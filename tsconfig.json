@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    // подсвечивает если не указан тип переменной
+    "noImplicitAny": true,
+    "module": "ESNext",
+    // target в какой код компилировать
+    "target": "es5",
+    "jsx": "react-jsx",
+    // обрабатывать js и ts файлы
+    "allowJs": true,
+    "moduleResolution": "node",
+    // esModuleInterop позволяет работать с пакетам которые испульхую common js как с обычными пакетам (requere() module.export) = common js
+    "esModuleInterop": true,
+    // allowSyntheticDefaultImports позволяет импортировать как обычный пакет. import * as webpack => import webpack
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "."
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
+}
