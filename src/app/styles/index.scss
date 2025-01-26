@@ -1,0 +1,30 @@
+@use 'reset';
+@use 'variables/global';
+@use 'themes/dark' as dark;
+@use 'themes/normal' as normal;
+
+.app {
+  font: var(--font-m);
+
+  background: var(--bg-color);
+  color: var(--primary-color);
+
+  min-height: 100vh;
+  // &.dark {
+  //   background-color: dark.$bg-color;
+  //   color: dark.$primary-color;
+  // }
+  // &.light {
+  //   background-color: normal.$bg-color;
+  //   color: normal.$primary-color;
+  // }
+}
+
+.content-page {
+  display: flex;
+}
+
+.page-wrapper {
+  flex-grow: 1;
+  padding: 20px;
+}

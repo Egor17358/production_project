@@ -14,7 +14,10 @@
     "esModuleInterop": true,
     // allowSyntheticDefaultImports позволяет импортировать как обычный пакет. import * as webpack => import webpack
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "*": ["./src/*"]
+    }
   },
   "ts-node": {
     "compilerOptions": {
