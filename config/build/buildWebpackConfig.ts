@@ -1,4 +1,3 @@
-import path from 'path';
 import { BuildOptions } from './types/config';
 import webpack from 'webpack';
 import { buildPlugins } from './buildPlugins';
