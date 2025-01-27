@@ -1,5 +1,9 @@
 {
   "Тестовый пример": "Test example",
   "Перевод": "Translate",
-  "Язык": "English"
+  "Язык": "English",
+  "Hello world": "Hello world",
+  "toggleS": "toggleS",
+  "glavnaya": "Main",
+  "about page": "About page"
 }

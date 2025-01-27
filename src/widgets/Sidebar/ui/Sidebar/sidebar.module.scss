@@ -1,4 +1,4 @@
-@use '../../../../app/styles/variables/global.scss';
+@use '../../../../app/styles/variables/global';
 
 .Sidebar {
   // height: calc(100vh - var(--navbar-height));
@@ -24,7 +24,6 @@
   justify-content: center;
   width: 100%;
 }
-
 
 .language {
   margin-left: 20px;

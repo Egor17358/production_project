@@ -6,6 +6,7 @@ import { useTheme } from 'app/providers/ThemeProvider';
 import { AppRouter } from 'app/providers/router';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
+import { t } from 'i18next';
 
 const App = () => {
   const { theme } = useTheme();
@@ -18,7 +19,7 @@ const App = () => {
         <div className='content-page'>
           <Sidebar />
           <AppRouter />
-          Hello world
+          {t('translation.Hello world')}
         </div>
       </Suspense>
     </div>

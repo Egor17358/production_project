@@ -1,6 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Navbar.module.scss';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import { t } from 'i18next';
 
 interface NavbarProps {
   className?: string;
@@ -15,10 +16,10 @@ export const Navbar = ({ className }: NavbarProps) => {
           to={'/'}
           className={cls.mainLink}
         >
-          Главная
+          {t('translation.glavnaya')}
         </AppLink>
         <AppLink theme={AppLinkTheme.RED} to={'/about'}>
-          О сайте
+         {t('translation.about page')}
         </AppLink>
       </div>
     </div>
