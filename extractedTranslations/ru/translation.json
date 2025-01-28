@@ -1,5 +1,21 @@
 {
+  "": "",
+  "Hello world": "Hello world",
+  "about page": "about page",
+  "glavnaya": "glavnaya",
+  "toggleS": "toggleS",
+  "tra": "tra",
+  "translation": {
+    "": "",
+    "Hello world": "Hello world",
+    "about page": "about page",
+    "glavnaya": "glavnaya",
+    "toggleS": "toggleS",
+    "Язык": "Язык"
+  },
+  "translation/": "translation/",
   "Главная страница": "Главная страница",
+  "Номер": "Номер",
   "О сайте": "О сайте",
   "Язык": "Язык"
 }
