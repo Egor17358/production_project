@@ -12,7 +12,7 @@ export default [
     settings: {
       "react": {
         "version": 'detect'
-      }
+      },
     }
     // extends: [tseslint.configs.disableTypeChecked],
   },
@@ -30,7 +30,8 @@ export default [
         "varsIgnorePattern": "^_",
         "ignoreRestSiblings": true
       }],
-      "@typescript-eslint/ban-ts-comment": "warn"
+      "@typescript-eslint/ban-ts-comment": "warn",
+      "jest": true
     }
   },
   i18next.configs['flat/recommended'],
