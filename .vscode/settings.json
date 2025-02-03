@@ -9,5 +9,6 @@
   "i18n-ally.regex.key": ".*?",
   // "i18n-ally.disablePathParsing": true
   "stylelint.validate": ["css", "scss"],
-  "stylelint.configFile": "frontendPro/stylelint.config.mjs",
+  "stylelint.configFile": "stylelint.config.mjs",
+  // "stylelint.stylelintPath": "./node_modules"
 }
