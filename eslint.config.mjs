@@ -15,7 +15,6 @@ export default [
         "version": 'detect'
       },
     },
-    extends: ['plugin:react/recommended']
     // extends: [tseslint.configs.disableTypeChecked],
   },
   {
@@ -37,7 +36,7 @@ export default [
       "jest/no-focused-tests": "error",
     },
     plugins: {
-      jest: pluginJest
+      jest: pluginJest,
     }
   },
   i18next.configs['flat/recommended'],
