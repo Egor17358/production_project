@@ -14,7 +14,8 @@ export default [
       "react": {
         "version": 'detect'
       },
-    }
+    },
+    extends: ['plugin:react/recommended']
     // extends: [tseslint.configs.disableTypeChecked],
   },
   {

@@ -6,9 +6,9 @@ export interface LangSwithcerProps {
   className?: string;
 }
 export const LangSwithcer = ({ className }: LangSwithcerProps) => {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation('translation');
 
-  const toogle = () => {
+  const toogle = async () => {
     i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
   };
 
