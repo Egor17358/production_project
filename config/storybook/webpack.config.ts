@@ -29,6 +29,7 @@ export default ({ config }: { config: webpack.Configuration }) => {
     use: ['@svgr/webpack'],
   })
 
+  config.module!.rules.push(buildCssLoader(true));
     // Add your own SVG loader
     // {
     //   test: /\.svg$/,
@@ -57,7 +58,7 @@ export default ({ config }: { config: webpack.Configuration }) => {
   //   use: ["@svgr/webpack", assetLoader]
   // });
 
-  if (config.module) {
+  // if (config.module) {
     // config.module.rules = config.module?.rules && config.module?.rules?.map((rule: RuleSetRule) => {
     //   if (/svg/.test(rule.test as string)) {
     //     return {...rule, exclude: /\svg$/i}
@@ -87,8 +88,7 @@ export default ({ config }: { config: webpack.Configuration }) => {
     //   issuer: /\.[jt]sx?$/,
     //   use: ['@svgr/webpack'],
     // })
-  }
+  // }
 
-  config.module?.rules?.push(buildCssLoader(true));
   return config;
 };
