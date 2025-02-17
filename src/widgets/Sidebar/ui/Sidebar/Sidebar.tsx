@@ -1,37 +1,36 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-// import cls from './Sidebar.module.scss';
+import cls from './Sidebar.module.scss';
 import { useState } from 'react';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 import { LangSwithcer } from 'widgets/LangSwithcer/LangSwithcer';
-// import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 export interface SidebarProps {
   className?: string;
 }
 export const Sidebar = ({ className }: SidebarProps) => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [collapsed, setCollapsed] = useState(false);
-  // const onToggle = () => {
-  //   setCollapsed(prev => !prev);
-  // };
+  const onToggle = () => {
+    setCollapsed(prev => !prev);
+  };
 
-  // const { t } = useTranslation('translation');
+  const { t } = useTranslation('translation');
 
   return (
     <div
       data-testid='sidebar'
-      // className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [
-      //   className,
-      // ])}
+      className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [
+        className,
+      ])}
     >
-      {/* <button data-testid='sidebar-toggle' onClick={onToggle}>
+      <button data-testid='sidebar-toggle' onClick={onToggle}>
         {t('toggleS')}
-      </button> */}
+      </button>
       <div 
-        // className={cls.switchers}
+        className={cls.switchers}
       >
         <ThemeSwitcher />
         <LangSwithcer 
-          // className={cls.language} 
+          className={cls.language} 
         />
       </div>
     </div>

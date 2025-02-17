@@ -17,20 +17,26 @@ export default [
     },
     // extends: [tseslint.configs.disableTypeChecked],
   },
+  pluginJs.configs.recommended,
+  ...tseslint.configs.recommended,
   {
     languageOptions: { globals: globals.browser },
     rules: {
-      "import/prefer-default-export": "off",
-      "no-unused-vars": "warn",
-      "@typescript-eslint/no-unused-vars": ["warn", {
-        "args": "all",
-        "argsIgnorePattern": "^_",
-        "caughtErrors": "all",
-        "caughtErrorsIgnorePattern": "^_",
-        "destructuredArrayIgnorePattern": "^_",
-        "varsIgnorePattern": "^_",
-        "ignoreRestSiblings": true
-      }],
+      // "import/prefer-default-export": "off",
+      "no-unused-vars": "off",
+      // "@typescript-eslint/no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": ["warn"
+        , {
+          // "varsIgnorePattern": "^[A-Z]",
+          "argsIgnorePattern": "^_",
+        // "args": "all",
+        // "caughtErrors": "all",
+        // "caughtErrorsIgnorePattern": "^_",
+        // "destructuredArrayIgnorePattern": "^_",
+        // "varsIgnorePattern": "^_",
+        // "ignoreRestSiblings": true
+      }
+    ],
       "@typescript-eslint/ban-ts-comment": "warn",
       "jest/no-disabled-tests": "warn",
       "jest/no-focused-tests": "error",
@@ -40,8 +46,6 @@ export default [
     }
   },
   i18next.configs['flat/recommended'],
-  pluginJs.configs.recommended,
-  ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
   pluginReact.configs.flat['jsx-runtime'],
 ];
