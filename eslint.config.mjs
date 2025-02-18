@@ -20,9 +20,11 @@ export default [
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   {
-    languageOptions: { globals: globals.browser },
-    env: {
-      node: true
+    languageOptions: { 
+      globals: {
+        __dirname: "readonly",
+      ...globals.browser
+      } 
     },
     rules: {
       // "import/prefer-default-export": "off",
