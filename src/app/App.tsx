@@ -1,5 +1,4 @@
 import { Suspense } from 'react';
-import './styles/index.scss';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTheme } from 'app/providers/ThemeProvider';
@@ -14,7 +13,7 @@ const App = () => {
   // const { t } = useTranslation('translation');
 
   return (
-    <div className={classNames('app', { hovered: true }, [theme])}>
+    <div className={classNames('app', {}, [theme])}>
       {/* <button onClick={toggleTheme}>ToGGLE</button> */}
       <Suspense fallback=''>
         <Navbar />

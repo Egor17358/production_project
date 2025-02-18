@@ -84,6 +84,7 @@
   },
   "dependencies": {
     "eslint-plugin-jest": "^28.11.0",
+    "eslint-plugin-react-hooks": "^5.2.0-canary-8a7b487e-20250218",
     "i18next": "^24.2.1",
     "i18next-browser-languagedetector": "^8.0.2",
     "i18next-http-backend": "^3.0.2",

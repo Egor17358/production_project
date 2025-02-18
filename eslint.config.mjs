@@ -4,6 +4,7 @@ import tseslint from "typescript-eslint";
 import pluginReact from "eslint-plugin-react";
 import pluginJest from 'eslint-plugin-jest';
 import i18next from 'eslint-plugin-i18next';
+import hooksPlugin from "eslint-plugin-react-hooks";
 
 
 /** @type {import('eslint').Linter.Config[]} */
@@ -45,10 +46,14 @@ export default [
       "@typescript-eslint/ban-ts-comment": "warn",
       "jest/no-disabled-tests": "warn",
       "jest/no-focused-tests": "error",
+      // "react-hooks/rules-of-hooks": "error"
+      ...hooksPlugin.configs.recommended.rules
     },
     plugins: {
-      jest: pluginJest,
-    }
+      jest: pluginJest, 
+      "react-hooks": hooksPlugin,
+    },
+    // rules: hooksPlugin.configs.recommended.rules,
   },
   i18next.configs['flat/recommended'],
   pluginReact.configs.flat.recommended,
