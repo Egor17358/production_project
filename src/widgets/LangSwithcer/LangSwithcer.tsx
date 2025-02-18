@@ -19,7 +19,7 @@ export const LangSwithcer = ({ className, short }: LangSwithcerProps) => {
       onClick={toogle}
       className={classNames('', {}, [className])}
     >
-      {t(short ? 'Короткий язык' : 'Язык')}
+      {short ? t('Короткий язык') : t('Язык')}
     </Button>
   );
 };

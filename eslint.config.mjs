@@ -21,6 +21,9 @@ export default [
   ...tseslint.configs.recommended,
   {
     languageOptions: { globals: globals.browser },
+    env: {
+      node: true
+    },
     rules: {
       // "import/prefer-default-export": "off",
       "no-unused-vars": "off",
