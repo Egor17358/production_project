@@ -16,6 +16,11 @@ const config: Config = {
   // The directory where Jest should store its cached dependency information
   // cacheDirectory: "/private/var/folders/9x/_681lhc97c16_383j30d5dn00000gn/T/jest_dx",
 
+
+  globals: {
+    __IS_DEV__: true
+  },
+
   // Automatically clear mock calls, instances, contexts and results before every test
   clearMocks: true,
   // testEnvironment: 'jest-environment-jsdom',
