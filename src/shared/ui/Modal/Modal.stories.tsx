@@ -11,7 +11,7 @@ const meta = {
   component: Modal,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
-    layout: 'fullscreen',
+    layout: 'padded',
   },
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],
@@ -31,7 +31,7 @@ export const Primary: Story = {
   args: {
     isOpen: true,
     children:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum blanditiis, eligendi suscipit earum eos, ab nesciunt ex eius omnis iste rem sunt animi alias quia? At amet optio similique quibusdam modi eos praesentium maiores quas beatae repellat numquam, tempora officiis quod iusto nihil, atque excepturi qui esse error porro! Expedita, sit consequatur ipsam dolore pariatur aspernatur commodi sed illo corrupti iste veniam repellendus blanditiis reiciendis enim itaque! Ducimus voluptate eligendi quisquam, molestiae asperiores ab error adipisci est quis. Culpa cum quibusdam dolorem obcaecati sequi ipsa illum exercitationem minima facilis reiciendis eum odio repellat, magnam, asperiores nesciunt minus tenetur corporis saepe?',
+      'Lorem ipsum dolor sit amet',
   },
 };
 
@@ -39,7 +39,7 @@ export const DarkTheme: Story = {
   args: {
     isOpen: true,
     children:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum blanditiis, eligendi suscipit earum eos, ab nesciunt ex eius omnis iste rem sunt animi alias quia? At amet optio similique quibusdam modi eos praesentium maiores quas beatae repellat numquam, tempora officiis quod iusto nihil, atque excepturi qui esse error porro! Expedita, sit consequatur ipsam dolore pariatur aspernatur commodi sed illo corrupti iste veniam repellendus blanditiis reiciendis enim itaque! Ducimus voluptate eligendi quisquam, molestiae asperiores ab error adipisci est quis. Culpa cum quibusdam dolorem obcaecati sequi ipsa illum exercitationem minima facilis reiciendis eum odio repellat, magnam, asperiores nesciunt minus tenetur corporis saepe?',
+      'Lorem ipsum dolor sit amet',
   },
 };
 DarkTheme.decorators = [ThemeDecorator];
