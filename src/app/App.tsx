@@ -14,7 +14,7 @@ const App = () => {
   // const { t } = useTranslation('translation');
   return (
     <StoreProvider>
-      <div className={classNames('app', {}, [theme])}>
+      <div className={classNames('app', {}, [])}>
         {/* <button onClick={toggleTheme}>ToGGLE</button> */}
         <Suspense fallback=''>
           <Navbar />
