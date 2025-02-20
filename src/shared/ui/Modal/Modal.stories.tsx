@@ -35,17 +35,17 @@ export const Primary: Story = {
   },
 };
 
-// export const Dark: Story = {
-//   args: {
-//     isOpen: true,
-//     children:
-//       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum blanditiis, eligendi suscipit earum eos, ab nesciunt ex eius omnis iste rem sunt animi alias quia? At amet optio similique quibusdam modi eos praesentium maiores quas beatae repellat numquam, tempora officiis quod iusto nihil, atque excepturi qui esse error porro! Expedita, sit consequatur ipsam dolore pariatur aspernatur commodi sed illo corrupti iste veniam repellendus blanditiis reiciendis enim itaque! Ducimus voluptate eligendi quisquam, molestiae asperiores ab error adipisci est quis. Culpa cum quibusdam dolorem obcaecati sequi ipsa illum exercitationem minima facilis reiciendis eum odio repellat, magnam, asperiores nesciunt minus tenetur corporis saepe?',
-//   },
-// };
-// Dark.decorators = [ThemeDecorator];
-// Dark.parameters = {
-//   theme: Theme.DARK,
-// };
+export const Dark: Story = {
+  args: {
+    isOpen: true,
+    children:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum blanditiis, eligendi suscipit earum eos, ab nesciunt ex eius omnis iste rem sunt animi alias quia? At amet optio similique quibusdam modi eos praesentium maiores quas beatae repellat numquam, tempora officiis quod iusto nihil, atque excepturi qui esse error porro! Expedita, sit consequatur ipsam dolore pariatur aspernatur commodi sed illo corrupti iste veniam repellendus blanditiis reiciendis enim itaque! Ducimus voluptate eligendi quisquam, molestiae asperiores ab error adipisci est quis. Culpa cum quibusdam dolorem obcaecati sequi ipsa illum exercitationem minima facilis reiciendis eum odio repellat, magnam, asperiores nesciunt minus tenetur corporis saepe?',
+  },
+};
+Dark.decorators = [ThemeDecorator];
+Dark.parameters = {
+  theme: Theme.DARK,
+};
 
 // export const OutlineDark: Story = {
 //   args: {
