@@ -4,6 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Modal } from './Modal';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
+import styles from './Modal.module.scss';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -31,7 +32,8 @@ export const Primary: Story = {
   args: {
     isOpen: true,
     children:
-      'Lorem ipsum dolor sit amet',
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore deleniti numquam enim consequatur est in explicabo commodi provident, quas maiores!',
+      className: `${styles.testModal}`,
   },
 };
 
@@ -39,7 +41,8 @@ export const DarkTheme: Story = {
   args: {
     isOpen: true,
     children:
-      'Lorem ipsum dolor sit amet',
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore, optio. Est neque quos qui. Voluptatem harum sint explicabo consequatur vitae!',
+      className: `${styles.testModal}`,
   },
 };
 DarkTheme.decorators = [ThemeDecorator];
