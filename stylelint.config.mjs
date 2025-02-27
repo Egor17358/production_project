@@ -6,7 +6,8 @@ export default {
     "scss/double-slash-comment-empty-line-before": null,
     "scss/dollar-variable-empty-line-before": null,
     "custom-property-empty-line-before": null,
-    "declaration-empty-line-before": null
+    "declaration-empty-line-before": null,
+    "color-hex-length": "long"
     // "double-slash-comment-empty-line-before": null,
   },
 };

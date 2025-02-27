@@ -89,6 +89,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.5.1",
+    "axios": "^1.8.1",
     "eslint-plugin-jest": "^28.11.0",
     "eslint-plugin-react-hooks": "^5.2.0-canary-8a7b487e-20250218",
     "i18next": "^24.2.1",

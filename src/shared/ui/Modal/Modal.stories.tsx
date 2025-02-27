@@ -33,7 +33,7 @@ export const Primary: Story = {
     isOpen: true,
     children:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore deleniti numquam enim consequatur est in explicabo commodi provident, quas maiores!',
-      className: `${styles.testModal}`,
+    className: `${styles.testModal}`,
   },
 };
 
@@ -42,7 +42,7 @@ export const DarkTheme: Story = {
     isOpen: true,
     children:
       'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore, optio. Est neque quos qui. Voluptatem harum sint explicabo consequatur vitae!',
-      className: `${styles.testModal}`,
+    className: `${styles.testModal}`,
   },
 };
 DarkTheme.decorators = [ThemeDecorator];

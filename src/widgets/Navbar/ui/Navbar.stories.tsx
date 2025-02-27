@@ -3,6 +3,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Navbar } from './Navbar';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
+import { StoreProvider } from 'app/providers/StoreProvider';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -29,10 +31,21 @@ type Story = StoryObj<typeof meta>;
 export const Light: Story = {
   args: {},
 };
+Light.decorators = [StoreDecorator];
+Light.parameters = { state: {} };
+
 export const Dark: Story = {
   args: {},
 };
-Dark.decorators = [ThemeDecorator];
+Dark.decorators = [ThemeDecorator, StoreDecorator];
 Dark.parameters = {
   theme: Theme.DARK,
+  state: {},
+};
+export const AuthNavbar: Story = {
+  args: {},
+};
+AuthNavbar.decorators = [StoreDecorator];
+AuthNavbar.parameters = {
+  state: { user: { authData: {} } },
 };

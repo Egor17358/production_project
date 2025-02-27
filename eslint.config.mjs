@@ -21,28 +21,29 @@ export default [
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   {
-    languageOptions: { 
+    languageOptions: {
       globals: {
         __dirname: "readonly",
-      ...globals.browser
-      } 
+        ...globals.browser
+      }
     },
     rules: {
       // "import/prefer-default-export": "off",
       "no-unused-vars": "off",
+      "max-len": ['error', { ignoreComments: true, code: 160 }],
       // "@typescript-eslint/no-unused-vars": "off",
       "@typescript-eslint/no-unused-vars": ["warn"
         , {
           // "varsIgnorePattern": "^[A-Z]",
           "argsIgnorePattern": "^_",
-        // "args": "all",
-        // "caughtErrors": "all",
-        // "caughtErrorsIgnorePattern": "^_",
-        // "destructuredArrayIgnorePattern": "^_",
-        // "varsIgnorePattern": "^_",
-        // "ignoreRestSiblings": true
-      }
-    ],
+          // "args": "all",
+          // "caughtErrors": "all",
+          // "caughtErrorsIgnorePattern": "^_",
+          // "destructuredArrayIgnorePattern": "^_",
+          // "varsIgnorePattern": "^_",
+          // "ignoreRestSiblings": true
+        }
+      ],
       "@typescript-eslint/ban-ts-comment": "warn",
       "jest/no-disabled-tests": "warn",
       "jest/no-focused-tests": "error",
@@ -50,7 +51,7 @@ export default [
       ...hooksPlugin.configs.recommended.rules
     },
     plugins: {
-      jest: pluginJest, 
+      jest: pluginJest,
       "react-hooks": hooksPlugin,
     },
     // rules: hooksPlugin.configs.recommended.rules,
