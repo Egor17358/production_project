@@ -5,6 +5,10 @@ import { userReducer } from 'entites/User';
 import { useDispatch, TypedUseSelectorHook, useSelector } from 'react-redux';
 import { createReducerManager } from './reducerManager';
 
+export type DeepPartial<T> = T extends object ? {
+  [P in keyof T]?: DeepPartial<T[P]>;
+} : T;
+
 export type RootState = ReducersMapObject<StateSchema>;
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type AppThunkDispatch = ThunkDispatch<RootState, any, Action>;
