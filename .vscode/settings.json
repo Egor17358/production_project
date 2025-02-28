@@ -10,5 +10,6 @@
   // "i18n-ally.disablePathParsing": true
   "stylelint.validate": ["css", "scss"],
   "stylelint.configFile": "stylelint.config.mjs",
+  "editor.wordWrapColumn": 80
   // "stylelint.stylelintPath": "./node_modules"
 }

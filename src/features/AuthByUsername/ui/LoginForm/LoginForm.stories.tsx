@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 // import { fn } from '@storybook/test';
 
-import { LoginForm } from './LoginForm';
+import LoginForm from './LoginForm';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
@@ -32,13 +32,13 @@ export const Primary: Story = {
   args: {},
 };
 Primary.decorators = [StoreDecorator];
-Primary.parameters = { state: { loginForm: { username: '123', password: '123' } } };
+Primary.parameters = { state: { loginForm: { username: 'name', password: '123' } } };
 
 export const withError: Story = {
   args: {},
 };
 withError.decorators = [StoreDecorator];
-withError.parameters = { state: { loginForm: { username: '123', password: '123', error: 'ERROR' } } };
+withError.parameters = { state: { loginForm: { username: 'name', password: '123', error: 'ERROR' } } };
 
 export const Loading: Story = {
   args: {},
