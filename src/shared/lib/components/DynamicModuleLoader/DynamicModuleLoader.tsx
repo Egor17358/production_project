@@ -2,7 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './DynamicModuleLoader.module.scss';
 import { useTranslation } from 'react-i18next';
 import { FC, ReactNode, useEffect } from 'react';
-import { useAppDispatch } from 'app/providers/StoreProvider/config/store';
+// import { useAppDispatch } from 'app/providers/StoreProvider/config/store';
 import { useStore } from 'react-redux';
 import {
   ReduxStoreWithManager,
@@ -10,6 +10,7 @@ import {
 } from 'app/providers/StoreProvider/config/StateSchema';
 import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
 import { Reducer } from '@reduxjs/toolkit';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 export type ReducerList = {
   [name in StateSchemaKey]?: Reducer;

@@ -11,9 +11,13 @@ export type DeepPartial<T> = T extends object ? {
 
 export type RootState = ReducersMapObject<StateSchema>;
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type AppThunkDispatch = ThunkDispatch<RootState, any, Action>;
-export const useAppDispatch = () => useDispatch<AppThunkDispatch>();
+// export type AppThunkDispatch = ThunkDispatch<RootState, any, Action>;
+// export const useAppDispatch = () => useDispatch<AppThunkDispatch>();
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
+
+// export type AppDispatch = typeof store.dispatch
+export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch']
+
 
 export function createReduxStore(
   initialState?: StateSchema,
@@ -40,3 +44,4 @@ export function createReduxStore(
 
   return store;
 }
+

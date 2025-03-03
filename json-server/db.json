@@ -13,6 +13,13 @@
     { "id": "1", "username": "admin", "password": "123" }
   ],
   "profile": {
-    "name": "typicode"
+    "first": "Иван",
+    "lastname": "Иванов",
+    "age": 33,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Vologda",
+    "username": "admin",
+    "avatar": "https://lastfm.freetls.fastly.net/i/u/ar0/708e7517998748bac8a19f4a42635124.png"
   }
 }

@@ -1,12 +1,13 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { memo } from 'react';
 
 export interface LangSwithcerProps {
   className?: string;
   short?: boolean;
 }
-export const LangSwithcer = ({ className, short }: LangSwithcerProps) => {
+export const LangSwithcer = memo(({ className, short }: LangSwithcerProps) => {
   const { t, i18n } = useTranslation('translation');
 
   const toogle = async () => {
@@ -14,12 +15,10 @@ export const LangSwithcer = ({ className, short }: LangSwithcerProps) => {
   };
 
   return (
-    <Button
-      theme={ButtonTheme.CLEAR}
-      onClick={toogle}
-      className={classNames('', {}, [className])}
-    >
+    <Button theme={ButtonTheme.CLEAR} onClick={toogle} className={classNames('', {}, [className])}>
       {short ? t('Короткий язык') : t('Язык')}
     </Button>
   );
-};
+});
+
+LangSwithcer.displayName = 'LangSwithcer';
