@@ -23,6 +23,8 @@ export default [
   {
     languageOptions: {
       globals: {
+        __IS_DEV__: true,
+        __API__: true,
         __dirname: "readonly",
         ...globals.browser
       }

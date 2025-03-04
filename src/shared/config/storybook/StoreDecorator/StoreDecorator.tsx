@@ -3,16 +3,18 @@ import { Decorator } from '@storybook/react';
 import { StateSchema, StoreProvider } from 'app/providers/StoreProvider';
 import { profileReducer } from 'entites/Profile';
 import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
+import { ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 
-const defaultAsyncReducers: Partial<ReducersMapObject<StateSchema>> = {
+const defaultAsyncReducers: ReducerList = {
   loginForm: loginReducer,
   profile: profileReducer
 };
 
 export const StoreDecorator: Decorator = (Story, { parameters }) => {
-  const state: Partial<StateSchema> = parameters.state;
+  const state: DeepPartial<StateSchema> = parameters.state;
   const asyncReducers: Partial<ReducersMapObject<StateSchema>> =
-    parameters?.asyncReducers || undefined;
+  // const asyncReducers: ReducerList =
+    parameters.asyncReducers;
 
   return (
     <StoreProvider

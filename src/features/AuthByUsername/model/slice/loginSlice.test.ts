@@ -1,10 +1,9 @@
-import { DeepPartial } from 'app/providers/StoreProvider/config/store';
 import { LoginSchema } from '../types/loginSchema';
 import { loginActions, loginReducer } from './loginSlice';
 
 describe('loginSlice.test', () => {
   test('test set username', () => {
-    const state: Partial<LoginSchema> = { username: '123' };
+    const state: DeepPartial<LoginSchema> = { username: '123' };
     expect(loginReducer(state as LoginSchema, loginActions.setUsername('123'))).toEqual({
       username: '123',
     });

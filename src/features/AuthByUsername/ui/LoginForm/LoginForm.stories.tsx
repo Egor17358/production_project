@@ -2,9 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 // import { fn } from '@storybook/test';
 
 import LoginForm from './LoginForm';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { fn } from '@storybook/test';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -21,7 +20,7 @@ const meta = {
     // backgroundCo lor: { control: 'color' },
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
-  // args: { onClick: fn() },
+  args: { onSuccess: fn() },
 } satisfies Meta<typeof LoginForm>;
 
 export default meta;
@@ -29,25 +28,23 @@ type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
-  args: {
-    onSuccess: () => console.log('close modal')
-  },
+  args: {},
 };
 Primary.decorators = [StoreDecorator];
-Primary.parameters = { state: { loginForm: { username: 'name', password: '123' } } };
+Primary.parameters = {
+  state: { loginForm: { username: 'name', password: '123' } },
+};
 
 export const withError: Story = {
-  args: {
-    onSuccess: () => console.log('close modal')
-  },
+  args: {},
 };
 withError.decorators = [StoreDecorator];
-withError.parameters = { state: { loginForm: { username: 'name', password: '123', error: 'ERROR' } } };
+withError.parameters = {
+  state: { loginForm: { username: 'name', password: '123', error: 'ERROR' } },
+};
 
 export const Loading: Story = {
-  args: {
-    onSuccess: () => console.log('close modal')
-  },
+  args: {},
 };
 Loading.decorators = [StoreDecorator];
 Loading.parameters = { state: { loginForm: { isLoading: true } } };

@@ -3,7 +3,6 @@ import { Modal } from 'shared/ui/Modal/Modal';
 import { LoginFormAsync } from '../LoginForm/LoginForm.async';
 import { Suspense } from 'react';
 import { Loader } from 'shared/ui/Loader/Loader';
-import LoginForm from '../LoginForm/LoginForm';
 
 export interface LoginModalProps {
   className?: string;

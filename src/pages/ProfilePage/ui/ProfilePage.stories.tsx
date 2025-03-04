@@ -28,15 +28,38 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Normal: Story = {
-  args: {},
-};
+export const Normal: Story = {};
 Normal.decorators = [StoreDecorator];
-
-export const Dark: Story = {
-  args: {},
+Normal.parameters = {
+  state: {
+    profile: {
+      data: {
+        username: 'admin',
+        age: 22,
+        country: "Russia",
+        lastname: 'asd asddas',
+        first: 'asd',
+        city: 'asf',
+        currency: 'USD',
+      },
+    },
+  },
 };
+export const Dark: Story = {};
 Dark.decorators = [ThemeDecorator, StoreDecorator];
 Dark.parameters = {
   theme: Theme.DARK,
+  state: {
+    profile: {
+      data: {
+        username: 'admin',
+        age: 22,
+        country: "Russia",
+        lastname: 'ads asdasd',
+        first: 'asd',
+        city: 'asf',
+        currency: 'USD',
+      },
+    },
+  },
 };

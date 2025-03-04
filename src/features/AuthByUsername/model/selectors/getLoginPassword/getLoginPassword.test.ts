@@ -1,6 +1,5 @@
 import { StateSchema } from 'app/providers/StoreProvider';
 import { getLoginPassword } from './getLoginPassword';
-import { DeepPartial } from 'app/providers/StoreProvider/config/store';
 
 describe('getLoginPassword.test', () => {
   test('should return 123', () => {
