@@ -1,6 +1,7 @@
 /build
 node_modules
 .idea
+/delete
 /storybook-static
 *storybook.log
 .loki/report.html
