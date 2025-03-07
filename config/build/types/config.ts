@@ -7,7 +7,7 @@ export interface BuildPath {
   build: string;
   // До файла html
   html: string;
-  src: string
+  src: string;
 }
 
 export interface BuildOptions {
@@ -15,11 +15,12 @@ export interface BuildOptions {
   paths: BuildPath;
   isDev: boolean;
   port: number;
-  apiUrl: string
+  apiUrl: string;
+  project: 'storybook' | 'frontend' | 'jest';
 }
 
 export interface BuildEnv {
   mode: BuildMode;
   port: number;
-  apiUrl: string
+  apiUrl: string;
 }

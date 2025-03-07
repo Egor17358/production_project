@@ -33,10 +33,10 @@ Normal.decorators = [StoreDecorator];
 Normal.parameters = {
   state: {
     profile: {
-      data: {
+      form: {
         username: 'admin',
         age: 22,
-        country: "Russia",
+        country: 'Russia',
         lastname: 'asd asddas',
         first: 'asd',
         city: 'asf',
@@ -51,10 +51,10 @@ Dark.parameters = {
   theme: Theme.DARK,
   state: {
     profile: {
-      data: {
+      form: {
         username: 'admin',
         age: 22,
-        country: "Russia",
+        country: 'Russia',
         lastname: 'ads asdasd',
         first: 'asd',
         city: 'asf',

@@ -14,9 +14,7 @@ export default ({ config }: { config: webpack.Configuration }) => {
   config.resolve?.extensions?.push('.ts', '.tsx');
 
   config.module!.rules = config
-    .module!.rules!.filter(
-      (rule): rule is RuleSetRule => rule !== undefined || rule !== null
-    )
+    .module!.rules!.filter((rule): rule is RuleSetRule => rule !== undefined || rule !== null)
     .map(rule => {
       if (/svg/.test(rule.test as string)) {
         return { ...rule, exclude: /\.svg$/i };
@@ -31,10 +29,13 @@ export default ({ config }: { config: webpack.Configuration }) => {
 
   config.module!.rules.push(buildCssLoader(true));
 
-  config.plugins?.push(new DefinePlugin({
-    __IS_DEV__: JSON.stringify(true),
-    __API__: JSON.stringify(''),
-  }))
+  config.plugins?.push(
+    new DefinePlugin({
+      __IS_DEV__: JSON.stringify(true),
+      __API__: JSON.stringify(''),
+      __PROJECT__: JSON.stringify('storybook'),
+    })
+  );
   // Add your own SVG loader
   // {
   //   test: /\.svg$/,

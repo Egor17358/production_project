@@ -19,8 +19,6 @@ export interface SelectProps {
 export const Select = memo((props: SelectProps) => {
   const { className, label, options, value, readonly, onChange } = props;
 
-  const { t } = useTranslation('translation');
-
   const optionsList = useMemo(() => {
     return options?.map((opt, index) => (
       <option className={cls.option} key={index} value={opt.value}>
