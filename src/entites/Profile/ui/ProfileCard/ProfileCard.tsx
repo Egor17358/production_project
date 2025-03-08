@@ -121,22 +121,18 @@ export const ProfileCard = (props: ProfileCardProps) => {
           className={cls.input}
           readonly={readonly}
         />
-        {__PROJECT__ !== 'storybook' && (
           <CurrencySelect
             className={cls.input}
             value={data?.currency}
             onChange={onChangeCurrency}
             readonly={readonly}
           />
-        )}
-        {__PROJECT__ !== 'storybook' && (
           <CountrySelect
             className={cls.input}
             value={data?.country}
             onChange={onChangeCountry}
             readonly={readonly}
           />
-        )}
       </div>
     </div>
   );

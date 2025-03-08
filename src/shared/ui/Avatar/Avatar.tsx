@@ -12,8 +12,8 @@ export const Avatar = ({ className, src, size, alt }: AvatarProps) => {
   const mods: Mods = {};
   const styles = useMemo<CSSProperties>(() => {
     return {
-      width: size || 100,
-      height: size || 100,
+      width: size || '100px',
+      height: size || '100px',
     };
   }, [size]);
 
