@@ -12,7 +12,7 @@ const defaultAsyncReducers: ReducerList = {
 
 export const StoreDecorator: Decorator = (Story, { parameters }) => {
   const state: DeepPartial<StateSchema> = parameters.state;
-  const asyncReducers: Partial<ReducersMapObject<StateSchema>> =
+  const asyncReducers: DeepPartial<ReducersMapObject<StateSchema>> =
   // const asyncReducers: ReducerList =
     parameters.asyncReducers;
 
