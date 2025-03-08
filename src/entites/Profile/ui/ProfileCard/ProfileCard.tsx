@@ -74,7 +74,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
   return (
     <div className={classNames(cls.ProfileCard, mods, [className])}>
       <div className={cls.data}>
-        {data?.avatar && (
+        {(__PROJECT__ !== 'storybook' && data?.avatar) && (
           <div className={cls.avatarWrapper}>
             <Avatar src={data?.avatar} />
           </div>
@@ -114,13 +114,15 @@ export const ProfileCard = (props: ProfileCardProps) => {
           className={cls.input}
           readonly={readonly}
         />
+        {__PROJECT__ !== 'storybook' && 
         <Input
-          onChange={onChangeAvatar}
-          value={data?.avatar}
-          placeholder={t('Введите ссылку на аватар')}
-          className={cls.input}
-          readonly={readonly}
+        onChange={onChangeAvatar}
+        value={data?.avatar}
+        placeholder={t('Введите ссылку на аватар')}
+        className={cls.input}
+        readonly={readonly}
         />
+      }
           <CurrencySelect
             className={cls.input}
             value={data?.currency}
