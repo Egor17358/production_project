@@ -74,7 +74,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
   return (
     <div className={classNames(cls.ProfileCard, mods, [className])}>
       <div className={cls.data}>
-        {(__PROJECT__ !== 'storybook' && data?.avatar) && (
+        {data?.avatar && (
           <div className={cls.avatarWrapper}>
             <Avatar src={data?.avatar} />
           </div>
