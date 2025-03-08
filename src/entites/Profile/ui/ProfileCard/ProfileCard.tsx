@@ -69,6 +69,8 @@ export const ProfileCard = (props: ProfileCardProps) => {
     [cls.editing]: !readonly,
   };
 
+  console.log(__PROJECT__);
+
   return (
     <div className={classNames(cls.ProfileCard, mods, [className])}>
       <div className={cls.data}>
@@ -119,18 +121,22 @@ export const ProfileCard = (props: ProfileCardProps) => {
           className={cls.input}
           readonly={readonly}
         />
-        <CurrencySelect
-          className={cls.input}
-          value={data?.currency}
-          onChange={onChangeCurrency}
-          readonly={readonly}
-        />
-        <CountrySelect
-          className={cls.input}
-          value={data?.country}
-          onChange={onChangeCountry}
-          readonly={readonly}
-        />
+        {__PROJECT__ !== 'storybook' && (
+          <CurrencySelect
+            className={cls.input}
+            value={data?.currency}
+            onChange={onChangeCurrency}
+            readonly={readonly}
+          />
+        )}
+        {__PROJECT__ !== 'storybook' && (
+          <CountrySelect
+            className={cls.input}
+            value={data?.country}
+            onChange={onChangeCountry}
+            readonly={readonly}
+          />
+        )}
       </div>
     </div>
   );
