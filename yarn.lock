@@ -1878,10 +1878,9 @@
     "@parcel/watcher-win32-ia32" "2.5.0"
     "@parcel/watcher-win32-x64" "2.5.0"
 
-"@pmmmwh/react-refresh-webpack-plugin@^0.5.15":
+"@pmmmwh/react-refresh-webpack-plugin@github:pmmmwh/react-refresh-webpack-plugin":
   version "0.5.15"
-  resolved "https://registry.yarnpkg.com/@pmmmwh/react-refresh-webpack-plugin/-/react-refresh-webpack-plugin-0.5.15.tgz#f126be97c30b83ed777e2aeabd518bc592e6e7c4"
-  integrity sha512-LFWllMA55pzB9D34w/wXUCf8+c+IYKuJDgxiZ3qMhl64KRMBHYM1I3VdGaD2BV5FNPV2/S2596bppxHbv2ZydQ==
+  resolved "https://codeload.github.com/pmmmwh/react-refresh-webpack-plugin/tar.gz/be959beba56726c56dd108dc0fca3b56cdafe99b"
   dependencies:
     ansi-html "^0.0.9"
     core-js-pure "^3.23.3"
