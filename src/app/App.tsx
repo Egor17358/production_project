@@ -5,8 +5,8 @@ import { useTheme } from 'app/providers/ThemeProvider';
 import { AppRouter } from 'app/providers/router';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
-import { useDispatch } from 'react-redux';
-import { userActions } from 'entites/User';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUserInited, userActions } from 'entites/User';
 // import { t } from 'i18next';
 // import { useTranslation } from 'react-i18next';
 
@@ -14,6 +14,7 @@ const App = () => {
   const { theme } = useTheme();
 
   const dispatch = useDispatch();
+  const inited = useSelector(getUserInited)
 
   useEffect(() => {
     dispatch(userActions.initAuthData());
@@ -26,7 +27,7 @@ const App = () => {
         <Navbar />
         <div className='content-page'>
           <Sidebar />
-          <AppRouter />
+          {inited && <AppRouter />}
           {/* {t('Hello world')} */}
         </div>
       </Suspense>
