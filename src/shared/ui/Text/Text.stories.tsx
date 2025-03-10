@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Text, TextTheme } from './Text';
+import { Text, TextSize, TextTheme } from './Text';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 
@@ -29,12 +29,11 @@ const darkThemeParameters = {
   theme: Theme.DARK,
 };
 
-
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   args: {
     title: 'Title lorem title',
-    text: 'Description Example Description'
+    text: 'Description Example Description',
   },
 };
 
@@ -42,7 +41,7 @@ export const Error: Story = {
   args: {
     title: 'Title lorem title',
     text: 'Description Example Description',
-    theme: TextTheme.ERROR
+    theme: TextTheme.ERROR,
   },
 };
 
@@ -53,13 +52,13 @@ export const OnlyTitle: Story = {
 };
 export const OnlyText: Story = {
   args: {
-    text: 'Description Example Description'
+    text: 'Description Example Description',
   },
 };
 export const PrimaryDark: Story = {
   args: {
     title: 'Title lorem title',
-    text: 'Description Example Description'
+    text: 'Description Example Description',
   },
 };
 PrimaryDark.decorators = [ThemeDecorator];
@@ -74,11 +73,27 @@ OnlyTitleDark.parameters = darkThemeParameters;
 
 export const OnlyTextDark: Story = {
   args: {
-    text: 'Description Example Description'
+    text: 'Description Example Description',
   },
 };
 OnlyTextDark.decorators = [ThemeDecorator];
 OnlyTextDark.parameters = darkThemeParameters;
+
+export const SizeL: Story = {
+  args: {
+    title: 'Title lorem title',
+    text: 'Description Example Description',
+    size: TextSize.L,
+  },
+};
+
+export const SizeM: Story = {
+  args: {
+    title: 'Title lorem title',
+    text: 'Description Example Description',
+    size: TextSize.M,
+  },
+};
 
 // export const OutlineDark: Story = {
 //   args: {
@@ -90,5 +105,3 @@ OnlyTextDark.parameters = darkThemeParameters;
 // OutlineDark.parameters = {
 //   theme: Theme.DARK,
 // };
-
-

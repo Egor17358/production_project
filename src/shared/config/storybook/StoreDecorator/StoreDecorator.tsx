@@ -1,13 +1,15 @@
 import { ReducersMapObject } from '@reduxjs/toolkit';
 import { Decorator } from '@storybook/react';
 import { StateSchema, StoreProvider } from 'app/providers/StoreProvider';
+import { articleDetailsReducer } from 'entites/Article/model/slice/articleDetailsSlice';
 import { profileReducer } from 'entites/Profile';
 import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
 import { ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 
 const defaultAsyncReducers: ReducerList = {
   loginForm: loginReducer,
-  profile: profileReducer
+  profile: profileReducer,
+  articleDetails: articleDetailsReducer,
 };
 
 export const StoreDecorator: Decorator = (Story, { parameters }) => {
