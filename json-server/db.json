@@ -39,6 +39,36 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "123",
+      "id": "iqyS8Rf"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "321",
+      "id": "JEoG2jL"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "aaa",
+      "id": "MvwC-fJ"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "dd",
+      "id": "E2MsvHm"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "Ghbd",
+      "id": "ijtxB55"
     }
   ],
   "users": [
@@ -65,7 +95,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2037",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -128,14 +160,28 @@
       ]
     }
   ],
-  "profile": {
-    "first": "Иван",
-    "lastname": "Иванов",
-    "age": 33,
-    "currency": "USD",
-    "country": "Russia",
-    "city": "Vologda",
-    "username": "admin",
-    "avatar": "https://lastfm.freetls.fastly.net/i/u/ar0/708e7517998748bac8a19f4a42635124.png"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "Иван",
+      "lastname": "Иванов",
+      "age": 33,
+      "currency": "USD",
+      "country": "Russia",
+      "city": "Vologda",
+      "username": "admin",
+      "avatar": "https://lastfm.freetls.fastly.net/i/u/ar0/708e7517998748bac8a19f4a42635124.png"
+    },
+    {
+      "id": "2",
+      "first": "firstName",
+      "lastname": "asf",
+      "age": 55,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "UserName2",
+      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
+    }
+  ]
 }

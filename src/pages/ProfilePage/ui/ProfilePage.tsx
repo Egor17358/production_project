@@ -24,6 +24,8 @@ import { Currency } from 'entites/Currency';
 import { Country } from 'entites/Country';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useParams } from 'react-router-dom';
 
 const reducers: ReducerList = {
   profile: profileReducer,
@@ -40,6 +42,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
   const isLoading = useSelector(getProfileisLoading);
   const readonly = useSelector(getProfileReadonly);
   const validateErrors = useSelector(getProfileValidateErrors);
+  const { id } = useParams<{ id: string }>();
 
   const validateErrorTranslates = {
     [ValidateProfileError.SERVER_ERROR]: t('Серверная ошибка при сохранении'),
@@ -50,11 +53,11 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     [ValidateProfileError.NO_DATA]: t('Данные не указаны'),
   };
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchProfileData());
+  useInitialEffect(() => {
+    if (id && __PROJECT__ !== 'storybook') {
+      dispatch(fetchProfileData(id));
     }
-  }, [dispatch]);
+  });
 
   const onChangeFirstname = useCallback(
     (value?: string) => {
@@ -122,10 +125,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
         <ProfilePageHeader />
         {validateErrors?.length &&
           validateErrors.map((err, index) => (
-            <Text 
-            theme={TextTheme.ERROR} 
-            text={validateErrorTranslates[err]} 
-            key={index} />
+            <Text theme={TextTheme.ERROR} text={validateErrorTranslates[err]} key={index} />
           ))}
         <ProfileCard
           data={formData}

@@ -9,6 +9,7 @@ import { ValidateProfileError } from '../../types/profile';
 
 // const mockedAxios = jest.mocked(axios);
 const data = {
+  id: '1',
   username: 'admin',
   age: 22,
   country: Country.Russia,

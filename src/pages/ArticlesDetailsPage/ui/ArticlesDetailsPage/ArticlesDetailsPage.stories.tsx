@@ -108,23 +108,23 @@ const article: Article = {
   ],
 };
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Normal: Story = {
-  args: {},
-};
-Normal.decorators = [StoreDecorator]
-Normal.parameters= {
-  state: {
-    articleDetails: { data: article },
-  },
-}
+// export const Normal: Story = {
+//   args: {},
+// };
+// Normal.decorators = [StoreDecorator]
+// Normal.parameters= {
+//   state: {
+//     articleDetails: { data: article },
+//   },
+// }
 
-export const DARK: Story = {
-  args: {},
-};
-DARK.decorators = [ThemeDecorator, StoreDecorator];
-DARK.parameters = {
-  theme: Theme.DARK,
-  state: {
-    articleDetails: { data: article },
-  },
-};
+// export const DARK: Story = {
+//   args: {},
+// };
+// DARK.decorators = [ThemeDecorator, StoreDecorator];
+// DARK.parameters = {
+//   theme: Theme.DARK,
+//   state: {
+//     articleDetails: { data: article },
+//   },
+// };

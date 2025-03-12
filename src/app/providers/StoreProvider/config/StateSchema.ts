@@ -4,6 +4,7 @@ import { articleDetailsSchema } from 'entites/Article';
 import { CounterSchema } from 'entites/Counter';
 import { ProfileSchema } from 'entites/Profile';
 import { UserSchema } from 'entites/User';
+import { AddCommentFormSchema } from 'features/AddCommentForm';
 import { LoginSchema } from 'features/AuthByUsername';
 import { ArticlesDetailsCommentsSchema } from 'pages/ArticlesDetailsPage';
 import { NavigateOptions, To } from 'react-router-dom';
@@ -17,6 +18,7 @@ export interface StateSchema {
   profile?: ProfileSchema;
   articleDetails?: articleDetailsSchema;
   articleDetailsComments?: ArticlesDetailsCommentsSchema;
+  addCommentForm?: AddCommentFormSchema;
   // counter: CounterState;
 }
 

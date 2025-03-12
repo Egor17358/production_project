@@ -3,6 +3,7 @@ import { Decorator } from '@storybook/react';
 import { StateSchema, StoreProvider } from 'app/providers/StoreProvider';
 import { articleDetailsReducer } from 'entites/Article/model/slice/articleDetailsSlice';
 import { profileReducer } from 'entites/Profile';
+import { addCommentFormReducer } from 'features/AddCommentForm/model/slices/addCommentForm';
 import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
 import { ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 
@@ -10,6 +11,8 @@ const defaultAsyncReducers: ReducerList = {
   loginForm: loginReducer,
   profile: profileReducer,
   articleDetails: articleDetailsReducer,
+  addCommentForm: addCommentFormReducer,
+  articleDetailsComments: articleDetailsReducer,
 };
 
 export const StoreDecorator: Decorator = (Story, { parameters }) => {

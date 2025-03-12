@@ -7,7 +7,7 @@ import { Theme } from 'app/providers/ThemeProvider';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'shared/CommentList',
+  title: 'entites/Comment/CommentList',
   component: CommentList,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
@@ -27,11 +27,18 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-// export const Normal: Story = {
-//   args: {
+export const Normal: Story = {
+  args: {
+    comments: [{ id: '1', text: 'aaaa', user: { id: '1', username: 'userName' } }, { id: '2', text: 'asasd', user: { id: '2', username: 'userName2' } }],
+  },
+};
 
-//   },
-// };
+export const Loading: Story = {
+  args: {
+    isLoading: true,
+    comments: [],
+  },
+};
 
 // export const DARK: Story = {
 //   args: {
