@@ -44,11 +44,7 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {
       case ArticleBlockType.CODE:
-        if (__PROJECT__ !== 'storybook') {
-          return <ArticleCodeBlockComponent block={block} key={block.id} className={cls.block} />;
-        } else {
-          return null;
-        }
+        return <ArticleCodeBlockComponent block={block} key={block.id} className={cls.block} />;
       case ArticleBlockType.IMAGE:
         return <ArticleImageBlockComponent block={block} key={block.id} className={cls.block} />;
       case ArticleBlockType.TEXT:
@@ -98,7 +94,9 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
           <Icon Svg={CalendarIcon} className={cls.icon} />
           <Text text={article?.createdAt} />
         </div>
-        {article?.blocks.map(renderBlock)}
+        {__PROJECT__ !== 'storybook' && (
+          article?.blocks.map(renderBlock)
+        )}
       </>
     );
   }
