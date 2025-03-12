@@ -6,6 +6,7 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import { Theme } from 'app/providers/ThemeProvider';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Article, ArticleBlockType, ArticleType } from 'entites/Article/model/types/article';
+import AvatarImg from 'shared/assets/tests/testimage.jpeg'
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -32,7 +33,7 @@ const article: Article = {
   id: '1',
   title: 'Javascript news',
   subtitle: 'Что нового в JS за 2037 год?',
-  img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
+  img: AvatarImg,
   views: 1022,
   createdAt: '26.02.2037',
   type: [ArticleType.IT],
