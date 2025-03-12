@@ -77,26 +77,28 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
   } else {
     content = (
       <>
-        <div className={cls.avatarWrapper}>
-          <Avatar size={200} src={article?.img} className={cls.avatar} />
-        </div>
-        <Text
-          size={TextSize.L}
-          className={cls.title}
-          title={article?.title}
-          text={article?.subtitle}
-        />
-        <div className={cls.articleInfo}>
-          <Icon Svg={EyeIcon} className={cls.icon} />
-          <Text text={String(article?.views)} />
-        </div>
-        <div className={cls.articleInfo}>
-          <Icon Svg={CalendarIcon} className={cls.icon} />
-          <Text text={article?.createdAt} />
-        </div>
         {__PROJECT__ !== 'storybook' && (
-          article?.blocks.map(renderBlock)
+          <>
+            <div className={cls.avatarWrapper}>
+              <Avatar size={200} src={article?.img} className={cls.avatar} />
+            </div>
+            <Text
+              size={TextSize.L}
+              className={cls.title}
+              title={article?.title}
+              text={article?.subtitle}
+            />
+            <div className={cls.articleInfo}>
+              <Icon Svg={EyeIcon} className={cls.icon} />
+              <Text text={String(article?.views)} />
+            </div>
+            <div className={cls.articleInfo}>
+              <Icon Svg={CalendarIcon} className={cls.icon} />
+              <Text text={article?.createdAt} />
+            </div>
+          </>
         )}
+        {article?.blocks.map(renderBlock)}
       </>
     );
   }
