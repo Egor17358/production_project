@@ -1,13 +1,16 @@
 .app_purple_theme {
   --bg-color: #f8f4fb;
   --inverted-bg-color: #a013ff;
-  --primary-color: #555DB4;
+  --primary-color: #555db4;
   --secondary-color: #0008f5;
   --inverted-primary-color: #0008f5;
-  --inverted-secondary-color: #555DB4;
+  --inverted-secondary-color: #555db4;
 
   --skeleton-color: #ffffff;
   --skeleton-shadow: #413c3c;
 
   --code-bg: #ffffff;
+
+  // card
+  --card-bg: #d5d5d7;
 }

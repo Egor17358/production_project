@@ -10,7 +10,7 @@ import AvatarImg from 'shared/assets/tests/testimage.jpeg'
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'entites/ArticleDetails',
+  title: 'entites/Article/ArticleDetails',
   component: ArticleDetails,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
@@ -37,6 +37,11 @@ const article: Article = {
   views: 1022,
   createdAt: '26.02.2037',
   type: [ArticleType.IT],
+  user: {
+    id: '1',
+    username: 'admin',
+    avatar: 'https://i.pinimg.com/736x/88/69/de/8869de3990901fc40f8f74a93c18aaff.jpg',
+  },
   blocks: [
     {
       id: '1',
