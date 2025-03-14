@@ -1,0 +1,54 @@
+import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { StateSchema } from 'app/providers/StoreProvider';
+import { Article, ArticleView } from 'entites/Article';
+import { ArticlesPageSchema } from '../types/articlesPageSchema';
+import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList';
+import { ARTICLE_VIEW_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
+
+const articlesAdapter = createEntityAdapter({
+  // Assume IDs are stored in a field other than `book.id`
+  selectId: (article: Article) => article.id,
+  // Keep the "all IDs" array sorted based on book titles
+  // sortComparer: (a, b) => a.title.localeCompare(b.title),
+});
+
+export const getArticles = articlesAdapter.getSelectors<StateSchema>(
+  (state: StateSchema) => state.articlesPage || articlesAdapter.getInitialState()
+);
+
+const articlePageSlice = createSlice({
+  name: 'articlePageSlice',
+  initialState: articlesAdapter.getInitialState<ArticlesPageSchema>({
+    isLoading: false,
+    error: undefined,
+    ids: [],
+    entities: {},
+    view: ArticleView.SMALL,
+  }),
+  reducers: {
+    setView: (state, action: PayloadAction<ArticleView>) => {
+      state.view = action.payload;
+      localStorage.setItem(ARTICLE_VIEW_LOCALSTORAGE_KEY, action.payload);
+    },
+    initState: state => {
+      state.view = localStorage.getItem(ARTICLE_VIEW_LOCALSTORAGE_KEY) as ArticleView;
+    },
+  },
+  extraReducers: builder => {
+    builder
+      .addCase(fetchArticlesList.pending, state => {
+        state.error = undefined;
+        state.isLoading = true;
+      })
+      .addCase(fetchArticlesList.fulfilled, (state, action: PayloadAction<Article[]>) => {
+        state.isLoading = false;
+        articlesAdapter.setAll(state, action.payload);
+      })
+      .addCase(fetchArticlesList.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      });
+  },
+});
+
+export const { reducer: articlesPageReducer, actions: articlesPageActions } = articlePageSlice;
