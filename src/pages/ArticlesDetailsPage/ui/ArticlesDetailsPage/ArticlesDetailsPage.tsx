@@ -23,6 +23,7 @@ import {
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { fetchCommentsByArticleId } from '../../../ArticlesDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { addCommentForArticle } from '../../../ArticlesDetailsPage/model/services/addCommentForArticle/addCommentForArticle';
+import { Page } from 'shared/ui/Page/Page';
 
 export interface ArticlesDetailsPageProps {
   className?: string;
@@ -58,15 +59,15 @@ const ArticlesDetailsPage = ({ className }: ArticlesDetailsPageProps) => {
 
   if (!id || (!id && __PROJECT__ !== 'storybook')) {
     return (
-      <div className={classNames(cls.ArticlesDetailsPage, {}, [className])}>
+      <Page className={classNames(cls.ArticlesDetailsPage, {}, [className])}>
         {t('Статья не найдена')}
-      </div>
+      </Page>
     );
   }
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={classNames(cls.ArticlesDetailsPage, {}, [className])}>
+      <Page className={classNames(cls.ArticlesDetailsPage, {}, [className])}>
         <Button onClick={onBackToList} theme={ButtonTheme.OUTLINE}>
           {t('Назад к списку')}
         </Button>
@@ -74,7 +75,7 @@ const ArticlesDetailsPage = ({ className }: ArticlesDetailsPageProps) => {
         <Text className={cls.commentTitle} title={t('Комментарии')} />
         <AddCommentForm onSendComment={onSendComment} />
         <CommentList isLoading={commentsIsLoading} comments={comments} />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };
