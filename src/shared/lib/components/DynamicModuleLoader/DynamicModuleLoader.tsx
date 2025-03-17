@@ -3,13 +3,15 @@ import { FC, ReactNode, useEffect } from 'react';
 import { useStore } from 'react-redux';
 import {
   ReduxStoreWithManager,
+  StateSchema,
   StateSchemaKey,
 } from 'app/providers/StoreProvider/config/StateSchema';
 import { Reducer } from '@reduxjs/toolkit';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 export type ReducerList = {
-  [name in StateSchemaKey]?: Reducer;
+  // [name in StateSchemaKey]?: Reducer;
+  [name in StateSchemaKey]?: Reducer<NonNullable<StateSchema[name]>>;
 };
 
 export interface DynamicModuleLoaderProps {
