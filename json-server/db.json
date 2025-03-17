@@ -102,11 +102,11 @@
   "articles": [
     {
       "id": "1",
-      "title": "Javascript news",
+      "title": "Javascript news Новая",
       "subtitle": "Что нового в JS за 2037 год?",
       "img": "https://codybonney.com/images/16x9/tags/javascript.png",
       "views": 1022,
-      "createdAt": "26.02.2037",
+      "createdAt": "26.05.2037",
       "userId": "1",
       "type": [
         "IT"
@@ -129,7 +129,7 @@
       "title": "Python news",
       "subtitle": "Что нового в Python за 2037 год?",
       "img": "https://i.pinimg.com/736x/69/bf/8b/69bf8b69d44711f31b780b830fe537a3.jpg",
-      "views": 1022,
+      "views": 52,
       "createdAt": "26.02.2037",
       "userId": "1",
       "type": [
@@ -153,8 +153,8 @@
       "title": "Kotlin news",
       "subtitle": "Что нового в Kotlin за 2037 год?",
       "img": "https://avatars.mds.yandex.net/i?id=9fdef14f7ee4582fb6956bc49d3d0e9e_l-7882711-images-thumbs&n=13",
-      "views": 1022,
-      "createdAt": "26.02.2037",
+      "views": 1222,
+      "createdAt": "26.02.2017",
       "userId": "2",
       "type": [
         "IT"
@@ -178,7 +178,7 @@
       "subtitle": "Что нового в Python за 2037 год?",
       "img": "https://i.pinimg.com/736x/69/bf/8b/69bf8b69d44711f31b780b830fe537a3.jpg",
       "views": 1022,
-      "createdAt": "26.02.2037",
+      "createdAt": "26.02.2027",
       "userId": "1",
       "type": [
         "IT"
@@ -201,7 +201,7 @@
       "title": "Kotlin5 news",
       "subtitle": "Что нового в Kotlin за 2037 год?",
       "img": "https://avatars.mds.yandex.net/i?id=9fdef14f7ee4582fb6956bc49d3d0e9e_l-7882711-images-thumbs&n=13",
-      "views": 1022,
+      "views": 12,
       "createdAt": "26.02.2037",
       "userId": "2",
       "type": [
@@ -226,7 +226,7 @@
       "subtitle": "Что нового в Python за 2037 год?",
       "img": "https://i.pinimg.com/736x/69/bf/8b/69bf8b69d44711f31b780b830fe537a3.jpg",
       "views": 1022,
-      "createdAt": "26.02.2037",
+      "createdAt": "26.02.2007",
       "userId": "1",
       "type": [
         "IT"
@@ -273,7 +273,7 @@
       "title": "Python8 news",
       "subtitle": "Что нового в Python за 2037 год?",
       "img": "https://i.pinimg.com/736x/69/bf/8b/69bf8b69d44711f31b780b830fe537a3.jpg",
-      "views": 1022,
+      "views": 2323,
       "createdAt": "26.02.2037",
       "userId": "1",
       "type": [
@@ -298,7 +298,7 @@
       "subtitle": "Что нового в Kotlin за 2037 год?",
       "img": "https://avatars.mds.yandex.net/i?id=9fdef14f7ee4582fb6956bc49d3d0e9e_l-7882711-images-thumbs&n=13",
       "views": 1022,
-      "createdAt": "26.02.2037",
+      "createdAt": "26.02.2137",
       "userId": "2",
       "type": [
         "IT"
@@ -318,14 +318,14 @@
     },
     {
       "id": "10",
-      "title": "Python10 news",
+      "title": "Python10 news 1",
       "subtitle": "Что нового в Python за 2037 год?",
       "img": "https://i.pinimg.com/736x/69/bf/8b/69bf8b69d44711f31b780b830fe537a3.jpg",
       "views": 1022,
       "createdAt": "26.02.2037",
       "userId": "1",
       "type": [
-        "IT"
+        "ECONOMICS"
       ],
       "blocks": [
         {
@@ -349,7 +349,7 @@
       "createdAt": "26.02.2037",
       "userId": "2",
       "type": [
-        "IT"
+        "SCIENCE"
       ],
       "blocks": [
         {
