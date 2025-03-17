@@ -20,7 +20,7 @@ export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'];
 export function createReduxStore(
   initialState?: StateSchema,
   asyncReducers?: ReducersMapObject<StateSchema>,
-  navigate?: (to: To, options?: NavigateOptions)=> void,
+  // navigate?: (to: To, options?: NavigateOptions)=> void,
   // navigate: (to: To, options?: NavigateOptions)=> void | Promise<void>
 ) {
   const rootReducers: ReducersMapObject<StateSchema> = {
@@ -33,7 +33,7 @@ export function createReduxStore(
 
   const extraArg: ThunkExtraArg = {
     api: $api,
-    navigate
+    // navigate
   }
 
   const store = configureStore({
