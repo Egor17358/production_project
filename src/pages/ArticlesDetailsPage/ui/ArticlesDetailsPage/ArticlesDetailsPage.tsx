@@ -23,7 +23,7 @@ import {
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { fetchCommentsByArticleId } from '../../../ArticlesDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { addCommentForArticle } from '../../../ArticlesDetailsPage/model/services/addCommentForArticle/addCommentForArticle';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page/Page';
 
 export interface ArticlesDetailsPageProps {
   className?: string;

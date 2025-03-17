@@ -7,6 +7,7 @@ import { createReducerManager } from './reducerManager';
 import { $api } from 'shared/api/api';
 import { NavigateOptions, To } from 'react-router-dom';
 import { Reducer } from 'redux';
+import { scrollSaveReducer } from 'features/ScrollSave';
 
 export type RootState = ReducersMapObject<StateSchema>;
 
@@ -19,7 +20,7 @@ export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'];
 
 export function createReduxStore(
   initialState?: StateSchema,
-  asyncReducers?: ReducersMapObject<StateSchema>,
+  asyncReducers?: ReducersMapObject<StateSchema>
   // navigate?: (to: To, options?: NavigateOptions)=> void,
   // navigate: (to: To, options?: NavigateOptions)=> void | Promise<void>
 ) {
@@ -27,6 +28,7 @@ export function createReduxStore(
     ...asyncReducers,
     counter: CounterReducer,
     user: userReducer,
+    scrollSave: scrollSaveReducer,
   };
 
   const reducerManager = createReducerManager(rootReducers);
@@ -34,7 +36,7 @@ export function createReduxStore(
   const extraArg: ThunkExtraArg = {
     api: $api,
     // navigate
-  }
+  };
 
   const store = configureStore({
     reducer: reducerManager.reduce as Reducer<StateSchema, UnknownAction>,
