@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
-import { ArticleDetails, ArticleList } from 'entites/Article';
+import { ArticleDetails, ArticleList, getArticleDetailsData } from 'entites/Article';
 import { CommentList } from 'entites/Comment';
 import { AddCommentForm } from 'features/AddCommentForm';
 import { Text, TextSize } from 'shared/ui/Text/Text';
@@ -31,6 +31,8 @@ import {
 import { getArticleRecommendationsIsLoading } from '../../model/selectors/recommendations';
 import { fetchArticleRecommendations } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 import { articleDetailsPageReducer } from 'pages/ArticlesDetailsPage/model/slices';
+import { ArticleDetailPageHeader } from '../ArticleDetailPageHeader/ArticleDetailPageHeader';
+import { getUserAuthData } from 'entites/User';
 
 export interface ArticlesDetailsPageProps {
   className?: string;
@@ -78,9 +80,7 @@ const ArticlesDetailsPage = ({ className }: ArticlesDetailsPageProps) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={classNames(cls.ArticlesDetailsPage, {}, [className])}>
-        <Button onClick={onBackToList} theme={ButtonTheme.OUTLINE}>
-          {t('Назад к списку')}
-        </Button>
+        <ArticleDetailPageHeader />
         <ArticleDetails id={id} />
         <Text size={TextSize.L} className={cls.commentTitle} title={t('Рекоммендации')} />
         <ArticleList
