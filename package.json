@@ -52,6 +52,7 @@
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@types/react-router-dom": "^5.3.3",
+    "@types/react-virtualized": "^9.22.2",
     "@types/webpack": "^5.28.5",
     "@types/webpack-bundle-analyzer": "^4.7.0",
     "@types/webpack-dev-server": "^4.7.2",
@@ -103,7 +104,8 @@
     "react-dom": "^18.3.1",
     "react-i18next": "^15.4.0",
     "react-redux": "^9.2.0",
-    "react-router-dom": "^7.1.1"
+    "react-router-dom": "^7.1.1",
+    "react-virtualized": "^9.22.6"
   },
   "eslintConfig": {
     "extends": [

@@ -6,6 +6,8 @@ import { Article, ArticleView } from '../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 import { Text, TextSize } from 'shared/ui/Text/Text';
+import { AutoSizer, List, ListRowProps, WindowScroller } from 'react-virtualized';
+import { PAGE_ID } from 'widgets/Page/Page';
 
 export interface ArticleListProps {
   className?: string;
@@ -25,24 +27,81 @@ export const ArticleList = memo((props: ArticleListProps) => {
   const { className, articles, isLoading, view = ArticleView.SMALL, target } = props;
   const { t } = useTranslation('translation');
 
+  const isBig = view === ArticleView.BIG;
 
+  const itemsPerRow = isBig ? 1 : 3;
 
-  const renderArticle = (article: Article) => {
-    return <ArticleListItem target={target} key={article.id} article={article} view={view} className={cls.card} />;
+  const rowCount = isBig ? articles.length : Math.ceil(articles.length / itemsPerRow);
+
+  const rowRender = ({ index, isScrolling, isVisible, key, style }: ListRowProps) => {
+    const items = [];
+    const fromIndex = index * itemsPerRow;
+    const toIndex = Math.min(fromIndex + itemsPerRow, articles.length);
+
+    for (let index = fromIndex; index < toIndex; index++) {
+      items.push(
+        <ArticleListItem
+          target={target}
+          key={articles[index].id}
+          article={articles[index]}
+          view={view}
+          className={cls.card}
+        />
+      );
+    }
+
+    return (
+      <div key={key} className={cls.row} style={style}>
+        {items}
+      </div>
+    );
   };
+
+  // const renderArticle = (article: Article) => {
+  //   return (
+  //     <ArticleListItem
+  //       target={target}
+  //       key={article.id}
+  //       article={article}
+  //       view={view}
+  //       className={cls.card}
+  //     />
+  //   );
+  // };
 
   if (!isLoading && !articles.length) {
     return (
       <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
         <Text size={TextSize.L} title={t('Статьи не найдены')} />
-    </div>
-    )
+      </div>
+    );
   }
   return (
-    <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-      {articles.length > 0 ? articles.map(renderArticle) : null}
-      {isLoading && getSkeletons(view)}
-    </div>
+    // <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+    //   {articles.length > 0 ? articles.map(renderArticle) : null}
+    //   {isLoading && getSkeletons(view)}
+    // </div>
+    <WindowScroller scrollElement={document.getElementById(PAGE_ID) as Element}>
+      {({ height, width, registerChild, onChildScroll, isScrolling, scrollTop }) => (
+        <div
+          ref={registerChild}
+          className={classNames(cls.ArticleList, {}, [className, cls[view]])}
+        >
+          <List
+            scrollTop={scrollTop}
+            onScroll={onChildScroll}
+            isScrolling={isScrolling}
+            autoHeight
+            height={height ?? 700}
+            rowCount={rowCount}
+            rowHeight={isBig ? 700 : 330}
+            rowRenderer={rowRender}
+            width={width ? width - 80 : 700}
+          />
+          {isLoading && getSkeletons(view)}
+        </div>
+      )}
+    </WindowScroller>
   );
 });
 
