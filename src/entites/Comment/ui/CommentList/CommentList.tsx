@@ -4,7 +4,7 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Text } from 'shared/ui/Text/Text';
 import { CommentCard } from '../CommentCard/CommentCard';
-import { CommentType } from 'entites/Comment/model/types/comment';
+import { CommentType } from '../../model/types/comment';
 
 export interface CommentListProps {
   className?: string;

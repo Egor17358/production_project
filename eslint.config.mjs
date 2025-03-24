@@ -5,7 +5,8 @@ import pluginReact from "eslint-plugin-react";
 import pluginJest from 'eslint-plugin-jest';
 import i18next from 'eslint-plugin-i18next';
 import hooksPlugin from "eslint-plugin-react-hooks";
-
+import myPlugin from "eslint-plugin-my-plugin-test-for-me";
+myPlugin.rules
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -31,6 +32,12 @@ export default [
         ...globals.browser
       }
     },
+    plugins: {
+      jest: pluginJest,
+      "react-hooks": hooksPlugin,
+      "my-plugin-test-for-me": myPlugin,
+    },
+    // myPlugin
     rules: {
       // "import/prefer-default-export": "off",
       "no-unused-vars": "off",
@@ -51,12 +58,9 @@ export default [
       "@typescript-eslint/ban-ts-comment": "warn",
       "jest/no-disabled-tests": "warn",
       "jest/no-focused-tests": "error",
+      "my-plugin-test-for-me/patch-checker": "error",
       // "react-hooks/rules-of-hooks": "error"
       ...hooksPlugin.configs.recommended.rules
-    },
-    plugins: {
-      jest: pluginJest,
-      "react-hooks": hooksPlugin,
     },
     // rules: hooksPlugin.configs.recommended.rules,
   },

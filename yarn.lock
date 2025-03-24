@@ -5145,6 +5145,13 @@ eslint-plugin-jest@^28.11.0:
   dependencies:
     "@typescript-eslint/utils" "^6.0.0 || ^7.0.0 || ^8.0.0"
 
+eslint-plugin-my-plugin-test-for-me@0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-my-plugin-test-for-me/-/eslint-plugin-my-plugin-test-for-me-0.0.2.tgz#ad352bbc9938d3459d4767f9c078b46e980e5d90"
+  integrity sha512-EjVIQAaZJvYaGc/WWA5Y7OgASpflpfxAONgv05CEN8AQnNS+BbJRDBbTylApqWGi+MxwLfN6mxOclH6B8FwIAA==
+  dependencies:
+    requireindex "^1.2.0"
+
 eslint-plugin-react-hooks@^5.2.0-canary-8a7b487e-20250218:
   version "5.2.0-canary-8a7b487e-20250218"
   resolved "https://registry.npmjs.org/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-5.2.0-canary-8a7b487e-20250218.tgz"
@@ -8969,6 +8976,11 @@ require-from-string@^2.0.2:
   version "2.0.2"
   resolved "https://registry.npmjs.org/require-from-string/-/require-from-string-2.0.2.tgz"
   integrity sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw==
+
+requireindex@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/requireindex/-/requireindex-1.2.0.tgz#3463cdb22ee151902635aa6c9535d4de9c2ef1ef"
+  integrity sha512-L9jEkOi3ASd9PYit2cwRfyppc9NoABujTP8/5gFcbERmo5jUoAKovIC3fsF17pkTnGsrByysqX+Kxd2OTNI1ww==
 
 requireindex@~1.1.0:
   version "1.1.0"

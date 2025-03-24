@@ -5,7 +5,7 @@ import { ArticleDetails } from './ArticleDetails';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import { Article, ArticleBlockType, ArticleType } from 'entites/Article/model/types/article';
+import { Article, ArticleBlockType, ArticleType } from '../../model/types/article';
 import AvatarImg from 'shared/assets/tests/testimage.jpeg'
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
