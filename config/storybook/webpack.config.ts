@@ -4,11 +4,15 @@ import path from 'path';
 import { buildCssLoader } from '../build/loaders/buildCssLoader';
 
 export default ({ config }: { config: webpack.Configuration }) => {
+  console.log('__dirname', __dirname);
+  
   const paths: BuildPath = {
     build: '',
     html: '',
     entry: '',
     src: path.resolve(__dirname, '..', '..', 'src'),
+    locales: path.resolve(__dirname, '..', '..', 'public'),
+    buildLocales: path.resolve(__dirname, '..', '..', 'public'),
   };
   config.resolve?.modules?.push(paths.src);
   config.resolve?.extensions?.push('.ts', '.tsx');
