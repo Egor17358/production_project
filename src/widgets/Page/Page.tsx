@@ -41,10 +41,10 @@ export const Page = memo((props: PageProps) => {
   }, 500);
 
   return (
-    <section id={PAGE_ID} ref={wrapperRef} onScroll={onScroll} className={classNames(cls.Page, {}, [className])}>
+    <main id={PAGE_ID} ref={wrapperRef} onScroll={onScroll} className={classNames(cls.Page, {}, [className])}>
       {children}
       {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}
-    </section>
+    </main>
   );
 });
 

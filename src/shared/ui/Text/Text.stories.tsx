@@ -95,6 +95,14 @@ export const SizeM: Story = {
   },
 };
 
+export const SizeS: Story = {
+  args: {
+    title: 'Title lorem title',
+    text: 'Description Example Description',
+    size: TextSize.S,
+  },
+};
+
 // export const OutlineDark: Story = {
 //   args: {
 //     children: 'Text',
