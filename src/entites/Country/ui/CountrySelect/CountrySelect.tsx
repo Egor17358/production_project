@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Select } from 'shared/ui/Select/Select';
 import { Country } from '../../model/types/country';
 import { memo, useCallback } from 'react';
+import { ListBox } from 'shared/ui/ListBox/ListBox';
 
 export interface CountrySelectProps {
   className?: string;
@@ -18,26 +19,30 @@ const options = [
   { value: Country.USA, content: Country.USA },
 ];
 
-export const CountrySelect = memo(({ className, value, readonly, onChange }: CountrySelectProps) => {
-  const { t } = useTranslation('profile');
+export const CountrySelect = memo(
+  ({ className, value, readonly, onChange }: CountrySelectProps) => {
+    const { t } = useTranslation('profile');
 
-  const onChangeHandler = useCallback(
-    (value: string) => {
-      onChange?.(value as Country);
-    },
-    [onChange]
-  );
+    const onChangeHandler = useCallback(
+      (value: string) => {
+        onChange?.(value as Country);
+      },
+      [onChange]
+    );
 
-  return (
-    <Select
-      className={classNames('', {}, [className])}
-      label={t('Укажите Валюту')}
-      options={options}
-      value={value}
-      onChange={onChangeHandler}
-      readonly={readonly}
-    />
-  );
-});
+    return (
+      <ListBox
+        className={className}
+        value={value}
+        onChange={onChangeHandler}
+        items={options}
+        defaultValue={t('Выберите страну')}
+        readonly={readonly}
+        direction='top'
+        label={t('Выберите страну')}
+      />
+    );
+  }
+);
 
 CountrySelect.displayName = 'CurrencySelect';
