@@ -8,6 +8,7 @@ import { $api } from 'shared/api/api';
 import { NavigateOptions, To } from 'react-router-dom';
 import { Reducer } from 'redux';
 import { scrollSaveReducer } from 'features/ScrollSave';
+import { rtkApi } from 'shared/api/rtkApi';
 
 export type RootState = ReducersMapObject<StateSchema>;
 
@@ -29,6 +30,7 @@ export function createReduxStore(
     counter: CounterReducer,
     user: userReducer,
     scrollSave: scrollSaveReducer,
+    [rtkApi.reducerPath]: rtkApi.reducer,
   };
 
   const reducerManager = createReducerManager(rootReducers);
@@ -47,7 +49,7 @@ export function createReduxStore(
         thunk: {
           extraArgument: extraArg,
         },
-      }),
+      }).concat(rtkApi.middleware),
   });
   // @ts-ignore
   store.reducerManager = reducerManager;

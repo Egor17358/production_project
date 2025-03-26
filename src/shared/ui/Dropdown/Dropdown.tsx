@@ -26,9 +26,10 @@ export function Dropdown(props: DropdownProps) {
     <Menu as={'div'} className={classNames(cls.Dropdown, {}, [className])}>
       <MenuButton className={cls.btn}>{trigger}</MenuButton>
       <MenuItems anchor={direction} className={cls.menu}>
-        {items.map(item => {
+        {items.map((item, index) => {
           const content = ({ focus }: { focus: boolean }) => (
             <button
+              key={index}
               type='button'
               disabled={item.disabled}
               onClick={item.onClick}

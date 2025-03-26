@@ -2,9 +2,9 @@ import { ReducersMapObject } from '@reduxjs/toolkit';
 import { Decorator } from '@storybook/react';
 import { StateSchema, StoreProvider } from 'app/providers/StoreProvider';
 import { articleDetailsReducer } from 'entites/Article/model/slice/articleDetailsSlice';
-import { profileReducer } from 'entites/Profile';
 import { addCommentFormReducer } from 'features/AddCommentForm/model/slices/addCommentForm';
 import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
+import { profileReducer } from 'features/editableProfileCard/model/slice/profileSlice';
 import { articleDetailsPageReducer } from 'pages/ArticlesDetailsPage/model/slices';
 import { ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 

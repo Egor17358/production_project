@@ -3,7 +3,7 @@ import { updateProfileData } from './updateProfileData';
 import { userActions } from 'entites/User';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { Currency } from 'entites/Currency';
-import { ValidateProfileError } from '../../types/profile';
+import { ValidateProfileError } from '../../types/editableProfileCardSchema';
 
 // jest.mock('axios');
 

@@ -1,7 +1,7 @@
 import { StateSchema } from 'app/providers/StoreProvider';
 import { AsyncThunkAction } from '@reduxjs/toolkit';
 import axios, { AxiosStatic } from 'axios';
-import { ValidateProfileError } from 'entites/Profile';
+import { ValidateProfileError } from 'features/editableProfileCard/model/types/editableProfileCardSchema';
 
 type ActionCreatorType<Return, Arg, RejectedValue> = (
   arg: Arg

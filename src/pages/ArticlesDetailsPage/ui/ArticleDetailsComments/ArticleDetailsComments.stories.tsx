@@ -1,14 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react';
 // import { fn } from '@storybook/test';
 
-import ArticleEditPage  from './ArticleEditPage';
+import { ArticleDetailsComments } from './ArticleDetailsComments';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
+import { Article, ArticleBlockType, ArticleType } from 'entites/Article/model/types/article';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'pages/ArticleEditPage/ArticleEditPage',
-  component: ArticleEditPage,
+  title: 'pages/ArticleDetailsPage/ArticleDetailsComments',
+  component: ArticleDetailsComments,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: 'fullscreen',
@@ -21,24 +23,23 @@ const meta = {
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   // args: { onClick: fn() },
-} satisfies Meta<typeof ArticleEditPage>;
+} satisfies Meta<typeof ArticleDetailsComments>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Normal: Story = {
-  args: {
+// export const Normal: Story = {
+//   args: {
+//   },
+// };
 
-  },
-};
+// export const DARK: Story = {
+//   args: {
 
-export const DARK: Story = {
-  args: {
-
-  },
-};
-DARK.decorators = [ThemeDecorator];
-DARK.parameters = {
-  theme: Theme.DARK,
-};
+//   },
+// };
+// DARK.decorators = [ThemeDecorator];
+// DARK.parameters = {
+//   theme: Theme.DARK,
+// };

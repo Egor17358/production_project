@@ -110,7 +110,7 @@
       "id": "1",
       "title": "Javascript news Новая",
       "subtitle": "Что нового в JS за 2037 год?",
-      "img": "https://codybonney.com/images/16x9/tags/javascript.png",
+      "img": "https://i.pinimg.com/originals/6b/f2/bf/6bf2bf6590e61fa3afab738849eaa863.png",
       "views": 1022,
       "createdAt": "26.05.2037",
       "userId": "1",
@@ -879,7 +879,7 @@
     {
       "id": "1",
       "first": "Иван",
-      "lastname": "Иванов",
+      "lastname": "Иванов1",
       "age": 33,
       "currency": "USD",
       "country": "Armenia",
