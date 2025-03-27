@@ -91,6 +91,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
         placeholder={t('Ваше имя')}
         className={cls.input}
         readonly={readonly}
+        data-testid={'ProfileCard.firstName'}
       />
       <Input
         onChange={onChangeLastname}
@@ -98,6 +99,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
         placeholder={t('Ваша фамилия')}
         className={cls.input}
         readonly={readonly}
+        data-testid={'ProfileCard.lastName'}
       />
       <Input
         onChange={onChangeAge}
@@ -105,6 +107,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
         placeholder={t('Ваш возраст')}
         className={cls.input}
         readonly={readonly}
+        data-testid={'ProfileCard.age'}
       />
       <Input
         onChange={onChangeCity}
@@ -112,6 +115,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
         placeholder={t('Ваш город')}
         className={cls.input}
         readonly={readonly}
+        data-testid={'ProfileCard.city'}
       />
       <Input
         onChange={onChangeUsername}
@@ -119,6 +123,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
         placeholder={t('Введите имя пользователя')}
         className={cls.input}
         readonly={readonly}
+        data-testid={'ProfileCard.username'}
       />
       {__PROJECT__ !== 'storybook' && (
         <Input
@@ -127,6 +132,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
           placeholder={t('Введите ссылку на аватар')}
           className={cls.input}
           readonly={readonly}
+          data-testid={'ProfileCard.avatar'}
         />
       )}
       <CurrencySelect
