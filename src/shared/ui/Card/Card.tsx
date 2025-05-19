@@ -15,7 +15,7 @@ export interface CardProps extends HTMLAttributes<HTMLDivElement> {
 export const Card = memo(
   ({ className, children, theme = CardTheme.NORMAL, ...otherProps }: CardProps) => {
     return (
-      <div className={classNames(cls.Card, {}, [className, cls[theme]])} {...otherProps}>
+      <div style={{borderRadius:__PROJECT__ === 'storybook' ? 'none' : '12px'}} className={classNames(cls.Card, {}, [className, cls[theme]])} {...otherProps}>
         {children}
       </div>
     );
