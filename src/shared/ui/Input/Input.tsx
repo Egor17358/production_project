@@ -68,7 +68,9 @@ export const Input = memo((props: InputProps) => {
   return (
     <div className={classNames(cls.InputWrapper, mods, [className])}>
       {placeholder && (
-        <div className={cls.placeholder}>{`${placeholder}>`}</div>
+        <div
+          style={{whiteSpace: __PROJECT__ === 'storybook' ? 'nowrap' : 'unset'}}
+          className={cls.placeholder}>{`${placeholder}>`}</div>
       )}
       <div className={cls.caretWrapper}>
         <input
