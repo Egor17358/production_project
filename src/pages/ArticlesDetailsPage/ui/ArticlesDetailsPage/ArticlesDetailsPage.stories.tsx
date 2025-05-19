@@ -142,7 +142,7 @@ Normal.parameters = {
       http.get(`${__API__}/articles?_limit=3`, async () => {
         await delay(200);
         return HttpResponse.json([
-          { ...articleRecommendation, id: '1' },
+          // { ...articleRecommendation, id: '1' },
           // { ...articleRecommendation, id: '2' },
           // { ...articleRecommendation, id: '3' },
         ]);
