@@ -8,6 +8,7 @@ import { Article, ArticleBlockType, ArticleType } from 'entites/Article/model/ty
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { mswDecorator, initialize, mswLoader } from 'msw-storybook-addon';
 import { http, HttpResponse, delay } from 'msw';
+import AvatarImg from 'shared/assets/tests/testimage.jpeg'
 
 initialize()
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -30,6 +31,18 @@ const meta = {
 
 export default meta;
 type Story = StoryObj<typeof meta>;
+
+const articleRecommendation: Article = {
+  id: '1',
+  img: AvatarImg,
+  createdAt: '',
+  views: 121,
+  user: { id: '1', username: '121' },
+  blocks: [],
+  type: [],
+  title: '121',
+  subtitle: '122121',
+};
 
 const article: Article = {
   id: '1',
@@ -129,9 +142,9 @@ Normal.parameters = {
       http.get(`${__API__}/articles?_limit=3`, async () => {
         await delay(200);
         return HttpResponse.json([
-          { ...article, id: '1' },
-          { ...article, id: '2' },
-          { ...article, id: '3' },
+          { ...articleRecommendation, id: '1' },
+          { ...articleRecommendation, id: '2' },
+          { ...articleRecommendation, id: '3' },
         ]);
       }),
     ],

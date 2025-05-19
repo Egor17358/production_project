@@ -9,6 +9,7 @@ import { Article } from 'entites/Article';
 // import { fn } from '@storybook/test';
 import { http, HttpResponse, delay } from 'msw';
 import { mswDecorator, initialize } from 'msw-storybook-addon';
+import AvatarImg from 'shared/assets/tests/testimage.jpeg'
 
 initialize();
 const meta = {
@@ -30,7 +31,7 @@ type Story = StoryObj<typeof meta>;
 
 const article: Article = {
   id: '1',
-  img: '',
+  img: AvatarImg,
   createdAt: '',
   views: 121,
   user: { id: '1', username: '121' },
