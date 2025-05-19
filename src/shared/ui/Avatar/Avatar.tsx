@@ -14,6 +14,7 @@ export const Avatar = ({ className, src, size, alt }: AvatarProps) => {
     return {
       width: size || '100px',
       height: size || '100px',
+      borderRadius: __PROJECT__ === 'storybook' ? 'unset' : '50%',
     };
   }, [size]);
 
