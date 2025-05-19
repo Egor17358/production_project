@@ -40,8 +40,8 @@ const ArticlesDetailsPage = ({ className }: ArticlesDetailsPageProps) => {
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={classNames(cls.ArticlesDetailsPage, {}, [className])}>
         <VStack gap='16' max>
-          {/* <ArticleDetailPageHeader /> */}
-          <ArticleDetails id={id} />
+          <ArticleDetailPageHeader />
+          {/* <ArticleDetails id={id} /> */}
           <ArticleRecommendationsList />
           <ArticleDetailsComments id={id} />
         </VStack>
