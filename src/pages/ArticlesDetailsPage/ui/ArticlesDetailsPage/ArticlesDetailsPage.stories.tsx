@@ -48,7 +48,7 @@ const article: Article = {
   id: '1',
   title: 'Javascript news',
   subtitle: 'Что нового в JS за 2037 год?',
-  img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
+  img: AvatarImg,
   views: 1022,
   createdAt: '26.02.2037',
   type: [ArticleType.IT],
