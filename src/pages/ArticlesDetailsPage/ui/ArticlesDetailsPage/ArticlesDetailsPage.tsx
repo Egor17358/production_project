@@ -41,8 +41,8 @@ const ArticlesDetailsPage = ({ className }: ArticlesDetailsPageProps) => {
       <Page className={classNames(cls.ArticlesDetailsPage, {}, [className])}>
         <VStack gap='16' max>
           <ArticleDetailPageHeader />
-          <ArticleDetails id={id} />
-          {/* <ArticleRecommendationsList /> */}
+          {/* <ArticleDetails id={id} /> */}
+          <ArticleRecommendationsList />
           {/* <ArticleDetailsComments id={id} /> */}
         </VStack>
       </Page>
