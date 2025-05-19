@@ -33,11 +33,11 @@ const article: Article = {
   id: '1',
   img: AvatarImg,
   createdAt: '',
-  views: 121,
+  views: 1022,
   user: { id: '1', username: '121' },
   blocks: [],
   type: [],
-  title: '121',
+  title: 'Заголовок этого блока',
   subtitle: '122121',
 };
 
@@ -53,8 +53,8 @@ Normal.parameters = {
         await delay(200);
         return HttpResponse.json([
           { ...article, id: '1' },
-          { ...article, id: '2' },
-          { ...article, id: '3' },
+          // { ...article, id: '2' },
+          // { ...article, id: '3' },
         ]);
       }),
     ],

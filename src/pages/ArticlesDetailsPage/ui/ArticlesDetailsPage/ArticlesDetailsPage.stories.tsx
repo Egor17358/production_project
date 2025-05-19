@@ -143,8 +143,8 @@ Normal.parameters = {
         await delay(200);
         return HttpResponse.json([
           { ...articleRecommendation, id: '1' },
-          { ...articleRecommendation, id: '2' },
-          { ...articleRecommendation, id: '3' },
+          // { ...articleRecommendation, id: '2' },
+          // { ...articleRecommendation, id: '3' },
         ]);
       }),
     ],
