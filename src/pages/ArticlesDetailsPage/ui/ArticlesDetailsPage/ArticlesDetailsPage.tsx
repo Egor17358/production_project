@@ -42,8 +42,8 @@ const ArticlesDetailsPage = ({ className }: ArticlesDetailsPageProps) => {
         <VStack gap='16' max>
           <ArticleDetailPageHeader />
           {/* <ArticleDetails id={id} /> */}
-          <ArticleRecommendationsList />
-          {/* <ArticleDetailsComments id={id} /> */}
+          {/* <ArticleRecommendationsList /> */}
+          <ArticleDetailsComments id={id} />
         </VStack>
       </Page>
     </DynamicModuleLoader>
