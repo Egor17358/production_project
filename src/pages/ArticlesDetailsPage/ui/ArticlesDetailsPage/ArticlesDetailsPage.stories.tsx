@@ -6,7 +6,10 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import { Theme } from 'app/providers/ThemeProvider';
 import { Article, ArticleBlockType, ArticleType } from 'entites/Article/model/types/article';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { mswDecorator, initialize, mswLoader } from 'msw-storybook-addon';
+import { http, HttpResponse, delay } from 'msw';
 
+initialize()
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
   title: 'pages/ArticleDetailsPage/ArticlesDetailsPage',
@@ -113,15 +116,29 @@ const article: Article = {
   ],
 };
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-// export const Normal: Story = {
-//   args: {},
-// };
-// Normal.decorators = [StoreDecorator]
-// Normal.parameters= {
-//   state: {
-//     articleDetails: { data: article },
-//   },
-// }
+export const Normal: Story = {
+  args: {
+  },
+};
+Normal.parameters = {
+  state: {
+    articleDetails: { data: article },
+  },
+  msw: {
+    handlers: [
+      http.get(`${__API__}/articles?_limit=3`, async () => {
+        await delay(200);
+        return HttpResponse.json([
+          { ...article, id: '1' },
+          { ...article, id: '2' },
+          { ...article, id: '3' },
+        ]);
+      }),
+    ],
+  },
+};
+
+Normal.decorators = [StoreDecorator, mswDecorator]
 
 // export const DARK: Story = {
 //   args: {},

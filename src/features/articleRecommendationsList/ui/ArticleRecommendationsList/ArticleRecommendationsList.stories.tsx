@@ -4,9 +4,13 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ArticleRecommendationsList } from './ArticleRecommendationsList';
 // import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 // import { Theme } from 'app/providers/ThemeProvider';
-// import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { Article } from 'entites/Article';
 // import { fn } from '@storybook/test';
+import { http, HttpResponse, delay } from 'msw';
+import { mswDecorator, initialize } from 'msw-storybook-addon';
 
+initialize();
 const meta = {
   title: 'features/ArticleRecommendationsList',
   component: ArticleRecommendationsList,
@@ -22,12 +26,39 @@ const meta = {
 } satisfies Meta<typeof ArticleRecommendationsList>;
 
 export default meta;
-// type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof meta>;
 
-// export const Normal: Story = {
-//   args: {},
-// };
+const article: Article = {
+  id: '1',
+  img: '',
+  createdAt: '',
+  views: 121,
+  user: { id: '1', username: '121' },
+  blocks: [],
+  type: [],
+  title: '121',
+  subtitle: '122121',
+};
 
+
+export const Normal: Story = {
+  args: {},
+};
+Normal.decorators = [StoreDecorator, mswDecorator];
+Normal.parameters = {
+  msw: {
+    handlers: [
+      http.get(`${__API__}/articles?_limit=3`, async () => {
+        await delay(200);
+        return HttpResponse.json([
+          { ...article, id: '1' },
+          { ...article, id: '2' },
+          { ...article, id: '3' },
+        ]);
+      }),
+    ],
+  },
+};
 // export const Dark: Story = {
 //   args: {},
 // };

@@ -5,7 +5,7 @@ import { getUserAuthData } from 'entites/User';
 import { getArticleDetailsData } from 'entites/Article/model/selectors/articleDetails';
 import { fetchCommentsByArticleId } from '../fetchCommentsByArticleId/fetchCommentsByArticleId';
 
-export const addCommentForArticle = createAsyncThunk<CommentType, string, ThunkConfig<string>>(
+export const addCommentForArticle = createAsyncThunk<CommentType, string | undefined, ThunkConfig<string>>(
   'articleDetails/addCommentForArticle',
   async (text, thunkApi) => {
     const { extra, dispatch, rejectWithValue, getState } = thunkApi;

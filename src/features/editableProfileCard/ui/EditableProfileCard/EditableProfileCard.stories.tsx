@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { EditableProfileCard } from './EditableProfileCard';
 // import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 // import { Theme } from 'app/providers/ThemeProvider';
-// import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 // import { fn } from '@storybook/test';
 
 const meta = {
@@ -24,10 +24,10 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// export const Normal: Story = {
-//   args: {
-//   },
-// };
+export const Normal: Story = {
+  args: {},
+};
+Normal.decorators = [StoreDecorator];
 
 // export const Dark: Story = {
 //   args: {},

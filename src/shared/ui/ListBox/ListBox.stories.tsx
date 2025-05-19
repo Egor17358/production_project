@@ -29,7 +29,11 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Normal: Story = {
   args: {
-
+    value: '123',
+    items: [
+      { content: '1asfasfasf23', value: '123' },
+      { content: '1asfasfasf21233', value: '1232' },
+    ],
   },
 };
 

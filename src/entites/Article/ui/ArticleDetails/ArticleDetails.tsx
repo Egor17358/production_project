@@ -32,7 +32,7 @@ const reducers: ReducerList = {
 };
 export interface ArticleDetailsProps {
   className?: string;
-  id: string;
+  id?: string;
 }
 export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
   const { t } = useTranslation('article-details');

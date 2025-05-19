@@ -13,9 +13,9 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
   const { t } = useTranslation('profile');
   const { id } = useParams<{ id: string }>();
 
-  if (!id) {
-    return <Text text={t('Произошла ошибка при загрузке профиля')} />;
-  }
+  // if (!id) {
+  //   return <Text text={t('Произошла ошибка при загрузке профиля')} />;
+  // }
 
   return (
     <Page className={classNames('', {}, [className])}>

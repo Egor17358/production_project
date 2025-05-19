@@ -28,13 +28,13 @@ const ArticlesDetailsPage = ({ className }: ArticlesDetailsPageProps) => {
 
   const { id } = useParams<{ id: string }>();
 
-  if (!id || (!id && __PROJECT__ !== 'storybook')) {
-    return (
-      <Page className={classNames(cls.ArticlesDetailsPage, {}, [className])}>
-        {t('Статья не найдена')}
-      </Page>
-    );
-  }
+  // if (!id || (!id && __PROJECT__ !== 'storybook')) {
+  //   return (
+  //     <Page className={classNames(cls.ArticlesDetailsPage, {}, [className])}>
+  //       {t('Статья не найдена')}
+  //     </Page>
+  //   );
+  // }
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>

@@ -15,7 +15,7 @@ import { VStack } from 'shared/ui/Stack';
 
 export interface ArticleDetailsCommentsProps {
   className?: string;
-  id: string;
+  id?: string;
 }
 export const ArticleDetailsComments = memo(({ className, id }: ArticleDetailsCommentsProps) => {
   const { t } = useTranslation('article-details');
