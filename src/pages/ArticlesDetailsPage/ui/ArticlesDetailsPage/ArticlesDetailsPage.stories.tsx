@@ -4,13 +4,14 @@ import type { Meta, StoryObj } from '@storybook/react';
 import ArticlesDetailsPage from './ArticlesDetailsPage';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { Article, ArticleBlockType, ArticleType } from 'entites/Article/model/types/article';
+import { Article } from 'entites/Article/model/types/article';
+import { ArticleBlockType, ArticleType } from 'entites/Article/model/consts/articleConsts';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { mswDecorator, initialize, mswLoader } from 'msw-storybook-addon';
 import { http, HttpResponse, delay } from 'msw';
-import AvatarImg from 'shared/assets/tests/testimage.jpeg'
+import AvatarImg from 'shared/assets/tests/testimage.jpeg';
 
-initialize()
+initialize();
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
   title: 'pages/ArticleDetailsPage/ArticlesDetailsPage',
@@ -130,8 +131,7 @@ const article: Article = {
 };
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Normal: Story = {
-  args: {
-  },
+  args: {},
 };
 Normal.parameters = {
   state: {
@@ -151,7 +151,7 @@ Normal.parameters = {
   },
 };
 
-Normal.decorators = [StoreDecorator, mswDecorator]
+Normal.decorators = [StoreDecorator, mswDecorator];
 
 // export const DARK: Story = {
 //   args: {},

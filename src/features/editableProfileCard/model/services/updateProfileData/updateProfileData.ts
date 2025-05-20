@@ -3,7 +3,7 @@ import { ThunkConfig } from 'app/providers/StoreProvider';
 import { getProfileForm } from '../../selectors/getProfileForm/getProfileForm';
 import { validateProfileData } from '../validateProfileData/validateProfileData';
 import { Profile } from 'entites/Profile';
-import { ValidateProfileError } from '../../types/editableProfileCardSchema';
+import { ValidateProfileError } from '../../consts/consts';
 
 export const updateProfileData = createAsyncThunk<
   Profile,
@@ -24,7 +24,7 @@ export const updateProfileData = createAsyncThunk<
     const response = await extra.api.put<Profile>(`/profile/${formData?.id}`, formData);
 
     if (!response.data) {
-      throw new Error()
+      throw new Error();
     }
 
     return response.data;

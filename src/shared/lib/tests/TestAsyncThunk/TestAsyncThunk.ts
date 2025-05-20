@@ -1,11 +1,11 @@
 import { StateSchema } from 'app/providers/StoreProvider';
 import { AsyncThunkAction } from '@reduxjs/toolkit';
 import axios, { AxiosStatic } from 'axios';
-import { ValidateProfileError } from 'features/editableProfileCard/model/types/editableProfileCardSchema';
+// import { ValidateProfileError } from 'features/editableProfileCard/model/consts/consts';
 
 type ActionCreatorType<Return, Arg, RejectedValue> = (
   arg: Arg
-) => AsyncThunkAction<Return, Arg, ({ rejectValue: string | ValidateProfileError[] })>;
+) => AsyncThunkAction<Return, Arg, { rejectValue: RejectedValue }>;
 
 jest.mock('axios');
 

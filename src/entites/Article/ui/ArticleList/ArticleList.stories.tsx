@@ -5,7 +5,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ArticleList } from './ArticleList';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { Article, ArticleView } from '../../../Article/model/types/article';
+import { Article } from '../../../Article/model/types/article';
+import { ArticleView } from '../../model/consts/articleConsts';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -108,7 +109,7 @@ export const LoadingBig: Story = {
   args: {
     isLoading: true,
     articles: [],
-    view: ArticleView.BIG
+    view: ArticleView.BIG,
   },
 };
 
@@ -116,7 +117,7 @@ export const LoadingSmall: Story = {
   args: {
     isLoading: true,
     articles: [],
-    view: ArticleView.SMALL
+    view: ArticleView.SMALL,
   },
 };
 
@@ -127,7 +128,7 @@ export const ListBig: Story = {
       ...article,
       id: String(index),
     })),
-    view: ArticleView.BIG
+    view: ArticleView.BIG,
   },
 };
 
@@ -138,7 +139,7 @@ export const ListSmall: Story = {
       ...article,
       id: String(index),
     })),
-    view: ArticleView.SMALL
+    view: ArticleView.SMALL,
   },
 };
 

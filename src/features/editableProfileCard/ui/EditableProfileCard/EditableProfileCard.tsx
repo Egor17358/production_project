@@ -8,7 +8,7 @@ import { AppDispatch } from 'app/providers/StoreProvider';
 import { useSelector } from 'react-redux';
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
-import { ValidateProfileError } from '../../model/types/editableProfileCardSchema';
+import { ValidateProfileError } from '../../model/consts/consts';
 import { getProfileisLoading } from '../../model/selectors/getProfileisLoading/getProfileisLoading';
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
 import { getProfileValidateErrors } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors';
@@ -53,7 +53,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
   };
 
   useInitialEffect(() => {
-    if (id && !(__PROJECT__ === 'jest' ||__PROJECT__ === 'storybook')) {
+    if (id && !(__PROJECT__ === 'jest' || __PROJECT__ === 'storybook')) {
       dispatch(fetchProfileData(id));
     }
   });
@@ -124,7 +124,12 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
         <EditableProfileCardHeader />
         {validateErrors?.length &&
           validateErrors.map((err, index) => (
-            <Text theme={TextTheme.ERROR} text={validateErrorTranslates[err]} key={index} data-testid={'EditableProfileCard.Error'} />
+            <Text
+              theme={TextTheme.ERROR}
+              text={validateErrorTranslates[err]}
+              key={index}
+              data-testid={'EditableProfileCard.Error'}
+            />
           ))}
         <ProfileCard
           data={formData}

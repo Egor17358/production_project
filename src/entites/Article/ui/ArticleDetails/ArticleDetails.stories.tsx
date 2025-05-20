@@ -5,8 +5,9 @@ import { ArticleDetails } from './ArticleDetails';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import { Article, ArticleBlockType, ArticleType } from '../../model/types/article';
-import AvatarImg from 'shared/assets/tests/testimage.jpeg'
+import { Article } from '../../model/types/article';
+import { ArticleBlockType, ArticleType } from '../../model/consts/articleConsts';
+import AvatarImg from 'shared/assets/tests/testimage.jpeg';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -144,7 +145,7 @@ export const Loading: Story = {
 Loading.decorators = [StoreDecorator];
 Loading.parameters = {
   state: {
-    articleDetails: {isLoading: true},
+    articleDetails: { isLoading: true },
   },
 };
 
@@ -154,6 +155,6 @@ export const Error: Story = {
 Error.decorators = [StoreDecorator];
 Error.parameters = {
   state: {
-    articleDetails: {error: 'error'},
+    articleDetails: { error: 'error' },
   },
 };
