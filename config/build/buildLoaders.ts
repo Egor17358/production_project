@@ -12,20 +12,15 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     use: ['@svgr/webpack'],
   };
 
-  const babelLoader = buildBabelLoader(options);
+  const codeBabelLoader = buildBabelLoader({ ...options, isTsx: false });
+  const tsxBabelLoader = buildBabelLoader({ ...options, isTsx: true });
 
   const cssLoader = buildCssLoader(isDev);
-
-  const typescriptLoader = {
-    test: /\.tsx?$/,
-    use: 'ts-loader',
-    exclude: /node_modules/,
-  };
 
   const assetModulesLoader = {
     test: /\.(png|jpg|gif|woff2|woff)$/i,
     type: 'asset/resource',
   };
 
-  return [assetModulesLoader, svgLoader, babelLoader, typescriptLoader, cssLoader];
+  return [assetModulesLoader, svgLoader, codeBabelLoader, tsxBabelLoader, cssLoader];
 }
