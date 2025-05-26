@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { TabItem, Tabs } from 'shared/ui/Tabs/Tabs';
 import { ArticleType } from '../../model/consts/articleConsts';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { fetchArticlesList } from 'pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList';
+// import { fetchArticlesList } from 'pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList';
 
 export interface ArticleTypeTabsProps {
   className?: string;
@@ -15,9 +15,9 @@ export const ArticleTypeTabs = memo(({ className, value, onChangeType }: Article
   const { t } = useTranslation('translation');
   const dispatch = useAppDispatch();
 
-  const fetchData = useCallback(() => {
-    dispatch(fetchArticlesList({ replace: true }));
-  }, [dispatch]);
+  // const fetchData = useCallback(() => {
+  //   dispatch(fetchArticlesList({ replace: true }));
+  // }, [dispatch]);
 
   const typeTabs = useMemo<TabItem[]>(
     () => [
