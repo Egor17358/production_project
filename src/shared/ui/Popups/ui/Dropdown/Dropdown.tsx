@@ -3,7 +3,8 @@ import cls from './Dropdown.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Fragment, ReactNode } from 'react';
 import { AnchorProps } from '@headlessui/react/dist/internal/floating';
-import { AppLink } from '../AppLink/AppLink';
+import { AppLink } from '../../../AppLink/AppLink';
+import popupCls from '../../styles/popup.module.scss';
 
 export interface DropdownItem {
   disabled?: boolean;
@@ -23,8 +24,8 @@ export function Dropdown(props: DropdownProps) {
   const { className, items, trigger, direction = 'bottom' } = props;
 
   return (
-    <Menu as={'div'} className={classNames(cls.Dropdown, {}, [className])}>
-      <MenuButton className={cls.btn}>{trigger}</MenuButton>
+    <Menu as={'div'} className={classNames(cls.Dropdown, {}, [className, popupCls.popup])}>
+      <MenuButton className={popupCls.trigger}>{trigger}</MenuButton>
       <MenuItems anchor={direction} className={cls.menu}>
         {items.map((item, index) => {
           const content = ({ focus }: { focus: boolean }) => (
@@ -33,7 +34,7 @@ export function Dropdown(props: DropdownProps) {
               type='button'
               disabled={item.disabled}
               onClick={item.onClick}
-              className={classNames(cls.item, { [cls.active]: focus }, [])}
+              className={classNames(cls.item, { [popupCls.active]: focus }, [])}
             >
               {item.content}
             </button>

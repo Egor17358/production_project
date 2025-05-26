@@ -9,7 +9,9 @@ import { useState, Fragment, ReactNode } from 'react';
 import cls from './ListBox.module.scss';
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import { AnchorPropsWithSelection } from '@headlessui/react/dist/internal/floating';
-import { HStack } from '../Stack';
+import { HStack } from '../../../Stack';
+import popupCls from '../../styles/popup.module.scss';
+
 
 export interface ListBoxItem {
   value: string;
@@ -46,7 +48,7 @@ export function ListBox(props: ListBoxProps) {
       <HListBox
         disabled={readonly}
         as={'div'}
-        className={classNames(cls.ListBox, {}, [className])}
+        className={classNames(cls.ListBox, {}, [className, popupCls.popup])}
         value={value}
         onChange={onChange}
       >
@@ -64,8 +66,8 @@ export function ListBox(props: ListBoxProps) {
               {({ focus, selected }) => (
                 <li
                   className={classNames(cls.item, {
-                    [cls.active]: focus,
-                    [cls.disabled]: item.disabled,
+                    [popupCls.active]: focus,
+                    [popupCls.disabled]: item.disabled,
                   })}
                 >
                   {selected && '!!!'}
