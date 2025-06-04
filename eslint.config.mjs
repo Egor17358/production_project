@@ -6,7 +6,7 @@ import pluginJest from 'eslint-plugin-jest';
 import i18next from 'eslint-plugin-i18next';
 import hooksPlugin from "eslint-plugin-react-hooks";
 import myPlugin from "eslint-plugin-my-plugin-test-for-me";
-myPlugin.rules
+// myPlugin.rules
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
