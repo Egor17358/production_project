@@ -1,5 +1,5 @@
 import { EntityState } from '@reduxjs/toolkit';
-import { CommentType } from 'entites/Comment';
+import { CommentType } from '@/entites/Comment';
 
 export interface ArticlesDetailsCommentsSchema extends EntityState<CommentType, string> {
   isLoading?: boolean;

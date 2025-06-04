@@ -1,14 +1,14 @@
 import { configureStore, UnknownAction, ReducersMapObject } from '@reduxjs/toolkit';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
-import { CounterReducer } from 'entites/Counter';
-import { userReducer } from 'entites/User';
+import { CounterReducer } from '@/entites/Counter';
+import { userReducer } from '@/entites/User';
 import { TypedUseSelectorHook, useSelector } from 'react-redux';
 import { createReducerManager } from './reducerManager';
-import { $api } from 'shared/api/api';
+import { $api } from '@/shared/api/api';
 import { NavigateOptions, To } from 'react-router-dom';
 import { Reducer } from 'redux';
-import { scrollSaveReducer } from 'features/ScrollSave';
-import { rtkApi } from 'shared/api/rtkApi';
+import { scrollSaveReducer } from '@/features/ScrollSave';
+import { rtkApi } from '@/shared/api/rtkApi';
 
 export type RootState = ReducersMapObject<StateSchema>;
 

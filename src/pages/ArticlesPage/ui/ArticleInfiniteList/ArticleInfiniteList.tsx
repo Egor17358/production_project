@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { memo } from 'react';
 import { useSelector } from 'react-redux';
 import { getArticles } from '../../model/slices/articlesPageSlice';
@@ -7,8 +7,8 @@ import {
   getArticlesPageIsLoading,
   getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
-import { ArticleList } from 'entites/Article';
-import { Text } from 'shared/ui/Text/Text';
+import { ArticleList } from '@/entites/Article';
+import { Text } from '@/shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
 
 export interface ArticleInfiniteListProps {

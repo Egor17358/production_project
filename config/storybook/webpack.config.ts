@@ -14,6 +14,13 @@ export default ({ config }: { config: webpack.Configuration }) => {
     locales: path.resolve(__dirname, '..', '..', 'public'),
     buildLocales: path.resolve(__dirname, '..', '..', 'public'),
   };
+  config.resolve = {
+    ...config.resolve,
+    alias: {
+      ...config.resolve?.alias,
+      '@': paths.src
+    }
+  }
   config.resolve?.modules?.push(paths.src);
   config.resolve?.extensions?.push('.ts', '.tsx');
 

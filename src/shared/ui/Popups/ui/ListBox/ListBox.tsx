@@ -7,7 +7,7 @@ import {
 } from '@headlessui/react';
 import { useState, Fragment, ReactNode } from 'react';
 import cls from './ListBox.module.scss';
-import { classNames, Mods } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import { AnchorPropsWithSelection } from '@headlessui/react/dist/internal/floating';
 import { HStack } from '../../../Stack';
 import popupCls from '../../styles/popup.module.scss';

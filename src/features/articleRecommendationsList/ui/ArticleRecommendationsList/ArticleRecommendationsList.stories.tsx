@@ -4,12 +4,12 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ArticleRecommendationsList } from './ArticleRecommendationsList';
 // import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 // import { Theme } from 'app/providers/ThemeProvider';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import { Article } from 'entites/Article';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { Article } from '@/entites/Article';
 // import { fn } from '@storybook/test';
 import { http, HttpResponse, delay } from 'msw';
 import { mswDecorator, initialize } from 'msw-storybook-addon';
-import AvatarImg from 'shared/assets/tests/testimage.jpeg'
+import AvatarImg from '@/shared/assets/tests/testimage.jpeg'
 
 initialize();
 const meta = {

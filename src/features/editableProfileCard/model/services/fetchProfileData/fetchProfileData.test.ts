@@ -1,8 +1,8 @@
-import { Country } from 'entites/Country';
+import { Country } from '@/entites/Country';
 import { fetchProfileData } from './fetchProfileData';
-import { userActions } from 'entites/User';
-import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-import { Currency } from 'entites/Currency';
+import { userActions } from '@/entites/User';
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
+import { Currency } from '@/entites/Currency';
 
 // jest.mock('axios');
 

@@ -1,10 +1,10 @@
-import { classNames, Mods } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cls from './Modal.module.scss';
 import { ReactNode } from 'react';
 import { Portal } from '../Portal/Portal';
-import { useTheme } from 'app/providers/ThemeProvider';
+import { useTheme } from '@/app/providers/ThemeProvider';
 import { Overlay } from '../Overlay/Overlay';
-import { useModal } from 'shared/lib/hooks/useModal/useModal';
+import { useModal } from '@/shared/lib/hooks/useModal/useModal';
 
 export interface ModalProps {
   className?: string;
@@ -37,7 +37,7 @@ export const Modal = (props: ModalProps) => {
   return (
     <Portal>
       <div className={classNames(cls.Modal, mods, [className, theme])}>
-        <Overlay onClick={close} />
+        <Overlay onClick={close} className={((__PROJECT__ ==='storybook') ? 'overlay' : undefined)} />
         <div className={cls.content}>{children}</div>
       </div>
     </Portal>

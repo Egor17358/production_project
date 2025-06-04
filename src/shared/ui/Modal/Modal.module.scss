@@ -10,21 +10,9 @@
   align-items: center;
 }
 
-.overlay {
-  width: 100%;
-  height: 100%;
-  background: var(--overlay-color);
-  // background: red;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 // for test M1 mac
 .testModal {
-  .overlay {
     background: black;
-  }
 }
 
 .content {
@@ -34,6 +22,7 @@
   transition: 0.3s transform;
   transform: scale(0.5);
   max-width: 60%;
+  z-index: var(--modal-z-index);
 }
 
 .opened {

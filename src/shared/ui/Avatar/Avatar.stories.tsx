@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Avatar } from './Avatar';
-import AvatarImg from 'shared/assets/tests/testimage.jpeg'
+import AvatarImg from '@/shared/assets/tests/testimage.jpeg'
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {

@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Popover.module.scss';
 import { Popover as HPopover, PopoverButton, PopoverPanel } from '@headlessui/react';
 import { ReactNode } from 'react';
