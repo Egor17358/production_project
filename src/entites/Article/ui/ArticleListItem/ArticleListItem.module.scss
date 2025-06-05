@@ -43,6 +43,10 @@
   transition: 0.2s;
   cursor: pointer;
 
+  .card {
+    width: 230px;
+  }
+
   .date {
     position: absolute;
     right: 0;

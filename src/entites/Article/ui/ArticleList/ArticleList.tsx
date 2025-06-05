@@ -71,20 +71,12 @@ export const ArticleList = memo((props: ArticleListProps) => {
     );
   }
 
-  const adaptedClass = (inboxView: ArticleView) => {
-    if (__PROJECT__ === 'storybook' && inboxView === ArticleView.SMALL) {
-      return 'test_SMALL';
-    } else {
-      return inboxView;
-    }
-  };
-  
   return (
     // <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
     //   {articles.length > 0 ? articles.map(renderArticle) : null}
     //   {isLoading && getSkeletons(view)}
     // </div>
-    <div className={classNames(cls.ArticleList, {}, [className, cls[adaptedClass(view)]])}>
+    <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
       {articles.map(item => (
         <ArticleListItem
           article={item}
