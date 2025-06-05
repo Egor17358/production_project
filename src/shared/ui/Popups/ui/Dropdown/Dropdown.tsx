@@ -30,7 +30,6 @@ export function Dropdown(props: DropdownProps) {
         {items.map((item, index) => {
           const content = ({ focus }: { focus: boolean }) => (
             <button
-              key={index}
               type='button'
               disabled={item.disabled}
               onClick={item.onClick}
@@ -42,19 +41,20 @@ export function Dropdown(props: DropdownProps) {
 
           if (item.href) {
             return (
-              <>
-                <MenuItem as={AppLink} to={item.href} disabled={item.disabled}>
-                  {content}
-                </MenuItem>
-              </>
+              <MenuItem
+                key={'dropdown-key' + index}
+                as={AppLink}
+                to={item.href}
+                disabled={item.disabled}
+              >
+                {content}
+              </MenuItem>
             );
           }
           return (
-            <>
-              <MenuItem as={Fragment} disabled={item.disabled}>
-                {content}
-              </MenuItem>
-            </>
+            <MenuItem key={'dropdown-key' + index} as={Fragment} disabled={item.disabled}>
+              {content}
+            </MenuItem>
           );
         })}
       </MenuItems>
