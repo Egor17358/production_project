@@ -49,7 +49,7 @@ const ProfileRating = memo(({ className, profileId = '' }: ProfileRatingProps) =
     [handleRateProfile]
   );
 
-  if (isLoading) {
+  if (isLoading && __PROJECT__ !== 'storybook') {
     return <Skeleton width={'100%'} height={120} />;
   }
 

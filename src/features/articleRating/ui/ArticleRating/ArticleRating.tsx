@@ -49,7 +49,7 @@ const ArticleRating = memo(({ className, articleId }: ArticleRatingProps) => {
     [handleRateArticle]
   );
 
-  if (isLoading) {
+  if (isLoading && __PROJECT__ !== 'storybook') {
     return <Skeleton width={'100%'} height={120} />;
   }
 
