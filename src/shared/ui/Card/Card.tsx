@@ -19,7 +19,7 @@ export const Card = memo(
       <div
         style={{
           borderRadius: __PROJECT__ === 'storybook' ? 'none' : '12px',
-          background: __PROJECT__ === 'storybook' ? 'black' : 'unset',
+          background: __PROJECT__ === 'storybook' ? theme === CardTheme.NORMAL ? 'white' : 'unset' : 'unset'
         }}
         className={classNames(cls.Card, { [cls.max]: max }, [className, cls[theme]])}
         {...otherProps}
