@@ -4,6 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { StarRating } from './StarRating';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/app/providers/ThemeProvider';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -28,15 +29,29 @@ type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Normal: Story = {
+  args: {},
+};
+
+export const Normal3Stars: Story = {
   args: {
+    selectedStars: 3,
   },
 };
 
 export const DARK: Story = {
-  args: {
-  },
+  args: {},
 };
 DARK.decorators = [ThemeDecorator];
 DARK.parameters = {
+  theme: Theme.DARK,
+};
+
+export const DARK3Stars: Story = {
+  args: {
+    selectedStars: 3
+  },
+};
+DARK3Stars.decorators = [ThemeDecorator];
+DARK3Stars.parameters = {
   theme: Theme.DARK,
 };

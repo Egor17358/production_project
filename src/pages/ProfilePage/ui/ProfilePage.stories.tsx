@@ -5,6 +5,11 @@ import ProfilePage from './ProfilePage';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/app/providers/ThemeProvider';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { http, HttpResponse, delay } from 'msw';
+import { mswDecorator, initialize } from 'msw-storybook-addon';
+
+initialize();
+
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -27,9 +32,17 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const profileRating = {
+  id: '1',
+  rate: 4,
+  feedback: 'Хороший пользователь',
+  userId: '1',
+  profileId: '1',
+};
+
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Normal: Story = {};
-Normal.decorators = [StoreDecorator];
+Normal.decorators = [StoreDecorator, mswDecorator];
 Normal.parameters = {
   state: {
     profile: {
@@ -44,9 +57,17 @@ Normal.parameters = {
       },
     },
   },
+  msw: {
+    handlers: [
+      http.get(`${__API__}/profile-ratings?userId=1&profileId=1`, async () => {
+        await delay(200);
+        return HttpResponse.json([{ ...profileRating, id: '1' }]);
+      }),
+    ],
+  },
 };
 export const Dark: Story = {};
-Dark.decorators = [ThemeDecorator, StoreDecorator];
+Dark.decorators = [ThemeDecorator, StoreDecorator, mswDecorator];
 Dark.parameters = {
   theme: Theme.DARK,
   state: {
@@ -61,5 +82,13 @@ Dark.parameters = {
         currency: 'USD',
       },
     },
+  },
+  msw: {
+    handlers: [
+      http.get(`${__API__}/profile-ratings?userId=1&profileId=1`, async () => {
+        await delay(200);
+        return HttpResponse.json([{ ...profileRating, id: '1' }]);
+      }),
+    ],
   },
 };

@@ -5,6 +5,7 @@ import { EditableProfileCard } from '@/features/editableProfileCard';
 import { useParams } from 'react-router-dom';
 import { Text } from '@/shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
+import { ProfileRating } from '@/features/profileRating';
 
 export interface ProfilePageProps {
   className?: string;
@@ -21,6 +22,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     <Page className={classNames('', {}, [className])}>
       <VStack gap='16' max>
         <EditableProfileCard id={id} />
+        <ProfileRating profileId={id} />
       </VStack>
     </Page>
   );
