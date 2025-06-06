@@ -17,8 +17,11 @@ export const Card = memo(
   ({ className, children, theme = CardTheme.NORMAL, max, ...otherProps }: CardProps) => {
     return (
       <div
-        style={{ borderRadius: __PROJECT__ === 'storybook' ? 'none' : '12px' }}
-        className={classNames(cls.Card, {[cls.max]: max}, [className, cls[theme]])}
+        style={{
+          borderRadius: __PROJECT__ === 'storybook' ? 'none' : '12px',
+          background: __PROJECT__ === 'storybook' ? 'black' : 'unset',
+        }}
+        className={classNames(cls.Card, { [cls.max]: max }, [className, cls[theme]])}
         {...otherProps}
       >
         {children}
