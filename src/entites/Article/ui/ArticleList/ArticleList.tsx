@@ -7,7 +7,7 @@ import { ArticleView } from '../../model/consts/articleConsts';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 import { Text, TextSize } from '@/shared/ui/Text/Text';
-import { PAGE_ID } from '@/widgets/Page/Page';
+// import { PAGE_ID } from '@/widgets/Page/ui/Page';
 
 export interface ArticleListProps {
   className?: string;

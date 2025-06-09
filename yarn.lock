@@ -6043,11 +6043,12 @@ eslint-plugin-jest@^28.11.0:
   dependencies:
     "@typescript-eslint/utils" "^6.0.0 || ^7.0.0 || ^8.0.0"
 
-eslint-plugin-my-plugin-test-for-me@0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-my-plugin-test-for-me/-/eslint-plugin-my-plugin-test-for-me-0.0.3.tgz#5584f057f5cf8b60bc4ce8116d62c45955edc675"
-  integrity sha512-bqCY7JLrBxsMfkspzlVcY6u5sBRMAwUWSFLo6qamZvhcfb6Z4KSIiPLQfCEA/UkWNM9aRmdvdLpmgcXPzVB3zw==
+eslint-plugin-my-plugin-test-for-me@0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-my-plugin-test-for-me/-/eslint-plugin-my-plugin-test-for-me-0.0.4.tgz#bb6ebdb8f9847d213af6b198eaff9cd9cf60166b"
+  integrity sha512-HDTNMCKjZLPVMRGG9DCOVop3TZPGGCDmMKqqZu87fXvW2k/++EYnCrZB2q/Vc9raHZCWj5vL7hDN8Im4aClRMw==
   dependencies:
+    micromatch "^4.0.8"
     requireindex "^1.2.0"
 
 eslint-plugin-react-hooks@^5.2.0-canary-8a7b487e-20250218:

@@ -6,9 +6,9 @@ import { Input } from '@/shared/ui/Input/Input';
 import { Profile } from '../../model/types/profile';
 import { Loader } from '@/shared/ui/Loader/Loader';
 import { Avatar } from '@/shared/ui/Avatar/Avatar';
-import { Currency } from '@/entites/Currency/model/types/currency';
+import { Currency } from '@/entites/Currency';
 import { CurrencySelect } from '@/entites/Currency';
-import { Country } from '@/entites/Country/model/types/country';
+import { Country } from '@/entites/Country';
 import { CountrySelect } from '@/entites/Country';
 import { HStack, VStack } from '@/shared/ui/Stack';
 

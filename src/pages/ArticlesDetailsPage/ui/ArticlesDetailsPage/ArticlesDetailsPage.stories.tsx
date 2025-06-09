@@ -2,10 +2,10 @@ import type { Meta, StoryObj } from '@storybook/react';
 // import { fn } from '@storybook/test';
 
 import ArticlesDetailsPage from './ArticlesDetailsPage';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
-import { Article } from '@/entites/Article/model/types/article';
-import { ArticleBlockType, ArticleType } from '@/entites/Article/model/consts/articleConsts';
+// import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+// import { Theme } from '@/app/providers/ThemeProvider';
+import { Article } from '@/entites/Article';
+import { ArticleBlockType, ArticleType } from '@/entites/Article';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { mswDecorator, initialize, mswLoader } from 'msw-storybook-addon';
 import { http, HttpResponse, delay } from 'msw';

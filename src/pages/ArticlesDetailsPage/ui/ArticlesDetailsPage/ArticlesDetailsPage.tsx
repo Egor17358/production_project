@@ -8,7 +8,7 @@ import {
   DynamicModuleLoader,
   ReducerList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { Page } from '@/widgets/Page/Page';
+import { Page } from '@/widgets/Page';
 import { articleDetailsPageReducer } from '../../model/slices';
 import { ArticleDetailPageHeader } from '../ArticleDetailPageHeader/ArticleDetailPageHeader';
 import { VStack } from '@/shared/ui/Stack';
@@ -38,7 +38,7 @@ const ArticlesDetailsPage = ({ className }: ArticlesDetailsPageProps) => {
   // }
 
   if (!id) {
-    return null
+    return null;
   }
 
   return (
