@@ -1,5 +1,5 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { memo, useCallback, useState } from 'react';
+import { memo, useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Card } from '@/shared/ui/Card/Card';
 import { HStack, VStack } from '@/shared/ui/Stack';
@@ -28,6 +28,12 @@ export const RatingCard = memo((props: RatingCardProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [starsCount, setStarsCount] = useState(rate);
   const [feedback, setFeedback] = useState('');
+
+  useEffect(() => {
+    if (__PROJECT__ === 'storybook') {
+      setStarsCount(rate);
+    }
+  }, [rate]);
 
   const onSelectStarts = useCallback(
     (selectedStarsCount: number) => {

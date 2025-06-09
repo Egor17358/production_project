@@ -1,6 +1,6 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './StarRating.module.scss';
-import { memo, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 import StarIcon from '@/shared/assets/icons/star.svg';
 import { Icon } from '../Icon/Icon';
 
@@ -17,7 +17,12 @@ export const StarRating = memo((props: StarRatingProps) => {
   const { className, onSelect, size = 30, selectedStars = 0 } = props;
   const [currentStarsCount, setCurrentStarsCount] = useState(selectedStars);
   const [isSelected, setIisSelected] = useState(Boolean(selectedStars));
-console.log('selectedStars', selectedStars);
+
+  useEffect(() => {
+    if (__PROJECT__ === 'storybook') {
+      setCurrentStarsCount(selectedStars);
+    }
+  }, [selectedStars]);
 
   const onHover = (starsCount: number) => () => {
     if (!isSelected) {
@@ -42,11 +47,9 @@ console.log('selectedStars', selectedStars);
   return (
     <div className={classNames(cls.StarRating, {}, [className])}>
       {stars.map(starNumber => (
-        console.log('starNumber', starNumber),
         <Icon
           className={classNames(cls.starIcon, { [cls.selected]: isSelected }, [
             currentStarsCount >= starNumber ? cls.hovered : cls.normal,
-            
           ])}
           width={size}
           height={size}
