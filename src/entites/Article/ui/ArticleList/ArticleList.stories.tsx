@@ -135,7 +135,7 @@ export const ListBig: Story = {
 export const ListSmall: Story = {
   args: {
     isLoading: false,
-    articles: new Array(8).fill(0).map((item, index) => ({
+    articles: new Array(2).fill(0).map((item, index) => ({
       ...article,
       id: String(index),
     })),
