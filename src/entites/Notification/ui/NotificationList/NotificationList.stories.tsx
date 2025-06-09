@@ -39,7 +39,7 @@ Normal.parameters = {
   msw: {
     handlers: [
       http.get(`${__API__}/notifications`, async () => {
-        await delay(200);
+        // await delay(200);
         return HttpResponse.json([
           {
             id: '1',
@@ -65,7 +65,7 @@ DARK.parameters = {
   msw: {
     handlers: [
       http.get(`${__API__}/notifications`, async () => {
-        await delay(200);
+        // await delay(200);
         return HttpResponse.json([
           {
             id: '1',

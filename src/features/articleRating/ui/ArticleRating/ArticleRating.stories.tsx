@@ -54,7 +54,7 @@ Normal.parameters = {
   msw: {
     handlers: [
       http.get(`${__API__}/article-ratings?userId=1&articleId=1`, async () => {
-        await delay(200);
+        // await delay(200);
         return HttpResponse.json([{ ...articleRating }]);
       }),
     ],
@@ -76,7 +76,7 @@ NormalWithoutRate.parameters = {
   msw: {
     handlers: [
       http.get(`${__API__}/article-ratings?userId=1&articleId=1`, async () => {
-        await delay(200);
+        // await delay(200);
         return HttpResponse.json([{ ...articleRating, rate: 0 }]);
       }),
     ],
@@ -99,7 +99,7 @@ DARK.parameters = {
   msw: {
     handlers: [
       http.get(`${__API__}/article-ratings?userId=1&articleId=1`, async () => {
-        await delay(200);
+        // await delay(200);
         return HttpResponse.json([{ ...articleRating }]);
       }),
     ],

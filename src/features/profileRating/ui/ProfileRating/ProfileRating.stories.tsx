@@ -48,7 +48,7 @@ Normal.parameters = {
   msw: {
     handlers: [
       http.get(`${__API__}/profile-ratings?userId=1&profileId=1`, async () => {
-        await delay(200);
+        // await delay(200);
         return HttpResponse.json([{ ...profileRating, id: '1' }]);
       }),
     ],
@@ -67,7 +67,7 @@ DARK.parameters = {
   msw: {
     handlers: [
       http.get(`${__API__}/profile-ratings?userId=1&profileId=1`, async () => {
-        await delay(200);
+        // await delay(200);
         return HttpResponse.json([{ ...profileRating, id: '1' }]);
       }),
     ],
