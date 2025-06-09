@@ -6043,10 +6043,10 @@ eslint-plugin-jest@^28.11.0:
   dependencies:
     "@typescript-eslint/utils" "^6.0.0 || ^7.0.0 || ^8.0.0"
 
-eslint-plugin-my-plugin-test-for-me@0.0.2:
-  version "0.0.2"
-  resolved "https://registry.npmjs.org/eslint-plugin-my-plugin-test-for-me/-/eslint-plugin-my-plugin-test-for-me-0.0.2.tgz"
-  integrity sha512-EjVIQAaZJvYaGc/WWA5Y7OgASpflpfxAONgv05CEN8AQnNS+BbJRDBbTylApqWGi+MxwLfN6mxOclH6B8FwIAA==
+eslint-plugin-my-plugin-test-for-me@0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-my-plugin-test-for-me/-/eslint-plugin-my-plugin-test-for-me-0.0.3.tgz#5584f057f5cf8b60bc4ce8116d62c45955edc675"
+  integrity sha512-bqCY7JLrBxsMfkspzlVcY6u5sBRMAwUWSFLo6qamZvhcfb6Z4KSIiPLQfCEA/UkWNM9aRmdvdLpmgcXPzVB3zw==
   dependencies:
     requireindex "^1.2.0"
 

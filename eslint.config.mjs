@@ -58,7 +58,7 @@ export default [
       "@typescript-eslint/ban-ts-comment": "warn",
       "jest/no-disabled-tests": "warn",
       "jest/no-focused-tests": "error",
-      "my-plugin-test-for-me/patch-checker": "error",
+      "my-plugin-test-for-me/patch-checker": ["error", { alias: '@' }],
       // "react-hooks/rules-of-hooks": "error"
       ...hooksPlugin.configs.recommended.rules
     },
