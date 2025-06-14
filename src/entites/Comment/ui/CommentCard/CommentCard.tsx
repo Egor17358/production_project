@@ -6,7 +6,7 @@ import { Avatar } from '@/shared/ui/Avatar/Avatar';
 import { Text } from '@/shared/ui/Text/Text';
 import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 import { AppLink } from '@/shared/ui/AppLink/AppLink';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { RoutePath } from '@/shared/const/router';
 import { VStack } from '@/shared/ui/Stack';
 
 export interface CommentCardProps {
@@ -17,7 +17,7 @@ export interface CommentCardProps {
 export const CommentCard = memo(({ className, comment, isLoading }: CommentCardProps) => {
   if (isLoading) {
     return (
-      <VStack max gap='8'  className={classNames(cls.CommentCard, {}, [className, cls.loading])}>
+      <VStack max gap='8' className={classNames(cls.CommentCard, {}, [className, cls.loading])}>
         <div className={cls.header}>
           <Skeleton width={30} height={30} border='50%' />
           <Skeleton width={100} height={16} className={cls.username} />
