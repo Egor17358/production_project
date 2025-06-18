@@ -2,8 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 // import { fn } from '@storybook/test';
 
 import { ArticleDetailPageHeader } from './ArticleDetailPageHeader';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
+// import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+// import { Theme } from '@/shared/const/theme';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -29,12 +29,9 @@ type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Normal: Story = {
-  args: {
-
-  },
+  args: {},
 };
 Normal.decorators = [StoreDecorator];
-
 
 // export const DARK: Story = {
 //   args: {

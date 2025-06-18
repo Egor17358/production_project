@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { Popover } from './Popover';
 // import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-// import { Theme } from '@/app/providers/ThemeProvider';
+// import { Theme } from '@/shared/const/theme';
 import { Button } from '@headlessui/react';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -31,7 +31,7 @@ type Story = StoryObj<typeof meta>;
 export const Normal: Story = {
   args: {
     trigger: <Button>{'open!'}</Button>,
-    children: 'asdsaddsa'
+    children: 'asdsaddsa',
   },
 };
 

@@ -3,9 +3,9 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { NotificationList } from './NotificationList';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
+import { Theme } from '@/shared/const/theme';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { http, HttpResponse, delay } from 'msw';
+import { http, HttpResponse } from 'msw';
 import { mswDecorator, initialize } from 'msw-storybook-addon';
 
 initialize();

@@ -2,8 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 // import { fn } from '@storybook/test';
 
 import { CommentCard } from './CommentCard';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
+// import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+// import { Theme } from '@/shared/const/theme';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -36,7 +36,7 @@ export const Normal: Story = {
 export const Loading: Story = {
   args: {
     comment: { id: '1', text: 'aaaa', user: { id: '1', username: 'userName' } },
-    isLoading: true
+    isLoading: true,
   },
 };
 

@@ -1,9 +1,12 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type {
+  Meta,
+  // StoryObj
+} from '@storybook/react';
 // import { fn } from '@storybook/test';
 
 import { ArticlesPageFilters } from './ArticlesPageFilters';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
+// import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+// import { Theme } from '@/shared/const/theme';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -24,7 +27,7 @@ const meta = {
 } satisfies Meta<typeof ArticlesPageFilters>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+// type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 // export const Normal: Story = {

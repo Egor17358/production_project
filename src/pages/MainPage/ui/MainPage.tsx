@@ -1,3 +1,4 @@
+// eslint-disable-next-line my-plugin-test-for-me/layer-imports
 import { BugButton } from '@/app/providers/ErrorBoundary';
 import { useTranslation } from 'react-i18next';
 import { ListBox } from '@/shared/ui/Popups/index';
@@ -15,7 +16,7 @@ const MainPage = () => {
         <div>{'12312'}</div>
         <ListBox
           defaultValue='Выберите значение'
-          onChange={(v: string) => {}}
+          onChange={() => {}}
           value={undefined}
           items={[
             { value: '1', content: '12345' },

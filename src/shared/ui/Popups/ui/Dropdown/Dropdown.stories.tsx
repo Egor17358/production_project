@@ -2,8 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 // import { fn } from '@storybook/test';
 
 import { Dropdown } from './Dropdown';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
+// import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+// import { Theme } from '@/shared/const/theme';
 import { Button } from '@headlessui/react';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export

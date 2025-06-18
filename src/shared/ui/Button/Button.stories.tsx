@@ -3,7 +3,7 @@ import { fn } from '@storybook/test';
 
 import { Button, ButtonSize, ButtonTheme } from './Button';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
+import { Theme } from '@/shared/const/theme';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -55,14 +55,14 @@ export const OutlineSizeL: Story = {
   args: {
     children: 'Text',
     theme: ButtonTheme.OUTLINE,
-    size: ButtonSize.L
+    size: ButtonSize.L,
   },
 };
 export const OutlineSizeXL: Story = {
   args: {
     children: 'Text',
     theme: ButtonTheme.OUTLINE,
-    size: ButtonSize.XL
+    size: ButtonSize.XL,
   },
 };
 
@@ -94,7 +94,7 @@ export const Square: Story = {
   args: {
     children: '>',
     theme: ButtonTheme.BACKGROUND_INVERTED,
-    square: true
+    square: true,
   },
 };
 export const SquareSizeL: Story = {
@@ -102,7 +102,7 @@ export const SquareSizeL: Story = {
     children: '>',
     theme: ButtonTheme.BACKGROUND_INVERTED,
     square: true,
-    size: ButtonSize.L
+    size: ButtonSize.L,
   },
 };
 export const SquareSizeXL: Story = {
@@ -110,7 +110,7 @@ export const SquareSizeXL: Story = {
     children: '>',
     theme: ButtonTheme.BACKGROUND_INVERTED,
     square: true,
-    size: ButtonSize.XL
+    size: ButtonSize.XL,
   },
 };
 export const Disabled: Story = {
@@ -120,4 +120,3 @@ export const Disabled: Story = {
     disabled: true,
   },
 };
-

@@ -1,6 +1,6 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ArticlesDetailsPage.module.scss';
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { useParams } from 'react-router-dom';
 import { ArticleDetails } from '@/entites/Article';
@@ -25,7 +25,7 @@ const reducers: ReducerList = {
 };
 
 const ArticlesDetailsPage = ({ className }: ArticlesDetailsPageProps) => {
-  const { t } = useTranslation('article-details');
+  // const { t } = useTranslation('article-details');
 
   const { id } = useParams<{ id: string }>();
 

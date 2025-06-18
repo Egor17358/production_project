@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { Skeleton } from './Skeleton';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
+import { Theme } from '@/shared/const/theme';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -29,7 +29,7 @@ type Story = StoryObj<typeof meta>;
 const argsFullWidth = {
   width: '100%',
   height: '200px',
-}
+};
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Normal: Story = {
   args: argsFullWidth,
@@ -37,7 +37,7 @@ export const Normal: Story = {
 export const DarkTheme: Story = {
   args: argsFullWidth,
 };
-DarkTheme.decorators = [ThemeDecorator]
+DarkTheme.decorators = [ThemeDecorator];
 DarkTheme.parameters = {
   theme: Theme.DARK,
 };
@@ -56,7 +56,7 @@ export const CircleDark: Story = {
     height: 100,
   },
 };
-CircleDark.decorators = [ThemeDecorator]
+CircleDark.decorators = [ThemeDecorator];
 CircleDark.parameters = {
   theme: Theme.DARK,
 };

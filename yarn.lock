@@ -6043,10 +6043,10 @@ eslint-plugin-jest@^28.11.0:
   dependencies:
     "@typescript-eslint/utils" "^6.0.0 || ^7.0.0 || ^8.0.0"
 
-eslint-plugin-my-plugin-test-for-me@0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-my-plugin-test-for-me/-/eslint-plugin-my-plugin-test-for-me-0.0.4.tgz#bb6ebdb8f9847d213af6b198eaff9cd9cf60166b"
-  integrity sha512-HDTNMCKjZLPVMRGG9DCOVop3TZPGGCDmMKqqZu87fXvW2k/++EYnCrZB2q/Vc9raHZCWj5vL7hDN8Im4aClRMw==
+eslint-plugin-my-plugin-test-for-me@0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-my-plugin-test-for-me/-/eslint-plugin-my-plugin-test-for-me-0.0.5.tgz#5b202f1d9c0f31e1651a089c40856ec5c2e557d2"
+  integrity sha512-XyWnx3TnxtdXTWPWwyGey+/zUJSeapTLYmQNu9yWMTDwOO/ULcSkf8Zv/1bJ5QUbWXItGAQ2EH/ceqeNe8joaw==
   dependencies:
     micromatch "^4.0.8"
     requireindex "^1.2.0"

@@ -2,8 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 // import { fn } from '@storybook/test';
 
 import { EditableProfileCardHeader } from './EditableProfileCardHeader';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
+// import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+// import { Theme } from '@/shared/const/theme';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -32,7 +32,6 @@ export const Normal: Story = {
   args: {},
 };
 Normal.decorators = [StoreDecorator];
-
 
 // export const DARK: Story = {
 //   args: {

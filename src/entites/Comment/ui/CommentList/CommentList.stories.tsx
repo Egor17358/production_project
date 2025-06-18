@@ -2,8 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 // import { fn } from '@storybook/test';
 
 import { CommentList } from './CommentList';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
+// import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+// import { Theme } from '@/shared/const/theme';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -29,7 +29,10 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Normal: Story = {
   args: {
-    comments: [{ id: '1', text: 'aaaa', user: { id: '1', username: 'userName' } }, { id: '2', text: 'asasd', user: { id: '2', username: 'userName2' } }],
+    comments: [
+      { id: '1', text: 'aaaa', user: { id: '1', username: 'userName' } },
+      { id: '2', text: 'asasd', user: { id: '2', username: 'userName2' } },
+    ],
   },
 };
 

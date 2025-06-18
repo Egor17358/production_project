@@ -13,7 +13,7 @@ export interface ArticleTypeTabsProps {
 }
 export const ArticleTypeTabs = memo(({ className, value, onChangeType }: ArticleTypeTabsProps) => {
   const { t } = useTranslation('translation');
-  const dispatch = useAppDispatch();
+  // const dispatch = useAppDispatch();
 
   // const fetchData = useCallback(() => {
   //   dispatch(fetchArticlesList({ replace: true }));

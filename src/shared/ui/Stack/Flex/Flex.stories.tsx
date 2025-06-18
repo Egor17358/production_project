@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { Flex } from './Flex';
 // import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-// import { Theme } from '@/app/providers/ThemeProvider';
+// import { Theme } from '@/shared/const/theme';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -30,8 +30,8 @@ const meta = {
         <div>{'first'}</div>
         <div>{'first'}</div>
       </>
-    )
-  }
+    ),
+  },
 } satisfies Meta<typeof Flex>;
 
 export default meta;
@@ -40,91 +40,91 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Row: Story = {
   args: {
-    direction: 'row'
-  }
+    direction: 'row',
+  },
 };
 
 export const Column: Story = {
   args: {
-    direction: 'column'
-  }
+    direction: 'column',
+  },
 };
 
 export const RowGap4: Story = {
   args: {
     direction: 'row',
-    gap: '4'
-  }
+    gap: '4',
+  },
 };
 
 export const RowGap8: Story = {
   args: {
     direction: 'row',
-    gap: '8'
-  }
+    gap: '8',
+  },
 };
 
 export const RowGap16: Story = {
   args: {
     direction: 'row',
-    gap: '16'
-  }
+    gap: '16',
+  },
 };
 
 export const RowGap32: Story = {
   args: {
     direction: 'row',
-    gap: '32'
-  }
+    gap: '32',
+  },
 };
 
 export const ColumnGap4: Story = {
   args: {
     direction: 'column',
-    gap: '4'
-  }
+    gap: '4',
+  },
 };
 
 export const ColumnGap8: Story = {
   args: {
     direction: 'column',
-    gap: '8'
-  }
+    gap: '8',
+  },
 };
 
 export const ColumnGap16: Story = {
   args: {
     direction: 'column',
-    gap: '16'
-  }
+    gap: '16',
+  },
 };
 
 export const ColumnGap32: Story = {
   args: {
     direction: 'column',
-    gap: '32'
-  }
+    gap: '32',
+  },
 };
 
 export const ColumnAlignStart: Story = {
   args: {
     direction: 'column',
-    align: 'start'
-  }
+    align: 'start',
+  },
 };
 
 export const ColumnAlignCenter: Story = {
   args: {
     direction: 'column',
-    align: 'center'
-  }
+    align: 'center',
+  },
 };
 
 export const ColumnAlignEnd: Story = {
   args: {
     direction: 'column',
-    align: 'end'
-  }
+    align: 'end',
+  },
 };
 
 // export const DARK: Story = {

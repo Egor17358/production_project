@@ -14,7 +14,7 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { addCommentFormActions, addCommentFormReducer } from '../../model/slices/addCommentForm';
 import {
   getAddCommentFormText,
-  getAddCommentFormError,
+  // getAddCommentFormError,
 } from '../../model/selectors/addCommentFormSelectors';
 import { HStack } from '@/shared/ui/Stack';
 
@@ -30,7 +30,7 @@ const reducers: ReducerList = {
 const AddCommentForm = memo(({ className, onSendComment }: AddCommentFormProps) => {
   const { t } = useTranslation('translation');
   const text = useSelector(getAddCommentFormText);
-  const error = useSelector(getAddCommentFormError);
+  // const error = useSelector(getAddCommentFormError);
   const dispatch = useAppDispatch();
 
   const onCommentChangeText = useCallback(

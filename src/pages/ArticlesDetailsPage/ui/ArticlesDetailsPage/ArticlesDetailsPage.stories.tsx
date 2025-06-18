@@ -3,11 +3,15 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import ArticlesDetailsPage from './ArticlesDetailsPage';
 // import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-// import { Theme } from '@/app/providers/ThemeProvider';
+// import { Theme } from '@/shared/const/theme';
 import { Article } from '@/entites/Article';
 import { ArticleBlockType, ArticleType } from '@/entites/Article';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { mswDecorator, initialize, mswLoader } from 'msw-storybook-addon';
+import {
+  mswDecorator,
+  initialize,
+  // mswLoader
+} from 'msw-storybook-addon';
 import { http, HttpResponse, delay } from 'msw';
 import AvatarImg from '@/shared/assets/tests/testimage.jpeg';
 

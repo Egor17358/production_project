@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { Input } from './Input';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
+import { Theme } from '@/shared/const/theme';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -29,17 +29,15 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   args: {
-    placeholder:
-      'Type Text',
-      value: '1331'
+    placeholder: 'Type Text',
+    value: '1331',
   },
 };
 
 export const DarkTheme: Story = {
   args: {
-    placeholder:
-    'Type Text',
-    value: '1331'
+    placeholder: 'Type Text',
+    value: '1331',
   },
 };
 DarkTheme.decorators = [ThemeDecorator];

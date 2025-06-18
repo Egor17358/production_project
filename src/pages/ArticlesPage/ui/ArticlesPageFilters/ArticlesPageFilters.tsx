@@ -1,6 +1,10 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ArticlesPageFilters.module.scss';
-import { memo, useCallback, useMemo } from 'react';
+import {
+  memo,
+  useCallback,
+  // useMemo
+} from 'react';
 import { useTranslation } from 'react-i18next';
 import {
   ArticleSortField,
@@ -87,7 +91,6 @@ export const ArticlesPageFilters = memo(({ className }: ArticlesPageFiltersProps
     },
     [dispatch, fetchData]
   );
-
 
   return (
     <div className={classNames(cls.ArticlesPageFilters, {}, [className])}>

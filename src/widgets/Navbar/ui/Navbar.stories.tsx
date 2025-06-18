@@ -2,10 +2,10 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { Navbar } from './Navbar';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { http, HttpResponse, delay } from 'msw';
 import { mswDecorator, initialize } from 'msw-storybook-addon';
+import { Theme } from '@/shared/const/theme';
 
 initialize();
 
@@ -31,15 +31,15 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const user = {
-  "id": "1",
-  "first": "Иван",
-  "lastname": "Иванов1",
-  "age": 33,
-  "currency": "USD",
-  "country": "Armenia",
-  "city": "Vologda",
-  "username": "admin",
-  "avatar": "https://lastfm.freetls.fastly.net/i/u/ar0/708e7517998748bac8a19f4a42635124.png"
+  id: '1',
+  first: 'Иван',
+  lastname: 'Иванов1',
+  age: 33,
+  currency: 'USD',
+  country: 'Armenia',
+  city: 'Vologda',
+  username: 'admin',
+  avatar: 'https://lastfm.freetls.fastly.net/i/u/ar0/708e7517998748bac8a19f4a42635124.png',
 };
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Light: Story = {
@@ -68,11 +68,11 @@ AuthNavbar.parameters = {
         await delay(200);
         return HttpResponse.json([
           {
-            "id": "1",
-            "title": "Уведомление 1",
-            "description": "Произошло какое-то событие",
-            "userId": "1"
-          }
+            id: '1',
+            title: 'Уведомление 1',
+            description: 'Произошло какое-то событие',
+            userId: '1',
+          },
         ]);
       }),
     ],

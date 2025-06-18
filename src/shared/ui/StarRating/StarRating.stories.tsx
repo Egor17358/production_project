@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { StarRating } from './StarRating';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
+import { Theme } from '@/shared/const/theme';
 // import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -48,7 +48,7 @@ DARK.parameters = {
 
 export const DARK3Stars: Story = {
   args: {
-    selectedStars: 3
+    selectedStars: 3,
   },
 };
 DARK3Stars.decorators = [ThemeDecorator];

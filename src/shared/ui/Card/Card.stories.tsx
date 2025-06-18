@@ -2,8 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 // import { fn } from '@storybook/test';
 
 import { Card } from './Card';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
+// import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+// import { Theme } from '@/shared/const/theme';
 import { Text } from '../Text/Text';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -30,6 +30,6 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Normal: Story = {
   args: {
-    children: <Text title={'test'} text={'text text'} /> 
+    children: <Text title={'test'} text={'text text'} />,
   },
 };

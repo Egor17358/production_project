@@ -1,4 +1,7 @@
-import { fireEvent, screen } from '@testing-library/react';
+import {
+  // fireEvent,
+  screen,
+} from '@testing-library/react';
 import { ComponentRender } from '@/shared/lib/tests/componentRender/componentRender';
 import { Profile } from '@/entites/Profile';
 import { Currency } from '@/entites/Currency';

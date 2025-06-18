@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import MainPage from './MainPage';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
+import { Theme } from '@/shared/const/theme';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -20,7 +20,7 @@ const meta = {
   argTypes: {
     // backgroundCo lor: { control: 'color' },
   },
-  decorators: [StoreDecorator]
+  decorators: [StoreDecorator],
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   // args: { onClick: fn() },
 } satisfies Meta<typeof MainPage>;

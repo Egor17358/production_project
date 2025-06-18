@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { ArticleDetailsComments } from './ArticleDetailsComments';
 // import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-// import { Theme } from '@/app/providers/ThemeProvider';
+// import { Theme } from '@/shared/const/theme';
 // import { Article } from '@/entites/Article';
 // import { ArticleBlockType, ArticleType } from '@/entites/Article';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';

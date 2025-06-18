@@ -2,12 +2,12 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 
 import AddCommentForm from './AddCommentForm';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
+// import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+// import { Theme } from '@/shared/const/theme';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { Country } from '@/entites/Country';
-import { Currency } from '@/entites/Currency';
-import AvatarImg from '@/shared/assets/tests/testimage.jpeg';
+// import { Country } from '@/entites/Country';
+// import { Currency } from '@/entites/Currency';
+// import AvatarImg from '@/shared/assets/tests/testimage.jpeg';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -25,9 +25,8 @@ const meta = {
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: {
-    onSendComment: fn()
+    onSendComment: fn(),
   },
-  
 } satisfies Meta<typeof AddCommentForm>;
 
 export default meta;

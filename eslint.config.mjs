@@ -59,6 +59,10 @@ export default [
       "jest/no-disabled-tests": "warn",
       "jest/no-focused-tests": "error",
       "my-plugin-test-for-me/patch-checker": ["error", { alias: '@' }],
+      "my-plugin-test-for-me/layer-imports": ["error", {
+        alias: '@',
+        ignoreImportPatterns: ['**/StoreProvider', '**/testing']
+      }],
       "my-plugin-test-for-me/public-api-imports": ["error", {
         alias: '@',
         testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx']
