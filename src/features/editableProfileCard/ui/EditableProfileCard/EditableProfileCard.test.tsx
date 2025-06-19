@@ -3,9 +3,9 @@ import {
   screen,
 } from '@testing-library/react';
 import { ComponentRender } from '@/shared/lib/tests/componentRender/componentRender';
-import { Profile } from '@/entites/Profile';
-import { Currency } from '@/entites/Currency';
-import { Country } from '@/entites/Country';
+import { Profile } from '@/entities/Profile';
+import { Currency } from '@/entities/Currency';
+import { Country } from '@/entities/Country';
 import userEvent from '@testing-library/user-event';
 import { $api } from '@/shared/api/api';
 import { profileReducer } from '../../model/slice/profileSlice';

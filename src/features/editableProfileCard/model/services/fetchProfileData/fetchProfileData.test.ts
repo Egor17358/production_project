@@ -1,8 +1,8 @@
-import { Country } from '@/entites/Country';
+import { Country } from '@/entities/Country';
 import { fetchProfileData } from './fetchProfileData';
-// import { userActions } from '@/entites/User';
+// import { userActions } from '@/entities/User';
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-import { Currency } from '@/entites/Currency';
+import { Currency } from '@/entities/Currency';
 
 // jest.mock('axios');
 
@@ -18,7 +18,6 @@ const data = {
   currency: Currency.RUB,
 };
 
-
 describe('fetchProfileData.test', () => {
   test('success', async () => {
     const thunk = new TestAsyncThunk(fetchProfileData);
@@ -28,16 +27,15 @@ describe('fetchProfileData.test', () => {
 
     expect(thunk.api.get).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe('fulfilled');
-    expect(result.payload).toEqual(data)
+    expect(result.payload).toEqual(data);
   });
 
   test('error', async () => {
     const thunk = new TestAsyncThunk(fetchProfileData);
     thunk.api.get.mockReturnValue(Promise.resolve({ status: 403 }));
-    
+
     const result = await thunk.callThunk('1');
 
     expect(result.meta.requestStatus).toBe('rejected');
-
   });
 });

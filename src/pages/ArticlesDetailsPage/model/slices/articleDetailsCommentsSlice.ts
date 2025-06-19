@@ -6,7 +6,7 @@ import {
   PayloadAction,
 } from '@reduxjs/toolkit';
 import { StateSchema } from '@/app/providers/StoreProvider';
-import { CommentType } from '@/entites/Comment';
+import { CommentType } from '@/entities/Comment';
 import { ArticlesDetailsCommentsSchema } from '../types/ArticlesDetailsCommentsSchema';
 import { fetchCommentsByArticleId } from '../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 

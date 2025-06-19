@@ -3,7 +3,7 @@ import cls from './ArticlesDetailsPage.module.scss';
 // import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { useParams } from 'react-router-dom';
-import { ArticleDetails } from '@/entites/Article';
+import { ArticleDetails } from '@/entities/Article';
 import {
   DynamicModuleLoader,
   ReducerList,

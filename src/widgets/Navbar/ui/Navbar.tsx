@@ -5,7 +5,7 @@ import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { memo, useCallback, useState } from 'react';
 import { LoginModal } from '@/features/AuthByUsername';
 import { useSelector } from 'react-redux';
-import { getUserAuthData } from '@/entites/User';
+import { getUserAuthData } from '@/entities/User';
 import { Text, TextTheme } from '@/shared/ui/Text';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 import { HStack } from '@/shared/ui/Stack';

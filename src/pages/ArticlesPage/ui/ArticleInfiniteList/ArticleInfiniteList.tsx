@@ -7,7 +7,7 @@ import {
   getArticlesPageIsLoading,
   getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
-import { ArticleList } from '@/entites/Article';
+import { ArticleList } from '@/entities/Article';
 import { Text } from '@/shared/ui/Text';
 import { useTranslation } from 'react-i18next';
 

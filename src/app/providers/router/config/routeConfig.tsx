@@ -1,4 +1,4 @@
-import { UserRole } from '@/entites/User';
+import { UserRole } from '@/entities/User';
 import { ForbiddenPage } from '@/pages/ForbiddenPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
 import { AboutPage } from '@/pages/AboutPage';

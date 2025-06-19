@@ -3,7 +3,7 @@ import cls from './AvatarDropdown.module.scss';
 import { useTranslation } from 'react-i18next';
 import { Dropdown } from '@/shared/ui/Popups';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUserAuthData, isUserAdmin, isUserManager, userActions } from '@/entites/User';
+import { getUserAuthData, isUserAdmin, isUserManager, userActions } from '@/entities/User';
 import { useCallback } from 'react';
 import { RoutePath } from '@/shared/const/router';
 import { Avatar } from '@/shared/ui/Avatar';

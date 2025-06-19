@@ -12,7 +12,7 @@ import {
   ArticleTypeTabs,
   ArticleView,
   ArticleViewSelector,
-} from '@/entites/Article';
+} from '@/entities/Article';
 import { articlesPageActions } from '../../model/slices/articlesPageSlice';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
@@ -28,7 +28,7 @@ import { Input } from '@/shared/ui/Input';
 import { SortOrder } from '@/shared/types';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
-import { ArticleType } from '@/entites/Article';
+import { ArticleType } from '@/entities/Article';
 
 export interface ArticlesPageFiltersProps {
   className?: string;

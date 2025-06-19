@@ -1,7 +1,7 @@
 import { ReducersMapObject } from '@reduxjs/toolkit';
 import { Decorator } from '@storybook/react';
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
-import { articleDetailsReducer } from '@/entites/Article/testing';
+import { articleDetailsReducer } from '@/entities/Article/testing';
 import { addCommentFormReducer } from '@/features/AddCommentForm/testing';
 import { loginReducer } from '@/features/AuthByUsername/testing';
 import { profileReducer } from '@/features/editableProfileCard/testing';
@@ -19,7 +19,7 @@ const defaultAsyncReducers: ReducerList = {
 export const StoreDecorator: Decorator = (Story, { parameters }) => {
   const state: DeepPartial<StateSchema> = parameters.state;
   const asyncReducers: DeepPartial<ReducersMapObject<StateSchema>> =
-  // const asyncReducers: ReducerList =
+    // const asyncReducers: ReducerList =
     parameters.asyncReducers;
 
   return (

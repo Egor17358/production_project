@@ -12,7 +12,7 @@ const sharedUiDirectory = project.getDirectory(uiPath);
 const componentsDirs = sharedUiDirectory?.getDirectories();
 
 function isAbsolute(value: string) {
-  const layers = ['app', 'shared', 'entites', 'features', 'widgets', 'pages'];
+  const layers = ['app', 'shared', 'entities', 'features', 'widgets', 'pages'];
   if (layers.some(layer => value.startsWith(layer))) {
     return true;
   }
@@ -35,12 +35,12 @@ files.forEach(sourceFile => {
   importDeclarations.forEach(importDeclarations => {
     const value = importDeclarations.getModuleSpecifierValue();
     const valueWithoutAlias = value.replace('@/', '');
-    
+
     const segments = valueWithoutAlias.split('/');
-    
+
     const isSharedLayer = segments?.[0] === 'shared';
     const isUiSlice = segments?.[1] === 'ui';
-    
+
     if (isAbsolute(valueWithoutAlias) && isSharedLayer && isUiSlice) {
       const result = valueWithoutAlias.split('/').slice(0, 3).join('/');
 

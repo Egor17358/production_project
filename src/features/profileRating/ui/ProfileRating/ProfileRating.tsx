@@ -1,9 +1,9 @@
-import { RatingCard } from '@/entites/Rating';
+import { RatingCard } from '@/entities/Rating';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useGetProfileRatings, useRateProfile } from '../../api/profileRatingApi';
 import { useSelector } from 'react-redux';
-import { getUserAuthData } from '@/entites/User';
+import { getUserAuthData } from '@/entities/User';
 import { Skeleton } from '@/shared/ui/Skeleton';
 
 export interface ProfileRatingProps {

@@ -1,7 +1,7 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
-import { ProfileCard } from '@/entites/Profile';
+import { ProfileCard } from '@/entities/Profile';
 import { Text, TextTheme } from '@/shared/ui/Text';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { AppDispatch } from '@/app/providers/StoreProvider';
@@ -15,8 +15,8 @@ import { getProfileValidateErrors } from '../../model/selectors/getProfileValida
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
-import { Country } from '@/entites/Country';
-import { Currency } from '@/entites/Currency';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
 import {
   DynamicModuleLoader,
   ReducerList,

@@ -1,7 +1,7 @@
 import { configureStore, UnknownAction, ReducersMapObject } from '@reduxjs/toolkit';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
-import { CounterReducer } from '@/entites/Counter';
-import { userReducer } from '@/entites/User';
+import { CounterReducer } from '@/entities/Counter';
+import { userReducer } from '@/entities/User';
 import { TypedUseSelectorHook, useSelector } from 'react-redux';
 import { createReducerManager } from './reducerManager';
 import { $api } from '@/shared/api/api';
