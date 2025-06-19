@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useGetProfileRatings, useRateProfile } from '../../api/profileRatingApi';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from '@/entites/User';
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 export interface ProfileRatingProps {
   className?: string;

@@ -2,7 +2,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { ProfileCard } from '@/entites/Profile';
-import { Text, TextTheme } from '@/shared/ui/Text/Text';
+import { Text, TextTheme } from '@/shared/ui/Text';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { AppDispatch } from '@/app/providers/StoreProvider';
 import { useSelector } from 'react-redux';
