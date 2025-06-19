@@ -6,6 +6,7 @@ import pluginJest from 'eslint-plugin-jest';
 import i18next from 'eslint-plugin-i18next';
 import hooksPlugin from "eslint-plugin-react-hooks";
 import myPlugin from "eslint-plugin-my-plugin-test-for-me";
+import unusedImports from "eslint-plugin-unused-imports";
 // myPlugin.rules
 
 /** @type {import('eslint').Linter.Config[]} */
@@ -36,11 +37,13 @@ export default [
       jest: pluginJest,
       "react-hooks": hooksPlugin,
       "my-plugin-test-for-me": myPlugin,
+      "unused-imports": unusedImports,
     },
     // myPlugin
     rules: {
       // "import/prefer-default-export": "off",
       "no-unused-vars": "off",
+      "unused-imports/no-unused-imports": "error",
       "max-len": ['error', { ignoreComments: true, code: 160 }],
       // "@typescript-eslint/no-unused-vars": "off",
       "@typescript-eslint/no-unused-vars": ["warn"

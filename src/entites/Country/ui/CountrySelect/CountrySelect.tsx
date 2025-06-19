@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Country } from '../../model/types/country';
 import { memo, useCallback } from 'react';
 import { ListBox } from '@/shared/ui/Popups';
+// import {Counter} from '@/entites/Counter/ui/Counter'
 
 export interface CountrySelectProps {
   className?: string;

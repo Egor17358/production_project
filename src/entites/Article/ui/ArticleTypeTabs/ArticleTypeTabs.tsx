@@ -3,7 +3,7 @@ import { memo, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { TabItem, Tabs } from '@/shared/ui/Tabs';
 import { ArticleType } from '../../model/consts/articleConsts';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+// import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 // import { fetchArticlesList } from 'pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList';
 
 export interface ArticleTypeTabsProps {

@@ -5,7 +5,7 @@ import { userReducer } from '@/entites/User';
 import { TypedUseSelectorHook, useSelector } from 'react-redux';
 import { createReducerManager } from './reducerManager';
 import { $api } from '@/shared/api/api';
-import { NavigateOptions, To } from 'react-router-dom';
+// import { NavigateOptions, To } from 'react-router-dom';
 import { Reducer } from 'redux';
 import { scrollSaveReducer } from '@/features/ScrollSave';
 import { rtkApi } from '@/shared/api/rtkApi';

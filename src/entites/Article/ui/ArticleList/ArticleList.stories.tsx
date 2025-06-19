@@ -3,8 +3,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 // import { fn } from '@storybook/test';
 
 import { ArticleList } from './ArticleList';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/shared/const/theme';
+// import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+// import { Theme } from '@/shared/const/theme';
 import { Article } from '../../../Article/model/types/article';
 import { ArticleView } from '../../model/consts/articleConsts';
 
@@ -135,7 +135,7 @@ export const ListBig: Story = {
 export const ListSmall: Story = {
   args: {
     isLoading: false,
-    articles: new Array(2).fill(0).map((item, index) => ({
+    articles: new Array(1).fill(0).map((item, index) => ({
       ...article,
       id: String(index),
     })),
