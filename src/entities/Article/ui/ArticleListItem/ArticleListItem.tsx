@@ -12,7 +12,7 @@ import { Avatar } from '@/shared/ui/Avatar';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 // import { useNavigate } from 'react-router-dom';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticlesDetails } from '@/shared/const/router';
 import { AppLink } from '@/shared/ui/AppLink';
 
 export interface ArticleListItemProps {
@@ -50,7 +50,7 @@ export const ArticleListItem = memo(
             <img src={article.img} className={cls.img} alt={article.title} />
             {textBlock && <ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />}
             <div className={cls.footer}>
-              <AppLink target={target} to={RoutePath.article_details + article.id}>
+              <AppLink target={target} to={getRouteArticlesDetails(article.id)}>
                 <Button theme={ButtonTheme.OUTLINE}>{t('Читать далее')}</Button>
               </AppLink>
               {views}
@@ -63,7 +63,7 @@ export const ArticleListItem = memo(
     return (
       <AppLink
         target={target}
-        to={RoutePath.article_details + article.id}
+        to={getRouteArticlesDetails(article.id)}
         className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
       >
         <Card className={cls.card}>

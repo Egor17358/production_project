@@ -5,7 +5,7 @@ import { Dropdown } from '@/shared/ui/Popups';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, isUserAdmin, isUserManager, userActions } from '@/entities/User';
 import { useCallback } from 'react';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
 import { Avatar } from '@/shared/ui/Avatar';
 
 export interface AvatarDropdownProps {
@@ -42,13 +42,13 @@ export const AvatarDropdown = ({ className }: AvatarDropdownProps) => {
           ? [
               {
                 content: t('Админка'),
-                href: RoutePath.admin_panel,
+                href: getRouteAdmin(),
               },
             ]
           : []),
         {
           content: t('Профиль'),
-          href: RoutePath.profile + authData.id,
+          href: getRouteProfile(authData.id),
         },
       ]}
       trigger={<Avatar size={30} src={authData.avatar} />}

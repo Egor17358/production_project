@@ -2,7 +2,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticles, getRouteArticlesEdit } from '@/shared/const/router';
 import { useNavigate } from 'react-router-dom';
 import { getCanEditArticle } from '../../model/selectors/article';
 import { useSelector } from 'react-redux';
@@ -19,12 +19,14 @@ export const ArticleDetailPageHeader = memo(({ className }: ArticleDetailPageHea
   const article = useSelector(getArticleDetailsData);
 
   const onBackToList = useCallback(() => {
-    navigate(RoutePath.articles);
+    navigate(getRouteArticles());
   }, [navigate]);
 
   const onEditArticle = useCallback(() => {
-    navigate(`${RoutePath.article_details}${article?.id}/edit`);
-  }, [navigate, article?.id]);
+    if (article) {
+      navigate(getRouteArticlesEdit(article.id));
+    }
+  }, [navigate, article]);
 
   return (
     <HStack max justify='between' className={classNames('', {}, [className])}>
