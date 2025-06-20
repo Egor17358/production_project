@@ -4,9 +4,9 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { AppImage } from './AppImage';
 // import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 // import { Theme } from '@/shared/const/theme';
-import { Skeleton } from '../Skeleton';
-import UserIcon from '../../assets/icons/user-filled.svg';
-import { Icon } from '../Icon';
+// import { Skeleton } from '../Skeleton';
+// import UserIcon from '../../assets/icons/user-filled.svg';
+// import { Icon } from '../Icon';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -30,10 +30,23 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
+export const Normal: Story = {
+  args: {
+    src: 'https://i.pinimg.com/736x/88/69/de/8869de3990901fc40f8f74a93c18aaff.jpg',
+    width: '100px',
+    height: '100px',
+    fallback: <div>{'fallback'}</div>,
+    errorFallback: <div style={{width: '100px', height: '100px'}}>{'errorFallback'}</div>
+  },
+};
+
 export const NormalFallback: Story = {
   args: {
-    fallback: <Skeleton width={200} height={200} border='50%' />,
-    errorFallback: <Icon inverted={true} width={100} height={100} Svg={UserIcon} />
+    // src: 'https://error.jpg',
+    width: '100px',
+    height: '100px',
+    fallback: <div>{'fallback'}</div>,
+    errorFallback: <div style={{background: 'blue', color:'red', width: '100px', height: '100px'}}>{'errorFallback'}</div>
   },
 };
 

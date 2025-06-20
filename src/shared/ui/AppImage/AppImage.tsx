@@ -11,7 +11,6 @@ export const AppImage = memo((props: AppImageProps) => {
   const [hasError, setHasError] = useState(false);
 
   useLayoutEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
       const img = new Image();
       img.src = src ?? '';
       img.onload = () => {
@@ -21,10 +20,6 @@ export const AppImage = memo((props: AppImageProps) => {
         setIsLoading(false);
         setHasError(true);
       };
-    }
-    if (__PROJECT__ === 'storybook') {
-      setIsLoading(false)
-    }
   }, [src]);
 
   if (isLoading && fallback) {
