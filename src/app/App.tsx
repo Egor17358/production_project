@@ -4,21 +4,24 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppRouter } from './providers/router';
 import { Navbar } from '@/widgets/Navbar';
 import { Sidebar } from '@/widgets/Sidebar';
-import { useDispatch, useSelector } from 'react-redux';
-import { getUserInited, userActions } from '@/entities/User';
+import { useSelector } from 'react-redux';
+import { getUserInited } from '@/entities/User';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
+import { useUserActions } from '@/entities/User/model/slice/userSlice';
 // import { t } from 'i18next';
 // import { useTranslation } from 'react-i18next';
 
 const App = () => {
   const { theme } = useTheme();
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const inited = useSelector(getUserInited);
 
+  const { initAuthData } = useUserActions();
+
   useEffect(() => {
-    dispatch(userActions.initAuthData());
-  }, [dispatch]);
+    initAuthData();
+  }, [initAuthData]);
   // const { t } = useTranslation('translation');
   return (
     <div className={classNames('app', {}, [theme])}>

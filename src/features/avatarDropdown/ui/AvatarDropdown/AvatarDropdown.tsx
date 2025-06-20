@@ -3,10 +3,11 @@ import cls from './AvatarDropdown.module.scss';
 import { useTranslation } from 'react-i18next';
 import { Dropdown } from '@/shared/ui/Popups';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUserAuthData, isUserAdmin, isUserManager, userActions } from '@/entities/User';
+import { getUserAuthData, isUserManager, userActions } from '@/entities/User';
 import { useCallback } from 'react';
 import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
 import { Avatar } from '@/shared/ui/Avatar';
+import { useUserRole } from '@/entities/User/model/selectors/roleSelectors';
 
 export interface AvatarDropdownProps {
   className?: string;
@@ -15,7 +16,8 @@ export const AvatarDropdown = ({ className }: AvatarDropdownProps) => {
   const { t } = useTranslation('translation');
 
   const dispatch = useDispatch();
-  const isAdmin = useSelector(isUserAdmin);
+  // const isAdmin = useSelector(isUserAdmin);
+  const isAdmin = useUserRole();
   const isManager = useSelector(isUserManager);
   const authData = useSelector(getUserAuthData);
 
