@@ -7,7 +7,7 @@ import { ArticleRecommendationsList } from './ArticleRecommendationsList';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Article } from '@/entities/Article';
 // import { fn } from '@storybook/test';
-import { http, HttpResponse, delay } from 'msw';
+import { http, HttpResponse } from 'msw';
 import { mswDecorator, initialize } from 'msw-storybook-addon';
 import AvatarImg from '@/shared/assets/tests/testimage.jpeg';
 
@@ -49,7 +49,7 @@ Normal.parameters = {
   msw: {
     handlers: [
       http.get(`${__API__}/articles?_limit=3`, async () => {
-        await delay(200);
+        // await delay(200);
         return HttpResponse.json([
           { ...article, id: '1' },
           // { ...article, id: '2' },

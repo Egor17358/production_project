@@ -20,6 +20,9 @@ export const AppImage = memo((props: AppImageProps) => {
         setIsLoading(false);
         setHasError(true);
       };
+    if (__PROJECT__ === 'storybook') {
+      setIsLoading(false);
+    }
   }, [src]);
 
   if (isLoading && fallback) {
