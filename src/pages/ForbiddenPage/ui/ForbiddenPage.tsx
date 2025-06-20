@@ -7,7 +7,7 @@ export interface ForbiddenPageProps {
 const ForbiddenPage = ({ className }: ForbiddenPageProps) => {
   const { t } = useTranslation('translation');
 
-  return <Page>{t('У вас нет доступа к этой странице')}</Page>;
+  return <Page data-testid='ForbiddenPage'>{t('У вас нет доступа к этой странице')}</Page>;
 };
 
 export default ForbiddenPage;

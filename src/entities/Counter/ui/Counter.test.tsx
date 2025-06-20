@@ -27,6 +27,14 @@ describe('Counter', () => {
     expect(screen.getByTestId('value-title')).toHaveTextContent('9');
   });
 
+  test('add 3', () => {
+    ComponentRender(<Counter />, {
+      initialState: { counter: { value: 0 } },
+    });
+    fireEvent.click(screen.getByTestId('add-btn'));
+    expect(screen.getByTestId('value-title')).toHaveTextContent('3');
+  });
+
   // test('test toggle', () => {
   //   ComponentRender(<Counter />)
   //   const toggleBtn = screen.getByTestId('sidebar-toggle');

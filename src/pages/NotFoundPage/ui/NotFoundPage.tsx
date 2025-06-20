@@ -5,11 +5,12 @@ import { useTranslation } from 'react-i18next';
 export interface NotFoundPageProps {
   className?: string;
 }
-export const NotFoundPage = ({ className}: NotFoundPageProps) => {
+export const NotFoundPage = (props: NotFoundPageProps) => {
+  const { className } = props;
   const { t } = useTranslation('translation');
-  
+
   return (
-    <div className={classNames(cls.NotFoundPage, {}, [className])}>
+    <div data-testid={'NotFoundPage'} className={classNames(cls.NotFoundPage, {}, [className])}>
       {t('Страница не найдена')}
     </div>
   );
