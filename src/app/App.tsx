@@ -7,7 +7,7 @@ import { Sidebar } from '@/widgets/Sidebar';
 import { useSelector } from 'react-redux';
 import { getUserInited } from '@/entities/User';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
-import { useUserActions } from '@/entities/User/model/slice/userSlice';
+import { useUserActions } from '@/entities/User';
 // import { t } from 'i18next';
 // import { useTranslation } from 'react-i18next';
 

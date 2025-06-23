@@ -7,7 +7,7 @@ import { getUserAuthData, isUserManager, userActions } from '@/entities/User';
 import { useCallback } from 'react';
 import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
 import { Avatar } from '@/shared/ui/Avatar';
-import { useUserRole } from '@/entities/User/model/selectors/roleSelectors';
+import { useUserRole } from '@/entities/User';
 
 export interface AvatarDropdownProps {
   className?: string;
