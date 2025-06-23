@@ -6,4 +6,4 @@ node_modules
 *storybook.log
 .loki/report.html
 .loki/report.json
-/reports
+/reports/unit
