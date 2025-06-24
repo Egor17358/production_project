@@ -12,6 +12,7 @@ describe('Пользователь заходит на страницу стат
   afterEach(() => {
     cy.removeArticle(currentArticleId);
   });
+
   it('Содержимое статьи', () => {
     cy.getByTestId('ArticleDetails.Info').should('exist');
   });
@@ -25,6 +26,15 @@ describe('Пользователь заходит на страницу стат
     cy.getByTestId('CommentCard.Content').should('have.length', 1);
   });
   it('Ставим оценку', () => {
+    const rate = 4;
+    cy.getByTestId('ArticleDetails.Info');
+    cy.getByTestId('RatingCard').scrollIntoView();
+    cy.setRate(rate, 'feedback');
+    cy.get('[data-selected=true]').should('have.length', rate);
+  });
+
+  it('Ставим оценку (пример с fixtures)', () => {
+    cy.intercept('GET', '**/articles/*', { fixture: 'article-details.json' });
     const rate = 4;
     cy.getByTestId('ArticleDetails.Info');
     cy.getByTestId('RatingCard').scrollIntoView();
