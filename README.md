@@ -5,7 +5,7 @@ yarn add - устанавливаем зависимости
 yarn start:dev или yarn start:dev:vite - запуск сервера + frontend проекта в dev режиме
 ```
 
-----
+---
 
 ## Скрипты
 
@@ -32,7 +32,7 @@ yarn start:dev или yarn start:dev:vite - запуск сервера + fronte
 - `yarn prepare` - pre commit hooks
 - `yarn generate:slice` - Скрипт для генерации FSD slice
 
-----
+---
 
 ## Архитектура проекта
 
@@ -40,7 +40,7 @@ yarn start:dev или yarn start:dev:vite - запуск сервера + fronte
 
 Ссылка на документацию - [feature sliced design](https://feature-sliced.design/docs/get-started/tutorial)
 
-----
+---
 
 ## Работа с переводами
 
@@ -51,39 +51,43 @@ yarn start:dev или yarn start:dev:vite - запуск сервера + fronte
 
 Документация i18next - [https://react.i18next.com/](https://react.i18next.com/)
 
-----
+---
 
 ## Тесты
 
 В проекте используются 4 вида тестов:
-1) Обычные unit тесты на jest - `yarn test:unit`
-2) Тесты на компоненты с React testing library -`yarn test:unit`
-3) Screenshot тестирование с loki `yarn test:ui`
-4) e2e тестирование с Cypress `yarn test:e2e`
+
+1. Обычные unit тесты на jest - `yarn test:unit`
+2. Тесты на компоненты с React testing library -`yarn test:unit`
+3. Screenshot тестирование с loki `yarn test:ui`
+4. e2e тестирование с Cypress `yarn test:e2e`
 
 Подробнее о тестах - [документация тестирование](/docs/tests.md)
 
-----
+---
 
 ## Linting
 
 В проекте используется eslint для проверки typescript кода и stylelint для проверки файлов со стилями.
 
 Также для строгого контроля главных архитектурных принципов
-используется собственный eslint plugin *eslint-plugin-my-plugin-test-for-me*,
+используется собственный eslint plugin _eslint-plugin-my-plugin-test-for-me_,
 который содержит 3 правила
-1) path-checker - запрещает использовать абсолютные импорты в рамках одного модуля
-2) layer-imports - проверяет корректность использования слоев с точки зрения FSD
+
+1. path-checker - запрещает использовать абсолютные импорты в рамках одного модуля
+2. layer-imports - проверяет корректность использования слоев с точки зрения FSD
    (например widgets нельзя использовать в features и entities)
-3) public-api-imports - разрешает импорт из других модулей только из public api. Имеет auto fix
+3. public-api-imports - разрешает импорт из других модулей только из public api. Имеет auto fix
 
 ##### Запуск линтеров
+
 - `yarn lint:ts` - Проверка ts файлов линтером
 - `yarn lint:ts:fix` - Исправление ts файлов линтером
 - `yarn lint:scss` - Проверка scss файлов style линтером
 - `yarn lint:scss:fix` - Исправление scss файлов style линтером
 
-----
+---
+
 ## Storybook
 
 В проекте для каждого компонента описываются stories.
@@ -92,21 +96,24 @@ yarn start:dev или yarn start:dev:vite - запуск сервера + fronte
 Файл со stories создает рядом с компонентом с расширением .stories.tsx
 
 Запустить storybook можно командой:
+
 - `yarn storybook`
 
 Подробнее о [Storybook](/docs/storybook.md)
 
-----
+---
 
 ## Конфигурация проекта
 
 Для разработки проект содержит 2 конфига:
+
 1. Webpack - ./config/build
 2. vite - vite.config.ts
 
 Оба сборщика адаптированы под основные фичи приложения.
 
 Вся конфигурация хранится в /config
+
 - /config/babel - babel
 - /config/build - конфигурация webpack
 - /config/jest - конфигурация тестовой среды
@@ -114,7 +121,7 @@ yarn start:dev или yarn start:dev:vite - запуск сервера + fronte
 
 В папке `scripts` находятся различные скрипты для refactoring/упрощения написания кода/генерации отчетов и тд.
 
-----
+---
 
 ## CI pipeline и pre commit хуки
 
@@ -123,7 +130,7 @@ yarn start:dev или yarn start:dev:vite - запуск сервера + fronte
 
 В pre commit хуках проверяем проект линтерами, конфигурация находится в /.husky
 
-----
+---
 
 ### Работа с данными
 
@@ -135,8 +142,7 @@ yarn start:dev или yarn start:dev:vite - запуск сервера + fronte
 Для асинхронного подключения reducers (чтобы не тянуть их в общий bundle) используется
 [DynamicModuleLoader](/src/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader.tsx)
 
-----
-
+---
 
 ## Сущности (entities)
 

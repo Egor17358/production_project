@@ -1,4 +1,10 @@
-import { MutableRefObject, useCallback, useEffect, useRef, useState } from 'react';
+import {
+  MutableRefObject,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 
 interface UseModalProps {
   onClose?: () => void;
@@ -9,7 +15,6 @@ interface UseModalProps {
 /**
  * Переиспользуемый хук для модальных компонентов (drawer/modal)
  */
-
 
 export function useModal(props: UseModalProps) {
   const { onClose, isOpen, animationDelay } = props;
@@ -40,7 +45,7 @@ export function useModal(props: UseModalProps) {
         close();
       }
     },
-    [close]
+    [close],
   );
 
   useEffect(() => {

@@ -9,13 +9,13 @@ const MainPage = () => {
   const { t } = useTranslation('main');
 
   return (
-    <Page data-testid='MainPage'>
+    <Page data-testid="MainPage">
       <BugButton />
       {t('Главная страница')}
       <VStack>
         <div>{'12312'}</div>
         <ListBox
-          defaultValue='Выберите значение'
+          defaultValue="Выберите значение"
           onChange={() => {}}
           value={undefined}
           items={[

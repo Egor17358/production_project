@@ -26,9 +26,9 @@ const App = () => {
   return (
     <div className={classNames('app', {}, [theme])}>
       {/* <button onClick={toggleTheme}>ToGGLE</button> */}
-      <Suspense fallback=''>
+      <Suspense fallback="">
         <Navbar />
-        <div className='content-page'>
+        <div className="content-page">
           <Sidebar />
           {inited && <AppRouter />}
           {/* {t('Hello world')} */}

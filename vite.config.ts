@@ -10,9 +10,9 @@ export default defineConfig({
       svgrOptions: {
         exportType: 'default',
         icon: true,
-      }
-    }), 
-    react()
+      },
+    }),
+    react(),
   ],
   resolve: {
     alias: [{ find: '@', replacement: '/src' }],

@@ -6,5 +6,10 @@ export interface OverlayProps {
   onClick?: () => void;
 }
 export const Overlay = ({ className, onClick }: OverlayProps) => {
-  return <div onClick={onClick} className={classNames(cls.Overlay, {}, [className])} />;
+  return (
+    <div
+      onClick={onClick}
+      className={classNames(cls.Overlay, {}, [className])}
+    />
+  );
 };

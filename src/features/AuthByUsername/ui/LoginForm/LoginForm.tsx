@@ -46,20 +46,20 @@ const LoginForm = memo((props: LoginFormProps) => {
     (value: string) => {
       dispatch(loginActions.setUsername(value));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onChangePassword = useCallback(
     (value: string) => {
       dispatch(loginActions.setPassword(value));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onLoginClick = useCallback(async () => {
     const result = await dispatch(loginByUserName({ username, password }));
     if (result.meta.requestStatus === 'fulfilled') {
-      onSuccess()
+      onSuccess();
     }
   }, [onSuccess, dispatch, password, username]);
 
@@ -68,8 +68,14 @@ const LoginForm = memo((props: LoginFormProps) => {
       {/* <DynamicModuleLoader reducers={{loginForm: loginReducer}}> */}
       <div className={classNames(cls.LoginForm, {}, [className])}>
         <Text title={t('Форма авторизации')} />
-        {error && <Text text={t('Вы ввели неверный логин или пароль')} theme={TextTheme.ERROR} />}
+        {error && (
+          <Text
+            text={t('Вы ввели неверный логин или пароль')}
+            theme={TextTheme.ERROR}
+          />
+        )}
         <Input
+          name="aa"
           placeholder={t('Введите username')}
           className={cls.input}
           autofocus

@@ -28,7 +28,7 @@ export const CountrySelect = memo(
       (value: string) => {
         onChange?.(value as Country);
       },
-      [onChange]
+      [onChange],
     );
 
     return (
@@ -39,11 +39,11 @@ export const CountrySelect = memo(
         items={options}
         defaultValue={t('Выберите страну')}
         readonly={readonly}
-        direction='top'
+        direction="top"
         label={t('Выберите страну')}
       />
     );
-  }
+  },
 );
 
 CountrySelect.displayName = 'CurrencySelect';

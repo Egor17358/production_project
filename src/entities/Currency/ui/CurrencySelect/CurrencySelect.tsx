@@ -26,7 +26,7 @@ export const CurrencySelect = memo(
       (value: string) => {
         onChange?.(value as Currency);
       },
-      [onChange]
+      [onChange],
     );
 
     return (
@@ -40,7 +40,7 @@ export const CurrencySelect = memo(
         label={t('Укажите Валюту')}
       />
     );
-  }
+  },
 );
 
 CurrencySelect.displayName = 'CurrencySelect';

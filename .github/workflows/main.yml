@@ -9,7 +9,7 @@ permissions:
   pages: write
   id-token: write
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: true
 jobs:
   build-and-uiTesting:
@@ -83,7 +83,6 @@ jobs:
       - name: unit testing
         run: npm run test:unit
         if: always()
-
 # name: linting, testing, building
 # on:
 #   push:

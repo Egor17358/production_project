@@ -1,34 +1,34 @@
-import type { StorybookConfig } from "@storybook/react-webpack5";
+import type { StorybookConfig } from '@storybook/react-webpack5';
 
 const config: StorybookConfig = {
-  stories: ["../../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+  stories: ['../../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
-    "@storybook/addon-webpack5-compiler-swc",
-    "@storybook/addon-onboarding",
+    '@storybook/addon-webpack5-compiler-swc',
+    '@storybook/addon-onboarding',
     {
-      name: "@storybook/addon-essentials",
+      name: '@storybook/addon-essentials',
       options: {
         backgrounds: false,
-      }
+      },
     },
-    "@chromatic-com/storybook",
-    "@storybook/addon-themes",
-    "@storybook/addon-interactions",
+    '@chromatic-com/storybook',
+    '@storybook/addon-themes',
+    '@storybook/addon-interactions',
   ],
   framework: {
-    name: "@storybook/react-webpack5",
+    name: '@storybook/react-webpack5',
     options: {},
   },
   swc: () => ({
     jsc: {
       transform: {
         react: {
-          runtime: 'automatic'
-        }
-      }
-    }
+          runtime: 'automatic',
+        },
+      },
+    },
   }),
-  
+
   // webpackFinal: async (config) => {
   //   config.module?.rules?.push({
   //     test: /\.svg$/, // Add this line to handle SVG files

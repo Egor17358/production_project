@@ -12,7 +12,7 @@ import ProfileIcon from '@/shared/assets/icons/profile-20-20.svg';
 import ArticleIcon from '@/shared/assets/icons/article-20-20.svg';
 import { SidebarItemType } from '../type/sidebar';
 
-export const geSidebarItems = createSelector(getUserAuthData, userData => {
+export const geSidebarItems = createSelector(getUserAuthData, (userData) => {
   const SidebarItemsList: SidebarItemType[] = [
     {
       path: getRouteMain(),
@@ -38,7 +38,7 @@ export const geSidebarItems = createSelector(getUserAuthData, userData => {
         text: 'Статьи',
         Icon: ArticleIcon,
         authOnly: true,
-      }
+      },
     );
   }
   return SidebarItemsList;

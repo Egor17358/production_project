@@ -15,7 +15,11 @@ export const LangSwithcer = memo(({ className, short }: LangSwithcerProps) => {
   };
 
   return (
-    <Button theme={ButtonTheme.CLEAR} onClick={toogle} className={classNames('', {}, [className])}>
+    <Button
+      theme={ButtonTheme.CLEAR}
+      onClick={toogle}
+      className={classNames('', {}, [className])}
+    >
       {short ? t('Короткий язык') : t('Язык')}
     </Button>
   );

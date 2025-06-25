@@ -5,7 +5,7 @@ import { buildCssLoader } from '../build/loaders/buildCssLoader';
 
 export default ({ config }: { config: webpack.Configuration }) => {
   console.log('__dirname', __dirname);
-  
+
   const paths: BuildPath = {
     build: '',
     html: '',
@@ -18,15 +18,17 @@ export default ({ config }: { config: webpack.Configuration }) => {
     ...config.resolve,
     alias: {
       ...config.resolve?.alias,
-      '@': paths.src
-    }
-  }
+      '@': paths.src,
+    },
+  };
   config.resolve?.modules?.push(paths.src);
   config.resolve?.extensions?.push('.ts', '.tsx');
 
   config.module!.rules = config
-    .module!.rules!.filter((rule): rule is RuleSetRule => rule !== undefined || rule !== null)
-    .map(rule => {
+    .module!.rules!.filter(
+      (rule): rule is RuleSetRule => rule !== undefined || rule !== null,
+    )
+    .map((rule) => {
       if (/svg/.test(rule.test as string)) {
         return { ...rule, exclude: /\.svg$/i };
       }
@@ -45,7 +47,7 @@ export default ({ config }: { config: webpack.Configuration }) => {
       __IS_DEV__: JSON.stringify(true),
       __API__: JSON.stringify('https://testapi.ru'),
       __PROJECT__: JSON.stringify('storybook'),
-    })
+    }),
   );
   // Add your own SVG loader
   // {

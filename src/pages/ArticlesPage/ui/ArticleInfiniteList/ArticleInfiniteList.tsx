@@ -14,22 +14,29 @@ import { useTranslation } from 'react-i18next';
 export interface ArticleInfiniteListProps {
   className?: string;
 }
-export const ArticleInfiniteList = memo(({ className }: ArticleInfiniteListProps) => {
-  const articles = useSelector(getArticles.selectAll);
-  const isLoading = useSelector(getArticlesPageIsLoading);
-  const view = useSelector(getArticlesPageView);
-  const error = useSelector(getArticlesPageError);
-  const { t } = useTranslation('article-details');
+export const ArticleInfiniteList = memo(
+  ({ className }: ArticleInfiniteListProps) => {
+    const articles = useSelector(getArticles.selectAll);
+    const isLoading = useSelector(getArticlesPageIsLoading);
+    const view = useSelector(getArticlesPageView);
+    const error = useSelector(getArticlesPageError);
+    const { t } = useTranslation('article-details');
 
-  if (error) {
-    <Text text={t('Произошла ошибка при загрузки статьи')} />;
-  }
+    if (error) {
+      <Text text={t('Произошла ошибка при загрузки статьи')} />;
+    }
 
-  return (
-    <div className={classNames('', {}, [className])}>
-      <ArticleList isLoading={isLoading} articles={articles} view={view} className={className} />
-    </div>
-  );
-});
+    return (
+      <div className={classNames('', {}, [className])}>
+        <ArticleList
+          isLoading={isLoading}
+          articles={articles}
+          view={view}
+          className={className}
+        />
+      </div>
+    );
+  },
+);
 
 ArticleInfiniteList.displayName = 'ArticleInfiniteList';

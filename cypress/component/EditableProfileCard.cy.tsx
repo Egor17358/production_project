@@ -1,6 +1,6 @@
 import { EditableProfileCard } from '../../src/features/editableProfileCard';
 import { TestProvider } from '../../src/shared/lib/tests/componentRender/componentRender';
-const USER_ID = '4'
+const USER_ID = '4';
 
 describe('EditableProfileCard.cy.tsx', () => {
   it('playground', () => {
@@ -18,7 +18,7 @@ describe('EditableProfileCard.cy.tsx', () => {
         }}
       >
         <EditableProfileCard id={USER_ID} />
-      </TestProvider>
+      </TestProvider>,
     );
   });
 });

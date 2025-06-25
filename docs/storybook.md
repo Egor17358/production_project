@@ -6,8 +6,8 @@
 Файл со stories создает рядом с компонентом с расширением .stories.tsx
 
 Запустить storybook можно командой:
-- `yarn storybook`
 
+- `yarn storybook`
 
 Пример:
 
@@ -26,8 +26,7 @@ const meta = {
     layout: 'centered',
   },
   tags: ['autodocs'],
-  argTypes: {
-  },
+  argTypes: {},
   args: { onClick: fn() },
 } satisfies Meta<typeof Button>;
 

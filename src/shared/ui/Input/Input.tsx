@@ -1,6 +1,13 @@
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
-import React, { InputHTMLAttributes, memo, MutableRefObject, useEffect, useRef, useState } from 'react';
+import React, {
+  InputHTMLAttributes,
+  memo,
+  MutableRefObject,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 
 type HTMLInputProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,
@@ -12,7 +19,7 @@ export interface InputProps extends HTMLInputProps {
   value?: string | number;
   onChange?: (value: string) => void;
   autofocus?: boolean;
-  readonly?: boolean
+  readonly?: boolean;
 }
 
 export const Input = memo((props: InputProps) => {
@@ -27,18 +34,18 @@ export const Input = memo((props: InputProps) => {
     ...otherProps
   } = props;
 
-  const ref = useRef<HTMLInputElement>() as MutableRefObject<HTMLInputElement>
+  const ref = useRef<HTMLInputElement>() as MutableRefObject<HTMLInputElement>;
 
   const [isFocused, setIsFocused] = useState(false);
   const [caretPosition, setCaretPosition] = useState(0);
 
-  const isCaretVisible = isFocused && !readonly
+  const isCaretVisible = isFocused && !readonly;
 
   useEffect(() => {
     if (autofocus) {
       setIsFocused(true);
       if (ref.current) {
-        ref.current.focus()
+        ref.current.focus();
       }
     }
   }, [autofocus]);
@@ -63,14 +70,17 @@ export const Input = memo((props: InputProps) => {
 
   const mods: Mods = {
     [cls.readonly]: readonly,
-  }
+  };
 
   return (
     <div className={classNames(cls.InputWrapper, mods, [className])}>
       {placeholder && (
         <div
-          style={{whiteSpace: __PROJECT__ === 'storybook' ? 'nowrap' : 'unset'}}
-          className={cls.placeholder}>{`${placeholder}>`}</div>
+          style={{
+            whiteSpace: __PROJECT__ === 'storybook' ? 'nowrap' : 'unset',
+          }}
+          className={cls.placeholder}
+        >{`${placeholder}>`}</div>
       )}
       <div className={cls.caretWrapper}>
         <input

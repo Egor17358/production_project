@@ -36,7 +36,9 @@ export const Normal: Story = {
     width: '100px',
     height: '100px',
     fallback: <div>{'fallback'}</div>,
-    errorFallback: <div style={{width: '100px', height: '100px'}}>{'errorFallback'}</div>
+    errorFallback: (
+      <div style={{ width: '100px', height: '100px' }}>{'errorFallback'}</div>
+    ),
   },
 };
 
@@ -46,7 +48,18 @@ export const NormalFallback: Story = {
     width: '100px',
     height: '100px',
     fallback: <div>{'fallback'}</div>,
-    errorFallback: <div style={{background: 'blue', color:'red', width: '100px', height: '100px'}}>{'errorFallback'}</div>
+    errorFallback: (
+      <div
+        style={{
+          background: 'blue',
+          color: 'red',
+          width: '100px',
+          height: '100px',
+        }}
+      >
+        {'errorFallback'}
+      </div>
+    ),
   },
 };
 

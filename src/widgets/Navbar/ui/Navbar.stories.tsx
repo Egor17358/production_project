@@ -39,7 +39,8 @@ const user = {
   country: 'Armenia',
   city: 'Vologda',
   username: 'admin',
-  avatar: 'https://lastfm.freetls.fastly.net/i/u/ar0/708e7517998748bac8a19f4a42635124.png',
+  avatar:
+    'https://lastfm.freetls.fastly.net/i/u/ar0/708e7517998748bac8a19f4a42635124.png',
 };
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Light: Story = {

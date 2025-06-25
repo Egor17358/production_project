@@ -10,7 +10,10 @@ export const NotFoundPage = (props: NotFoundPageProps) => {
   const { t } = useTranslation('translation');
 
   return (
-    <div data-testid={'NotFoundPage'} className={classNames(cls.NotFoundPage, {}, [className])}>
+    <div
+      data-testid={'NotFoundPage'}
+      className={classNames(cls.NotFoundPage, {}, [className])}
+    >
       {t('Страница не найдена')}
     </div>
   );

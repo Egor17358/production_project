@@ -8,7 +8,7 @@ i18n
   .use(Backend)
   .use(LanguageDetector)
   .use(initReactI18next)
-  
+
   .init({
     fallbackLng: 'ru',
     // debug: __IS_DEV__,
@@ -18,9 +18,8 @@ i18n
       escapeValue: false, // not needed for react as it escapes by default
     },
     backend: {
-      loadPath: '/locales/{{lng}}/{{ns}}.json'
-    }
+      loadPath: '/locales/{{lng}}/{{ns}}.json',
+    },
   });
-
 
 export default i18n;

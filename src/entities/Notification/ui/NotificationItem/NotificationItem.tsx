@@ -8,16 +8,22 @@ export interface NotificationItemProps {
   className?: string;
   item: Notification;
 }
-export const NotificationItem = ({ className, item }: NotificationItemProps) => {
+export const NotificationItem = ({
+  className,
+  item,
+}: NotificationItemProps) => {
   const content = (
-    <Card theme={CardTheme.OUTLINED} className={classNames(cls.NotificationItem, {}, [className])}>
+    <Card
+      theme={CardTheme.OUTLINED}
+      className={classNames(cls.NotificationItem, {}, [className])}
+    >
       <Text title={item.title} text={item.description} />
     </Card>
   );
 
   if (item.href) {
     return (
-      <a className={cls.link} target='_blank' href={item.href} rel='noreferrer'>
+      <a className={cls.link} target="_blank" href={item.href} rel="noreferrer">
         {content}
       </a>
     );

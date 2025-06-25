@@ -1,4 +1,9 @@
-import { Action, EnhancedStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit';
+import {
+  Action,
+  EnhancedStore,
+  Reducer,
+  ReducersMapObject,
+} from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 import { articleDetailsSchema } from '@/entities/Article';
 import { CounterSchema } from '@/entities/Counter';

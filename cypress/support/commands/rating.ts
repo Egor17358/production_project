@@ -1,6 +1,9 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 
-export const setRate = (starsCount: number = 3, feedback: string = 'feedback') => {
+export const setRate = (
+  starsCount: number = 3,
+  feedback: string = 'feedback',
+) => {
   cy.getByTestId(`StarRating.${starsCount}`).click();
   cy.getByTestId(`RatingCard.Input`).type(feedback);
   cy.getByTestId(`RatingCard.Send`).click();

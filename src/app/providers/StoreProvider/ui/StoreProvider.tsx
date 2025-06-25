@@ -27,6 +27,6 @@ export const StoreProvider = (props: StoreProviderProps) => {
   );
 
   console.log('RENDER');
-  
+
   return <Provider store={store}>{children}</Provider>;
 };

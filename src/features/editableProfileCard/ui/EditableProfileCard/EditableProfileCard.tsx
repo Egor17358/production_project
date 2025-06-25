@@ -62,21 +62,21 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
     (value?: string) => {
       dispatch(profileActions.updateProfile({ first: value || '' }));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onChangeLastname = useCallback(
     (value?: string) => {
       dispatch(profileActions.updateProfile({ lastname: value || '' }));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onChangeCity = useCallback(
     (value?: string) => {
       dispatch(profileActions.updateProfile({ city: value || '' }));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onChangeAge = useCallback(
@@ -87,40 +87,40 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
         dispatch(profileActions.updateProfile({ age: Number(value) || 0 }));
       }
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onChangeUsername = useCallback(
     (value?: string) => {
       dispatch(profileActions.updateProfile({ username: value || '' }));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onChangeAvatar = useCallback(
     (value?: string) => {
       dispatch(profileActions.updateProfile({ avatar: value || '' }));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onChangeCurrency = useCallback(
     (value?: Currency) => {
       dispatch(profileActions.updateProfile({ currency: value }));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onChangeCountry = useCallback(
     (value?: Country) => {
       dispatch(profileActions.updateProfile({ country: value }));
     },
-    [dispatch]
+    [dispatch],
   );
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <VStack gap='8' max className={classNames('', {}, [className])}>
+      <VStack gap="8" max className={classNames('', {}, [className])}>
         <EditableProfileCardHeader />
         {validateErrors?.length &&
           validateErrors.map((err, index) => (

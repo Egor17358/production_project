@@ -40,7 +40,8 @@ const article = {
   user: {
     id: '1',
     username: 'admin',
-    avatar: 'https://i.pinimg.com/736x/88/69/de/8869de3990901fc40f8f74a93c18aaff.jpg',
+    avatar:
+      'https://i.pinimg.com/736x/88/69/de/8869de3990901fc40f8f74a93c18aaff.jpg',
   },
   blocks: [
     {

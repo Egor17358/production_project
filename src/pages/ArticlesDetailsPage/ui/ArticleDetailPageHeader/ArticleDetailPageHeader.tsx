@@ -12,34 +12,36 @@ import { HStack } from '@/shared/ui/Stack';
 export interface ArticleDetailPageHeaderProps {
   className?: string;
 }
-export const ArticleDetailPageHeader = memo(({ className }: ArticleDetailPageHeaderProps) => {
-  const { t } = useTranslation('translation');
-  const navigate = useNavigate();
-  const isAuth = useSelector(getCanEditArticle);
-  const article = useSelector(getArticleDetailsData);
+export const ArticleDetailPageHeader = memo(
+  ({ className }: ArticleDetailPageHeaderProps) => {
+    const { t } = useTranslation('translation');
+    const navigate = useNavigate();
+    const isAuth = useSelector(getCanEditArticle);
+    const article = useSelector(getArticleDetailsData);
 
-  const onBackToList = useCallback(() => {
-    navigate(getRouteArticles());
-  }, [navigate]);
+    const onBackToList = useCallback(() => {
+      navigate(getRouteArticles());
+    }, [navigate]);
 
-  const onEditArticle = useCallback(() => {
-    if (article) {
-      navigate(getRouteArticlesEdit(article.id));
-    }
-  }, [navigate, article]);
+    const onEditArticle = useCallback(() => {
+      if (article) {
+        navigate(getRouteArticlesEdit(article.id));
+      }
+    }, [navigate, article]);
 
-  return (
-    <HStack max justify='between' className={classNames('', {}, [className])}>
-      <Button onClick={onBackToList} theme={ButtonTheme.OUTLINE}>
-        {t('Назад к списку')}
-      </Button>
-      {isAuth && (
-        <Button onClick={onEditArticle} theme={ButtonTheme.OUTLINE}>
-          {t('Редактировать')}
+    return (
+      <HStack max justify="between" className={classNames('', {}, [className])}>
+        <Button onClick={onBackToList} theme={ButtonTheme.OUTLINE}>
+          {t('Назад к списку')}
         </Button>
-      )}
-    </HStack>
-  );
-});
+        {isAuth && (
+          <Button onClick={onEditArticle} theme={ButtonTheme.OUTLINE}>
+            {t('Редактировать')}
+          </Button>
+        )}
+      </HStack>
+    );
+  },
+);
 
 ArticleDetailPageHeader.displayName = 'ArticleDetailPageHeader';

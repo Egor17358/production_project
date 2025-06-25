@@ -46,11 +46,29 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {
       case ArticleBlockType.CODE:
-        return <ArticleCodeBlockComponent block={block} key={block.id} className={cls.block} />;
+        return (
+          <ArticleCodeBlockComponent
+            block={block}
+            key={block.id}
+            className={cls.block}
+          />
+        );
       case ArticleBlockType.IMAGE:
-        return <ArticleImageBlockComponent block={block} key={block.id} className={cls.block} />;
+        return (
+          <ArticleImageBlockComponent
+            block={block}
+            key={block.id}
+            className={cls.block}
+          />
+        );
       case ArticleBlockType.TEXT:
-        return <ArticleTextBlockComponent block={block} key={block.id} className={cls.block} />;
+        return (
+          <ArticleTextBlockComponent
+            block={block}
+            key={block.id}
+            className={cls.block}
+          />
+        );
       default:
         return null;
     }
@@ -67,7 +85,12 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
   if (isLoading) {
     content = (
       <div>
-        <Skeleton className={cls.avatar} width={200} height={200} border={'50%'} />
+        <Skeleton
+          className={cls.avatar}
+          width={200}
+          height={200}
+          border={'50%'}
+        />
         <Skeleton className={cls.title} width={300} height={32} />
         <Skeleton className={cls.skeleton} width={600} height={24} />
         <Skeleton className={cls.skeleton} width={'100%'} height={200} />
@@ -75,25 +98,30 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
       </div>
     );
   } else if (error) {
-    content = <Text align={TextAlign.CENTER} title={t('Произошла ошибка при загрузки статьи')} />;
+    content = (
+      <Text
+        align={TextAlign.CENTER}
+        title={t('Произошла ошибка при загрузки статьи')}
+      />
+    );
   } else {
     content = (
       <>
-        <HStack justify='center' max className={cls.avatarWrapper}>
+        <HStack justify="center" max className={cls.avatarWrapper}>
           <Avatar size={200} src={article?.img} className={cls.avatar} />
         </HStack>
-        <VStack data-testid={'ArticleDetails.Info'} gap='4' max>
+        <VStack data-testid={'ArticleDetails.Info'} gap="4" max>
           <Text
             size={TextSize.L}
             className={cls.title}
             title={article?.title}
             text={article?.subtitle}
           />
-          <HStack gap='8' className={cls.articleInfo}>
+          <HStack gap="8" className={cls.articleInfo}>
             <Icon Svg={EyeIcon} className={cls.icon} />
             <Text text={String(article?.views)} />
           </HStack>
-          <HStack gap='8' className={cls.articleInfo}>
+          <HStack gap="8" className={cls.articleInfo}>
             <Icon Svg={CalendarIcon} className={cls.icon} />
             <Text text={article?.createdAt} />
           </HStack>
@@ -105,7 +133,11 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={true}>
-      <VStack gap='16' max className={classNames(cls.ArticleDetails, {}, [className])}>
+      <VStack
+        gap="16"
+        max
+        className={classNames(cls.ArticleDetails, {}, [className])}
+      >
         {content}
       </VStack>
     </DynamicModuleLoader>

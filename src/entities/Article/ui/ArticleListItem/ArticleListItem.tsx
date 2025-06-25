@@ -3,7 +3,10 @@ import cls from './ArticleListItem.module.scss';
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Article, ArticleTextBlock } from '../../model/types/article';
-import { ArticleBlockType, ArticleView } from '../../model/consts/articleConsts';
+import {
+  ArticleBlockType,
+  ArticleView,
+} from '../../model/consts/articleConsts';
 import { Text } from '@/shared/ui/Text';
 import { Icon } from '@/shared/ui/Icon';
 import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
@@ -36,13 +39,16 @@ export const ArticleListItem = memo(
     );
     if (view == ArticleView.BIG) {
       const textBlock = article.blocks.find(
-        block => block.type === ArticleBlockType.TEXT
+        (block) => block.type === ArticleBlockType.TEXT,
       ) as ArticleTextBlock;
 
       return (
         <div
           data-testid={'ArticleListItem'}
-          className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
+          className={classNames(cls.ArticleListItem, {}, [
+            className,
+            cls[view],
+          ])}
         >
           <Card className={cls.card}>
             <div className={cls.header}>
@@ -58,7 +64,12 @@ export const ArticleListItem = memo(
               className={cls.img}
               alt={article.title}
             />
-            {textBlock && <ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />}
+            {textBlock && (
+              <ArticleTextBlockComponent
+                block={textBlock}
+                className={cls.textBlock}
+              />
+            )}
             <div className={cls.footer}>
               <AppLink target={target} to={getRouteArticlesDetails(article.id)}>
                 <Button theme={ButtonTheme.OUTLINE}>{t('Читать далее')}</Button>
@@ -95,7 +106,7 @@ export const ArticleListItem = memo(
         </Card>
       </AppLink>
     );
-  }
+  },
 );
 
 ArticleListItem.displayName = 'ArticleListItem';

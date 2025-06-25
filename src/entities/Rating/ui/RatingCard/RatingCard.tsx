@@ -21,7 +21,15 @@ export interface RatingCardProps {
   rate?: number;
 }
 export const RatingCard = memo((props: RatingCardProps) => {
-  const { className, title, feedbackTitle, hasFeedback, rate = 0, onAccept, onCancel } = props;
+  const {
+    className,
+    title,
+    feedbackTitle,
+    hasFeedback,
+    rate = 0,
+    onAccept,
+    onCancel,
+  } = props;
 
   const { t } = useTranslation('translation');
 
@@ -44,7 +52,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
         onAccept?.(selectedStarsCount);
       }
     },
-    [hasFeedback, onAccept]
+    [hasFeedback, onAccept],
   );
 
   const acceptHandle = useCallback(() => {
@@ -71,15 +79,19 @@ export const RatingCard = memo((props: RatingCardProps) => {
 
   return (
     <Card className={className} max data-testid={'RatingCard'}>
-      <VStack align='center' gap='8'>
+      <VStack align="center" gap="8">
         <Text title={starsCount ? t('Спасибо за оценку') : title} />
-        <StarRating selectedStars={starsCount} size={40} onSelect={onSelectStarts} />
+        <StarRating
+          selectedStars={starsCount}
+          size={40}
+          onSelect={onSelectStarts}
+        />
       </VStack>
       <BrowserView>
         <Modal isOpen={isModalOpen} lazy>
-          <VStack max gap='32'>
+          <VStack max gap="32">
             {modalContent}
-            <HStack max gap='16' justify='end'>
+            <HStack max gap="16" justify="end">
               <Button
                 data-testid={'RatingCard.Close'}
                 onClick={cancelHandle}
@@ -96,7 +108,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
       </BrowserView>
       <MobileView>
         <Drawer isOpen={isModalOpen} lazy onClose={cancelHandle}>
-          <VStack gap='32'>
+          <VStack gap="32">
             {modalContent}
             <Button fullWidth onClick={acceptHandle} size={ButtonSize.L}>
               {t('Отправить')}

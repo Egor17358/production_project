@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Avatar } from './Avatar';
-import AvatarImg from '@/shared/assets/tests/testimage.jpeg'
+import AvatarImg from '@/shared/assets/tests/testimage.jpeg';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -31,12 +31,12 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     size: 150,
-    src: AvatarImg
+    src: AvatarImg,
   },
 };
 export const Small: Story = {
   args: {
     size: 50,
-    src: AvatarImg
+    src: AvatarImg,
   },
 };

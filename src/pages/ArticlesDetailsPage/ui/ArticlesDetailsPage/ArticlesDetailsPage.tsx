@@ -44,7 +44,7 @@ const ArticlesDetailsPage = ({ className }: ArticlesDetailsPageProps) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={classNames(cls.ArticlesDetailsPage, {}, [className])}>
-        <VStack gap='16' max>
+        <VStack gap="16" max>
           <ArticleDetailPageHeader />
           {__PROJECT__ === 'storybook' ? null : (
             <>

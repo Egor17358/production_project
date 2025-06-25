@@ -1,4 +1,10 @@
-import { ImgHTMLAttributes, memo, ReactElement, useLayoutEffect, useState } from 'react';
+import {
+  ImgHTMLAttributes,
+  memo,
+  ReactElement,
+  useLayoutEffect,
+  useState,
+} from 'react';
 
 export interface AppImageProps extends ImgHTMLAttributes<HTMLImageElement> {
   className?: string;
@@ -6,20 +12,27 @@ export interface AppImageProps extends ImgHTMLAttributes<HTMLImageElement> {
   errorFallback?: ReactElement;
 }
 export const AppImage = memo((props: AppImageProps) => {
-  const { className, src, alt = 'image', fallback, errorFallback, ...otherProps } = props;
+  const {
+    className,
+    src,
+    alt = 'image',
+    fallback,
+    errorFallback,
+    ...otherProps
+  } = props;
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
 
   useLayoutEffect(() => {
-      const img = new Image();
-      img.src = src ?? '';
-      img.onload = () => {
-        setIsLoading(false);
-      };
-      img.onerror = () => {
-        setIsLoading(false);
-        setHasError(true);
-      };
+    const img = new Image();
+    img.src = src ?? '';
+    img.onload = () => {
+      setIsLoading(false);
+    };
+    img.onerror = () => {
+      setIsLoading(false);
+      setHasError(true);
+    };
     if (__PROJECT__ === 'storybook') {
       setIsLoading(false);
     }

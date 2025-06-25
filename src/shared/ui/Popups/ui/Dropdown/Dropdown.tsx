@@ -24,13 +24,16 @@ export function Dropdown(props: DropdownProps) {
   const { className, items, trigger, direction = 'bottom' } = props;
 
   return (
-    <Menu as={'div'} className={classNames(cls.Dropdown, {}, [className, popupCls.popup])}>
+    <Menu
+      as={'div'}
+      className={classNames(cls.Dropdown, {}, [className, popupCls.popup])}
+    >
       <MenuButton className={popupCls.trigger}>{trigger}</MenuButton>
       <MenuItems anchor={direction} className={cls.menu}>
         {items.map((item, index) => {
           const content = ({ focus }: { focus: boolean }) => (
             <button
-              type='button'
+              type="button"
               disabled={item.disabled}
               onClick={item.onClick}
               className={classNames(cls.item, { [popupCls.active]: focus }, [])}
@@ -52,7 +55,11 @@ export function Dropdown(props: DropdownProps) {
             );
           }
           return (
-            <MenuItem key={'dropdown-key' + index} as={Fragment} disabled={item.disabled}>
+            <MenuItem
+              key={'dropdown-key' + index}
+              as={Fragment}
+              disabled={item.disabled}
+            >
               {content}
             </MenuItem>
           );

@@ -24,14 +24,19 @@ interface TestProviderProps {
 
 export function TestProvider(props: TestProviderProps) {
   const { children, options = {} } = props;
-  const { route = '/', initialState, asyncReducers, theme = Theme.LIGHT } = options;
+  const {
+    route = '/',
+    initialState,
+    asyncReducers,
+    theme = Theme.LIGHT,
+  } = options;
 
   return (
     <MemoryRouter initialEntries={[route]}>
       <StoreProvider asyncReducers={asyncReducers} initialState={initialState}>
         <I18nextProvider i18n={i18n}>
           <ThemeProvider initialTheme={theme}>
-            <div id='rootApp' className={`app ${theme}`}>
+            <div id="rootApp" className={`app ${theme}`}>
               {/* <Story /> */}
               {children}
             </div>
@@ -42,6 +47,9 @@ export function TestProvider(props: TestProviderProps) {
   );
 }
 
-export function ComponentRender(component: ReactNode, options: componentRenderOptions = {}) {
+export function ComponentRender(
+  component: ReactNode,
+  options: componentRenderOptions = {},
+) {
   return render(<TestProvider options={options}>{component}</TestProvider>);
 }

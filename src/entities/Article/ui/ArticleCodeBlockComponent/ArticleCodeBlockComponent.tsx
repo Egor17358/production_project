@@ -14,11 +14,13 @@ export const ArticleCodeBlockComponent = memo(
     // const { t } = useTranslation('translation');
 
     return (
-      <div className={classNames(cls.ArticleCodeBlockComponent, {}, [className])}>
+      <div
+        className={classNames(cls.ArticleCodeBlockComponent, {}, [className])}
+      >
         <Code text={block.code} />
       </div>
     );
-  }
+  },
 );
 
 ArticleCodeBlockComponent.displayName = 'ArticleCodeBlockComponent';

@@ -9,7 +9,7 @@ describe('Sidebar', () => {
   });
 
   test('test toggle', () => {
-    ComponentRender(<Sidebar />)
+    ComponentRender(<Sidebar />);
     const toggleBtn = screen.getByTestId('sidebar-toggle');
 
     expect(screen.getByTestId('sidebar')).toBeInTheDocument();

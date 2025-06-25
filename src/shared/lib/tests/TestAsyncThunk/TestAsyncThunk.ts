@@ -4,7 +4,7 @@ import axios, { AxiosStatic } from 'axios';
 // import { ValidateProfileError } from 'features/editableProfileCard/model/consts/consts';
 
 type ActionCreatorType<Return, Arg, RejectedValue> = (
-  arg: Arg
+  arg: Arg,
 ) => AsyncThunkAction<Return, Arg, { rejectValue: RejectedValue }>;
 
 jest.mock('axios');
@@ -23,7 +23,7 @@ export class TestAsyncThunk<Return, Arg, RejectedValue> {
 
   constructor(
     actionCreator: ActionCreatorType<Return, Arg, RejectedValue>,
-    state?: DeepPartial<StateSchema>
+    state?: DeepPartial<StateSchema>,
   ) {
     this.actionCreator = actionCreator;
     this.dispatch = jest.fn();

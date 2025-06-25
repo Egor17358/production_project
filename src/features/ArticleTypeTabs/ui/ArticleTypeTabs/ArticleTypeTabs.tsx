@@ -11,51 +11,53 @@ export interface ArticleTypeTabsProps {
   value: ArticleType;
   onChangeType: (type: ArticleType) => void;
 }
-export const ArticleTypeTabs = memo(({ className, value, onChangeType }: ArticleTypeTabsProps) => {
-  const { t } = useTranslation('translation');
-  // const dispatch = useAppDispatch();
+export const ArticleTypeTabs = memo(
+  ({ className, value, onChangeType }: ArticleTypeTabsProps) => {
+    const { t } = useTranslation('translation');
+    // const dispatch = useAppDispatch();
 
-  // const fetchData = useCallback(() => {
-  //   dispatch(fetchArticlesList({ replace: true }));
-  // }, [dispatch]);
+    // const fetchData = useCallback(() => {
+    //   dispatch(fetchArticlesList({ replace: true }));
+    // }, [dispatch]);
 
-  const typeTabs = useMemo<TabItem[]>(
-    () => [
-      {
-        value: ArticleType.ALL,
-        content: t('Все статьи'),
-      },
-      {
-        value: ArticleType.ECONOMICS,
-        content: t('Экономика'),
-      },
-      {
-        value: ArticleType.IT,
-        content: t('Айти'),
-      },
-      {
-        value: ArticleType.SCIENCE,
-        content: t('Наука'),
-      },
-    ],
-    [t]
-  );
+    const typeTabs = useMemo<TabItem[]>(
+      () => [
+        {
+          value: ArticleType.ALL,
+          content: t('Все статьи'),
+        },
+        {
+          value: ArticleType.ECONOMICS,
+          content: t('Экономика'),
+        },
+        {
+          value: ArticleType.IT,
+          content: t('Айти'),
+        },
+        {
+          value: ArticleType.SCIENCE,
+          content: t('Наука'),
+        },
+      ],
+      [t],
+    );
 
-  const onTabClick = useCallback(
-    (tab: TabItem) => {
-      onChangeType(tab.value as ArticleType);
-    },
-    [onChangeType]
-  );
+    const onTabClick = useCallback(
+      (tab: TabItem) => {
+        onChangeType(tab.value as ArticleType);
+      },
+      [onChangeType],
+    );
 
-  return (
-    <Tabs
-      onTabClick={onTabClick}
-      tabs={typeTabs}
-      value={value}
-      className={classNames('', {}, [className])}
-    />
-  );
-});
+    return (
+      <Tabs
+        onTabClick={onTabClick}
+        tabs={typeTabs}
+        value={value}
+        className={classNames('', {}, [className])}
+      />
+    );
+  },
+);
 
 ArticleTypeTabs.displayName = 'ArticleTypeTabs';

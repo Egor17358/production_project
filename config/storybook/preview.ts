@@ -29,7 +29,7 @@ const preview: Preview = {
         purple: Theme.PURPLE,
       },
       defaultTheme: 'light',
-      parentSelector: '#rootApp'
+      parentSelector: '#rootApp',
     }),
   ],
 };

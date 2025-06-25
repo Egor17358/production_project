@@ -1,4 +1,8 @@
-import { configureStore, UnknownAction, ReducersMapObject } from '@reduxjs/toolkit';
+import {
+  configureStore,
+  UnknownAction,
+  ReducersMapObject,
+} from '@reduxjs/toolkit';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
 import { CounterReducer } from '@/entities/Counter';
 import { userReducer } from '@/entities/User';
@@ -21,7 +25,7 @@ export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'];
 
 export function createReduxStore(
   initialState?: StateSchema,
-  asyncReducers?: ReducersMapObject<StateSchema>
+  asyncReducers?: ReducersMapObject<StateSchema>,
   // navigate?: (to: To, options?: NavigateOptions)=> void,
   // navigate: (to: To, options?: NavigateOptions)=> void | Promise<void>
 ) {
@@ -44,7 +48,7 @@ export function createReduxStore(
     reducer: reducerManager.reduce as Reducer<StateSchema, UnknownAction>,
     devTools: __IS_DEV__,
     preloadedState: initialState,
-    middleware: getDefaultMiddleware =>
+    middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware({
         thunk: {
           extraArgument: extraArg,

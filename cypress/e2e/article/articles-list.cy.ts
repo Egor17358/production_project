@@ -1,6 +1,6 @@
 describe('Пользователь заходит на страницу со списком статей', () => {
   beforeEach(() => {
-    cy.login('testUser', '123').then(data => {
+    cy.login('testUser', '123').then((data) => {
       cy.visit('articles');
     });
   });

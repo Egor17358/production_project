@@ -19,7 +19,10 @@ describe('profileSlice.test', () => {
   test('test update first', () => {
     const state: DeepPartial<ProfileSchema> = { form: { first: '123' } };
     expect(
-      profileReducer(state as ProfileSchema, profileActions.updateProfile({ first: '321' }))
+      profileReducer(
+        state as ProfileSchema,
+        profileActions.updateProfile({ first: '321' }),
+      ),
     ).toEqual({
       form: {
         first: '321',
@@ -32,7 +35,9 @@ describe('profileSlice.test', () => {
       form: { lastname: '123' },
       data: data,
     };
-    expect(profileReducer(state as ProfileSchema, profileActions.cancelEdit())).toEqual({
+    expect(
+      profileReducer(state as ProfileSchema, profileActions.cancelEdit()),
+    ).toEqual({
       form: data,
       data: data,
       readonly: true,
@@ -42,7 +47,9 @@ describe('profileSlice.test', () => {
 
   test('test setReadonly', () => {
     const state: DeepPartial<ProfileSchema> = { readonly: true };
-    expect(profileReducer(state as ProfileSchema, profileActions.setReadonly(false))).toEqual({
+    expect(
+      profileReducer(state as ProfileSchema, profileActions.setReadonly(false)),
+    ).toEqual({
       readonly: false,
     });
   });
@@ -52,7 +59,9 @@ describe('profileSlice.test', () => {
       isLoading: false,
       validateErrors: [ValidateProfileError.SERVER_ERROR],
     };
-    expect(profileReducer(state as ProfileSchema, updateProfileData.pending(''))).toEqual({
+    expect(
+      profileReducer(state as ProfileSchema, updateProfileData.pending('')),
+    ).toEqual({
       isLoading: true,
       validateErrors: undefined,
     });
@@ -62,7 +71,12 @@ describe('profileSlice.test', () => {
     const state: DeepPartial<ProfileSchema> = {
       isLoading: true,
     };
-    expect(profileReducer(state as ProfileSchema, updateProfileData.fulfilled(data, ''))).toEqual({
+    expect(
+      profileReducer(
+        state as ProfileSchema,
+        updateProfileData.fulfilled(data, ''),
+      ),
+    ).toEqual({
       isLoading: false,
       validateErrors: undefined,
       readonly: true,

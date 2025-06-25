@@ -12,7 +12,6 @@ import { AnchorPropsWithSelection } from '@headlessui/react/dist/internal/floati
 import { HStack } from '../../../Stack';
 import popupCls from '../../styles/popup.module.scss';
 
-
 export interface ListBoxItem {
   value: string;
   content: ReactNode;
@@ -55,8 +54,11 @@ export function ListBox(props: ListBoxProps) {
         <ListboxButton as={Fragment}>
           <Button disabled={readonly}>{value ?? defaultValue}</Button>
         </ListboxButton>
-        <ListboxOptions anchor={direction} className={classNames(cls.options, {}, [])}>
-          {items?.map(item => (
+        <ListboxOptions
+          anchor={direction}
+          className={classNames(cls.options, {}, [])}
+        >
+          {items?.map((item) => (
             <ListboxOption
               key={item.value}
               disabled={item.disabled}

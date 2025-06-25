@@ -1,6 +1,15 @@
-import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import {
+  createEntityAdapter,
+  createSlice,
+  PayloadAction,
+} from '@reduxjs/toolkit';
 import { StateSchema } from '@/app/providers/StoreProvider';
-import { Article, ArticleView, ArticleSortField, ArticleType } from '@/entities/Article';
+import {
+  Article,
+  ArticleView,
+  ArticleSortField,
+  ArticleType,
+} from '@/entities/Article';
 import { ArticlesPageSchema } from '../types/articlesPageSchema';
 import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList';
 import { ARTICLE_VIEW_LOCALSTORAGE_KEY } from '@/shared/const/localstorage';
@@ -14,7 +23,8 @@ const articlesAdapter = createEntityAdapter({
 });
 
 export const getArticles = articlesAdapter.getSelectors<StateSchema>(
-  (state: StateSchema) => state.articlesPage || articlesAdapter.getInitialState()
+  (state: StateSchema) =>
+    state.articlesPage || articlesAdapter.getInitialState(),
 );
 
 const articlePageSlice = createSlice({
@@ -54,14 +64,16 @@ const articlePageSlice = createSlice({
     setType: (state, action: PayloadAction<ArticleType>) => {
       state.type = action.payload;
     },
-    initState: state => {
-      const view = localStorage.getItem(ARTICLE_VIEW_LOCALSTORAGE_KEY) as ArticleView;
+    initState: (state) => {
+      const view = localStorage.getItem(
+        ARTICLE_VIEW_LOCALSTORAGE_KEY,
+      ) as ArticleView;
       state.view = view;
       state.limit = view === ArticleView.BIG ? 4 : 9;
       state._inited = true;
     },
   },
-  extraReducers: builder => {
+  extraReducers: (builder) => {
     builder
       .addCase(fetchArticlesList.pending, (state, action) => {
         state.error = undefined;
@@ -89,4 +101,5 @@ const articlePageSlice = createSlice({
   },
 });
 
-export const { reducer: articlesPageReducer, actions: articlesPageActions } = articlePageSlice;
+export const { reducer: articlesPageReducer, actions: articlesPageActions } =
+  articlePageSlice;

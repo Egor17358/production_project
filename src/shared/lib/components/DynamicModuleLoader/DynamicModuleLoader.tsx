@@ -1,7 +1,11 @@
 import { FC, ReactNode, useEffect } from 'react';
 // import { useAppDispatch } from 'app/providers/StoreProvider/config/store';
 import { useStore } from 'react-redux';
-import { ReduxStoreWithManager, StateSchema, StateSchemaKey } from '@/app/providers/StoreProvider';
+import {
+  ReduxStoreWithManager,
+  StateSchema,
+  StateSchemaKey,
+} from '@/app/providers/StoreProvider';
 import { Reducer } from '@reduxjs/toolkit';
 // import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useAppDispatch } from '../../hooks/useAppDispatch/useAppDispatch';
@@ -18,7 +22,7 @@ export interface DynamicModuleLoaderProps {
   // className?: string
 }
 
-export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = props => {
+export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
   const { children, reducers, removeAfterUnmount = true } = props;
   const store = useStore() as ReduxStoreWithManager;
   const dispatch = useAppDispatch();

@@ -1,10 +1,17 @@
 import { ComponentRender } from '@/shared/lib/tests/componentRender/componentRender';
 import AppRouter from './AppRouter';
-import { getRouteAbout, getRouteAdmin, getRouteProfile } from '@/shared/const/router';
+import {
+  getRouteAbout,
+  getRouteAdmin,
+  getRouteProfile,
+} from '@/shared/const/router';
 import { screen } from '@testing-library/react';
 import { UserRole } from '@/entities/User';
 
-type ResizeObserverCallback = (entries: ResizeObserverEntry[], observer: ResizeObserver) => void;
+type ResizeObserverCallback = (
+  entries: ResizeObserverEntry[],
+  observer: ResizeObserver,
+) => void;
 
 class ResizeObserver {
   private callback: ResizeObserverCallback;

@@ -33,8 +33,8 @@ export const Light: Story = {
 Light.decorators = [StoreDecorator];
 Light.parameters = {
   state: {
-    user: {authData: {}}
-  }
+    user: { authData: {} },
+  },
 };
 
 export const Dark: Story = {
@@ -44,10 +44,9 @@ Dark.decorators = [ThemeDecorator, StoreDecorator];
 Dark.parameters = {
   theme: Theme.DARK,
   state: {
-    user: {authData: {}}
-  }
+    user: { authData: {} },
+  },
 };
-
 
 export const NoAuth: Story = {
   args: {},
@@ -55,6 +54,6 @@ export const NoAuth: Story = {
 NoAuth.decorators = [StoreDecorator];
 NoAuth.parameters = {
   state: {
-    user: {}
-  }
+    user: {},
+  },
 };

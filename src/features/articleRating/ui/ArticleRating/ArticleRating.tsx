@@ -1,7 +1,10 @@
 import { RatingCard } from '@/entities/Rating';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useGetArticleRatings, useRateArticle } from '../../api/articleRatingApi';
+import {
+  useGetArticleRatings,
+  useRateArticle,
+} from '../../api/articleRatingApi';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from '@/entities/User';
 import { Skeleton } from '@/shared/ui/Skeleton';
@@ -15,7 +18,10 @@ const ArticleRating = memo(({ className, articleId }: ArticleRatingProps) => {
   const { t } = useTranslation('translation');
   const userData = useSelector(getUserAuthData);
 
-  const { data, isLoading } = useGetArticleRatings({ userId: userData?.id ?? '', articleId });
+  const { data, isLoading } = useGetArticleRatings({
+    userId: userData?.id ?? '',
+    articleId,
+  });
 
   const [rateArticleMutation] = useRateArticle();
 
@@ -32,21 +38,21 @@ const ArticleRating = memo(({ className, articleId }: ArticleRatingProps) => {
         console.log(error);
       }
     },
-    [articleId, rateArticleMutation, userData?.id]
+    [articleId, rateArticleMutation, userData?.id],
   );
 
   const onCancel = useCallback(
     (starsCount: number) => {
       handleRateArticle(starsCount);
     },
-    [handleRateArticle]
+    [handleRateArticle],
   );
 
   const onAccept = useCallback(
     (starsCount: number, feedback?: string) => {
       handleRateArticle(starsCount, feedback);
     },
-    [handleRateArticle]
+    [handleRateArticle],
   );
 
   if (isLoading && __PROJECT__ !== 'storybook') {

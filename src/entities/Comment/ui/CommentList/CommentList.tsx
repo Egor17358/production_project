@@ -11,34 +11,36 @@ export interface CommentListProps {
   comments?: CommentType[];
   isLoading?: boolean;
 }
-export const CommentList = memo(({ className, comments, isLoading }: CommentListProps) => {
-  const { t } = useTranslation('translation');
+export const CommentList = memo(
+  ({ className, comments, isLoading }: CommentListProps) => {
+    const { t } = useTranslation('translation');
 
-  if (isLoading) {
+    if (isLoading) {
+      return (
+        <VStack gap="16" max className={classNames('', {}, [className])}>
+          <CommentCard isLoading />
+          <CommentCard isLoading />
+          <CommentCard isLoading />
+        </VStack>
+      );
+    }
+
     return (
-      <VStack gap='16' max className={classNames('', {}, [className])}>
-        <CommentCard isLoading />
-        <CommentCard isLoading />
-        <CommentCard isLoading />
+      <VStack gap="16" max className={classNames('', {}, [className])}>
+        {comments?.length ? (
+          comments.map((comment) => (
+            <CommentCard
+              key={comment.id}
+              comment={comment}
+              isLoading={isLoading}
+            />
+          ))
+        ) : (
+          <Text text={t('Комментарии отсутствуют')} />
+        )}
       </VStack>
     );
-  }
-
-  return (
-    <VStack gap='16' max className={classNames('', {}, [className])}>
-      {comments?.length ? (
-        comments.map((comment) => (
-          <CommentCard
-            key={comment.id}
-            comment={comment}
-            isLoading={isLoading}
-          />
-        ))
-      ) : (
-        <Text text={t('Комментарии отсутствуют')} />
-      )}
-    </VStack>
-  );
-});
+  },
+);
 
 CommentList.displayName = 'CommentList';

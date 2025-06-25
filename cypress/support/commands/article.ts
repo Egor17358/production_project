@@ -20,7 +20,7 @@ export const createArticle = (article?: Article) => {
       headers: { Authorization: 'ddd' },
       body: article ?? defaultArticle,
     })
-    .then(resp => resp.body);
+    .then((resp) => resp.body);
 };
 
 export const removeArticle = (articleId: string) => {

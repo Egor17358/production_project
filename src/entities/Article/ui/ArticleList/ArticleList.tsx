@@ -20,11 +20,19 @@ export interface ArticleListProps {
 const getSkeletons = (view: ArticleView) => {
   return new Array(view === ArticleView.SMALL ? 9 : 3)
     .fill(0)
-    .map((item, index) => <ArticleListItemSkeleton className={cls.card} key={index} view={view} />);
+    .map((item, index) => (
+      <ArticleListItemSkeleton className={cls.card} key={index} view={view} />
+    ));
 };
 
 export const ArticleList = memo((props: ArticleListProps) => {
-  const { className, articles, isLoading, view = ArticleView.SMALL, target } = props;
+  const {
+    className,
+    articles,
+    isLoading,
+    view = ArticleView.SMALL,
+    target,
+  } = props;
   const { t } = useTranslation('translation');
 
   // const rowRender = ({ index, isScrolling, isVisible, key, style }: ListRowProps) => {
@@ -80,7 +88,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
       data-testid={'ArticleList'}
       className={classNames(cls.ArticleList, {}, [className, cls[view]])}
     >
-      {articles.map(item => (
+      {articles.map((item) => (
         <ArticleListItem
           article={item}
           view={view}

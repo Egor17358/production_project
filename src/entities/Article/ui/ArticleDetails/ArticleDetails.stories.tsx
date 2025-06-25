@@ -6,7 +6,10 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { Theme } from '@/shared/const/theme';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Article } from '../../model/types/article';
-import { ArticleBlockType, ArticleType } from '../../model/consts/articleConsts';
+import {
+  ArticleBlockType,
+  ArticleType,
+} from '../../model/consts/articleConsts';
 import AvatarImg from '@/shared/assets/tests/testimage.jpeg';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -41,7 +44,8 @@ const article: Article = {
   user: {
     id: '1',
     username: 'admin',
-    avatar: 'https://i.pinimg.com/736x/88/69/de/8869de3990901fc40f8f74a93c18aaff.jpg',
+    avatar:
+      'https://i.pinimg.com/736x/88/69/de/8869de3990901fc40f8f74a93c18aaff.jpg',
   },
   blocks: [
     {
