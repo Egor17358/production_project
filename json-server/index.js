@@ -4,6 +4,12 @@ const fs = require('fs');
 const jsonServer = require('json-server');
 // const jwt = require('jsonwebtoken')
 const path = require('path');
+const https = require('https');
+
+const options = {
+  key: fs.readFileSync(path.resolve(__dirname, 'key.pem')),
+  cert: fs.readFileSync(path.resolve(__dirname, 'cert.pem')),
+};
 
 const server = jsonServer.create();
 const router = jsonServer.router(path.resolve(__dirname, 'db.json'));
@@ -54,6 +60,8 @@ server.use((req, res, next) => {
 
 server.use(router);
 
-server.listen(8000, () => {
-  console.log('JSON Server is running 8000');
+const httpsServer = https.createServer(options, server);
+
+httpsServer.listen(443, () => {
+  console.log('JSON Server is running 443');
 });
