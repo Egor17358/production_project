@@ -7,7 +7,7 @@ const path = require('path');
 const https = require('https');
 
 const options = {
-  pfx: fs.readFileSync('test_cert.pfx'),
+  pfx: fs.readFileSync(path.resolve(__dirname, 'test_cert.pfx')),
   passphrase: 'sample',
 };
 
