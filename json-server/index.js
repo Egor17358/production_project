@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
 /* eslint-disable no-undef */
-const fs = require('fs');
+const fs = require('node:fs');
 const jsonServer = require('json-server');
 // const jwt = require('jsonwebtoken')
 const path = require('path');
-const https = require('https');
+const https = require('node:https');
 
 const options = {
-  pfx: fs.readFileSync(path.resolve(__dirname, 'test_cert.pfx')),
-  passphrase: 'sample',
+  key: fs.readFileSync(path.resolve(__dirname, 'private-key.pem')),
+  cert: fs.readFileSync(path.resolve(__dirname, 'certificate.pem')),
 };
 
 const server = jsonServer.create();
