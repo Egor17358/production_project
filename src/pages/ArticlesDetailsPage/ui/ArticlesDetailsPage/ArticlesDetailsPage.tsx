@@ -15,6 +15,7 @@ import { VStack } from '@/shared/ui/Stack';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleRating } from '@/features/articleRating';
+import { getFeatureFlag } from '@/shared/lib/features';
 
 export interface ArticlesDetailsPageProps {
   className?: string;
@@ -28,7 +29,7 @@ const ArticlesDetailsPage = ({ className }: ArticlesDetailsPageProps) => {
   // const { t } = useTranslation('article-details');
 
   const { id } = useParams<{ id: string }>();
-
+  const isArticleRatingEnabled = getFeatureFlag('isArticleRatingEnabled');
   // if (!id || (!id && __PROJECT__ !== 'storybook')) {
   //   return (
   //     <Page className={classNames(cls.ArticlesDetailsPage, {}, [className])}>
@@ -49,7 +50,7 @@ const ArticlesDetailsPage = ({ className }: ArticlesDetailsPageProps) => {
           {__PROJECT__ === 'storybook' ? null : (
             <>
               <ArticleDetails id={id} />
-              <ArticleRating articleId={id} />
+              {isArticleRatingEnabled && <ArticleRating articleId={id} />}
               <ArticleRecommendationsList />
             </>
           )}
