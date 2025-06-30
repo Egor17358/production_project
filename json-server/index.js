@@ -5,10 +5,12 @@ const jsonServer = require('json-server');
 // const jwt = require('jsonwebtoken')
 const path = require('path');
 const https = require('node:https');
+const cors = require('cors');
 
 const options = {
-  key: fs.readFileSync(path.resolve(__dirname, 'private-key.pem')),
-  cert: fs.readFileSync(path.resolve(__dirname, 'certificate.pem')),
+  key: fs.readFileSync('/etc/letsencrypt/live/egor17358project.ru/privkey.pem'),
+  // eslint-disable-next-line prettier/prettier
+  cert: fs.readFileSync('/etc/letsencrypt/live/egor17358project.ru/fullchain.pem'),
 };
 
 const server = jsonServer.create();
@@ -59,6 +61,15 @@ server.use((req, res, next) => {
 });
 
 server.use(router);
+
+server.use(
+  cors({
+    origin: '*',
+    credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  }),
+);
 
 const httpsServer = https.createServer(options, server);
 
