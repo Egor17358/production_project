@@ -5,12 +5,13 @@ const jsonServer = require('json-server');
 // const jwt = require('jsonwebtoken')
 const path = require('path');
 const https = require('node:https');
+const http = require('node:http');
 const cors = require('cors');
 
 const options = {
-  key: fs.readFileSync('/etc/letsencrypt/live/egor17358project.ru/privkey.pem'),
+  key: fs.readFileSync('./egor17358project.ru/privkey.pem'),
   // eslint-disable-next-line prettier/prettier
-  cert: fs.readFileSync('/etc/letsencrypt/live/egor17358project.ru/fullchain.pem'),
+  cert: fs.readFileSync('./egor17358project.ru/fullchain.pem'),
 };
 
 const server = jsonServer.create();
@@ -72,8 +73,15 @@ server.use(
 );
 
 const httpsServer = https.createServer(options, server);
+const httpServer = http.createServer(server);
 
 const PORT = 8443;
+const HTTP_PORT = 8000;
+
 httpsServer.listen(PORT, () => {
   console.log(`JSON Server is running ${PORT}`);
+});
+
+httpServer.listen(HTTP_PORT, () => {
+  console.log(`JSON Server is running ${HTTP_PORT}`);
 });
