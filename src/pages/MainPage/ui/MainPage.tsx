@@ -13,7 +13,7 @@ const MainPage = () => {
       <BugButton />
       {t('Главная страница')}
       <VStack>
-        <div>{'12312'}</div>
+        <div>{'test message'}</div>
         <ListBox
           defaultValue="Выберите значение"
           onChange={() => {}}
