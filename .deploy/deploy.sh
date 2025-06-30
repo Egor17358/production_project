@@ -1,5 +1,5 @@
 cd ~/../opt/production_project/
-npm run build:prod mode=production apiUrl=https://egor17358project.ru/api
+npm run build:prod mode=production
 
 rm -rf ../../var/www/production_project/html
 mv build ../../var/www/production_project/html
