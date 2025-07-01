@@ -8,11 +8,14 @@ const https = require('node:https');
 const http = require('node:http');
 const cors = require('cors');
 
-const options = {
-  key: fs.readFileSync('./egor17358project.ru/privkey.pem'),
-  // eslint-disable-next-line prettier/prettier
-  cert: fs.readFileSync('./egor17358project.ru/fullchain.pem'),
-};
+const options = {};
+
+try {
+  options.key = fs.readFileSync('./egor17358project.ru/privkey.pem');
+  options.cert = fs.readFileSync('./egor17358project.ru/fullchain.pem');
+} catch (error) {
+  console.log('error sert');
+}
 
 const server = jsonServer.create();
 const router = jsonServer.router(path.resolve(__dirname, 'db.json'));

@@ -15,7 +15,11 @@ import { VStack } from '@/shared/ui/Stack';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleRating } from '@/features/articleRating';
-import { getFeatureFlag } from '@/shared/lib/features';
+import {
+  // getFeatureFlag,
+  toggleFeatures,
+} from '@/shared/lib/features';
+import { Card } from '@/shared/ui/Card';
 
 export interface ArticlesDetailsPageProps {
   className?: string;
@@ -29,7 +33,7 @@ const ArticlesDetailsPage = ({ className }: ArticlesDetailsPageProps) => {
   // const { t } = useTranslation('article-details');
 
   const { id } = useParams<{ id: string }>();
-  const isArticleRatingEnabled = getFeatureFlag('isArticleRatingEnabled');
+  // const isArticleRatingEnabled = getFeatureFlag('isArticleRatingEnabled');
   // if (!id || (!id && __PROJECT__ !== 'storybook')) {
   //   return (
   //     <Page className={classNames(cls.ArticlesDetailsPage, {}, [className])}>
@@ -41,6 +45,11 @@ const ArticlesDetailsPage = ({ className }: ArticlesDetailsPageProps) => {
   if (!id) {
     return null;
   }
+  const articleRatingCard = toggleFeatures({
+    name: 'isArticleRatingEnabled',
+    on: () => <ArticleRating articleId={id} />,
+    off: () => <Card>{'Оценка статей скоро появится'}</Card>,
+  });
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
@@ -50,7 +59,8 @@ const ArticlesDetailsPage = ({ className }: ArticlesDetailsPageProps) => {
           {__PROJECT__ === 'storybook' ? null : (
             <>
               <ArticleDetails id={id} />
-              {isArticleRatingEnabled && <ArticleRating articleId={id} />}
+              {articleRatingCard}
+              {/* {isArticleRatingEnabled && <ArticleRating articleId={id} />} */}
               <ArticleRecommendationsList />
             </>
           )}
