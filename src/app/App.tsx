@@ -7,21 +7,25 @@ import { Sidebar } from '@/widgets/Sidebar';
 import { useSelector } from 'react-redux';
 import { getUserInited } from '@/entities/User';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
-import { useUserActions } from '@/entities/User';
+import { initAuthData } from '@/entities/User';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { PageLoader } from '@/widgets/PageLoader';
 // import { t } from 'i18next';
 // import { useTranslation } from 'react-i18next';
 
 const App = () => {
   const { theme } = useTheme();
 
-  // const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const inited = useSelector(getUserInited);
 
-  const { initAuthData } = useUserActions();
-
   useEffect(() => {
-    initAuthData();
-  }, [initAuthData]);
+    dispatch(initAuthData());
+  }, [dispatch]);
+
+  if (!inited) {
+    return <PageLoader />;
+  }
   // const { t } = useTranslation('translation');
   return (
     <div className={classNames('app', {}, [theme])}>
