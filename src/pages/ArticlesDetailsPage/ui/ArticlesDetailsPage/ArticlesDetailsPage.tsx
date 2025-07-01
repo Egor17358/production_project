@@ -16,8 +16,9 @@ import { ArticleRecommendationsList } from '@/features/articleRecommendationsLis
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleRating } from '@/features/articleRating';
 import {
+  ToggleFeatures,
   // getFeatureFlag,
-  toggleFeatures,
+  // toggleFeatures,
 } from '@/shared/lib/features';
 import { Card } from '@/shared/ui/Card';
 
@@ -45,11 +46,11 @@ const ArticlesDetailsPage = ({ className }: ArticlesDetailsPageProps) => {
   if (!id) {
     return null;
   }
-  const articleRatingCard = toggleFeatures({
-    name: 'isArticleRatingEnabled',
-    on: () => <ArticleRating articleId={id} />,
-    off: () => <Card>{'Оценка статей скоро появится'}</Card>,
-  });
+  // const articleRatingCard = toggleFeatures({
+  //   name: 'isArticleRatingEnabled',
+  //   on: () => <ArticleRating articleId={id} />,
+  //   off: () => <Card>{'Оценка статей скоро появится'}</Card>,
+  // });
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
@@ -59,7 +60,12 @@ const ArticlesDetailsPage = ({ className }: ArticlesDetailsPageProps) => {
           {__PROJECT__ === 'storybook' ? null : (
             <>
               <ArticleDetails id={id} />
-              {articleRatingCard}
+              <ToggleFeatures
+                feature={'isArticleRatingEnabled'}
+                on={<ArticleRating articleId={id} />}
+                off={<Card>{'Оценка статей скоро появится'}</Card>}
+              />
+              {/* {articleRatingCard} */}
               {/* {isArticleRatingEnabled && <ArticleRating articleId={id} />} */}
               <ArticleRecommendationsList />
             </>
