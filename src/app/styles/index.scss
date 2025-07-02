@@ -4,14 +4,11 @@
 @use 'themes/normal' as normal;
 @use 'themes/purple.scss' as purple;
 
-body {
-  font: var(--font-m);
-  color: var(--primary-color);
-}
-
 .app {
   background: var(--bg-color);
   min-height: 100vh;
+  font: var(--font-m);
+  color: var(--primary-color);
   // &.dark {
   //   background-color: dark.$bg-color;
   //   color: dark.$primary-color;
@@ -20,6 +17,13 @@ body {
   //   background-color: normal.$bg-color;
   //   color: normal.$primary-color;
   // }
+}
+
+.app_redesigned {
+  background: var(--bg-redesigned);
+  min-height: 100vh;
+  font: var(--font-m-redesigned);
+  color: var(--text-redesigned);
 }
 
 .content-page {
