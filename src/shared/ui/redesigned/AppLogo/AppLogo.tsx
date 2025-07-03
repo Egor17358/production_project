@@ -1,16 +1,14 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './AppLogo.module.scss';
 import UserIcon from '../../../assets/icons/user-filled.svg';
-import { HStack } from '../Stack';
+import { HStack } from '../../deprecated/Stack';
 
 export interface AppLogoProps {
   className?: string;
+  size?: number;
 }
-/**
- * Устарел, используем компоненты из папки redesigned
- * @deprecated
- */
-export const AppLogo = ({ className }: AppLogoProps) => {
+
+export const AppLogo = ({ className, size = 50 }: AppLogoProps) => {
   return (
     <HStack
       max
@@ -19,7 +17,12 @@ export const AppLogo = ({ className }: AppLogoProps) => {
     >
       <div className={cls.gradientBig}></div>
       <div className={cls.gradientSmall}></div>
-      <UserIcon className={cls.appLogo} />
+      <UserIcon
+        width={size}
+        height={size}
+        color={'black'}
+        className={cls.appLogo}
+      />
     </HStack>
   );
 };

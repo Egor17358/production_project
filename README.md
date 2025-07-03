@@ -148,20 +148,21 @@ yarn start:dev или yarn start:dev:vite - запуск сервера + fronte
 
 Разрешено использование feature flags только с помощью хелпера toggleFeatures
 
-в него передается объект с опциями 
+в него передается объект с опциями
 
 {
-   name: название фича-флага, 
-   on: функция, которая отработает после Включения фичи 
-   off: функция, которая отработает после ВЫключения фичи
+name: название фича-флага,
+on: функция, которая отработает после Включения фичи
+off: функция, которая отработает после ВЫключения фичи
 }
 
 Для автоматического удаления фичи использовать скрипт remove-feature.ts,
 который принимает 2 аргумента
+
 1. Название удаляемого фича-флага
 2. Состояние (on\off)
 
-----
+---
 
 ## Сущности (entities)
 
@@ -184,7 +185,7 @@ yarn start:dev или yarn start:dev:vite - запуск сервера + fronte
 - [AuthByUsername](/src/features/AuthByUsername)
 - [avatarDropdown](/src/features/avatarDropdown)
 - [editableProfileCard](/src/features/editableProfileCard)
-- [LangSwitcher](/src/features/LangSwithcer)
+- [LangSwitcher](/src/features/LangSwitcher)
 - [notificationButton](/src/features/notificationButton)
 - [profileRating](/src/features/profileRating)
 - [ThemeSwitcher](/src/features/ThemeSwitcher)
