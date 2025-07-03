@@ -1,9 +1,9 @@
 // import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-// import { Select } from '@/shared/ui/Select/Select';
+// import { Select } from '@/shared/ui/deprecated/Select/Select';
 import { Country } from '../../model/types/country';
 import { memo, useCallback } from 'react';
-import { ListBox } from '@/shared/ui/Popups';
+import { ListBox } from '@/shared/ui/deprecated/Popups';
 // import {Counter} from '@/entities/Counter/ui/Counter'
 
 export interface CountrySelectProps {

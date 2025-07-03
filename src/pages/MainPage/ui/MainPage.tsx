@@ -1,8 +1,8 @@
 // eslint-disable-next-line my-plugin-test-for-me/layer-imports
 import { BugButton } from '@/app/providers/ErrorBoundary';
 import { useTranslation } from 'react-i18next';
-import { ListBox } from '@/shared/ui/Popups';
-import { VStack } from '@/shared/ui/Stack';
+import { ListBox } from '@/shared/ui/deprecated/Popups';
+import { VStack } from '@/shared/ui/deprecated/Stack';
 import { Page } from '@/widgets/Page';
 
 const MainPage = () => {

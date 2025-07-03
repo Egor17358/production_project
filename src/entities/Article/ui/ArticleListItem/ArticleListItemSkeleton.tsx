@@ -7,14 +7,14 @@ import {
   // ArticleBlockType,
   ArticleView,
 } from '../../model/consts/articleConsts';
-// import { Text } from '@/shared/ui/Text/Text';
-// import { Icon } from '@/shared/ui/Icon/Icon';
+// import { Text } from '@/shared/ui/deprecated/Text/Text';
+// import { Icon } from '@/shared/ui/deprecated/Icon/Icon';
 // import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
-import { Card } from '@/shared/ui/Card';
-// import { Avatar } from '@/shared/ui/Avatar/Avatar';
-// import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
+import { Card } from '@/shared/ui/deprecated/Card';
+// import { Avatar } from '@/shared/ui/deprecated/Avatar/Avatar';
+// import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button/Button';
 // import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
-import { Skeleton } from '@/shared/ui/Skeleton';
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
 
 export interface ArticleListItemSkeletonProps {
   className?: string;
