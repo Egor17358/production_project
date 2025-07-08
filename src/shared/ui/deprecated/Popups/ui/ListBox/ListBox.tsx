@@ -9,7 +9,7 @@ import { Fragment, ReactNode } from 'react';
 import cls from './ListBox.module.scss';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AnchorPropsWithSelection } from '@headlessui/react/dist/internal/floating';
-import { HStack } from '../../../Stack';
+import { HStack } from '../../../../redesigned/Stack';
 import popupCls from '../../styles/popup.module.scss';
 
 export interface ListBoxItem {

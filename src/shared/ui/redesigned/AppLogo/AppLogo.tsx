@@ -1,7 +1,7 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './AppLogo.module.scss';
 import UserIcon from '../../../assets/icons/user-filled.svg';
-import { HStack } from '../../deprecated/Stack';
+import { HStack } from '../Stack';
 
 export interface AppLogoProps {
   className?: string;

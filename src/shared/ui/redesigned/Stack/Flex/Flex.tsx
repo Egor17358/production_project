@@ -45,10 +45,7 @@ export interface FlexProps extends DivProps {
   gap?: FlexGap;
   max?: boolean;
 }
-/**
- * Устарел, используем компоненты из папки redesigned
- * @deprecated
- */
+
 export const Flex = memo((props: FlexProps) => {
   const {
     className,

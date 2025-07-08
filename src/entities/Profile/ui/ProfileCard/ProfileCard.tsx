@@ -10,7 +10,7 @@ import { Currency } from '@/entities/Currency';
 import { CurrencySelect } from '@/entities/Currency';
 import { Country } from '@/entities/Country';
 import { CountrySelect } from '@/entities/Country';
-import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 
 export interface ProfileCardProps {
   className?: string;

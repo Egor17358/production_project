@@ -19,7 +19,7 @@ import {
   getAddCommentFormText,
   // getAddCommentFormError,
 } from '../../model/selectors/addCommentFormSelectors';
-import { HStack } from '@/shared/ui/deprecated/Stack';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 
 export interface AddCommentFormProps {
   className?: string;

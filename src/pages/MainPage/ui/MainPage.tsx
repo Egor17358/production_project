@@ -2,7 +2,7 @@
 import { BugButton } from '@/app/providers/ErrorBoundary';
 import { useTranslation } from 'react-i18next';
 import { ListBox } from '@/shared/ui/deprecated/Popups';
-import { VStack } from '@/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Page } from '@/widgets/Page';
 
 const MainPage = () => {

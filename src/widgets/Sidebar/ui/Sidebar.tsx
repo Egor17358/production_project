@@ -5,7 +5,7 @@ import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { geSidebarItems } from '../model/selectors/getSidebarItems';
 import { Sidebaritem } from './Sidebaritem/Sidebaritem';
 import { useSelector } from 'react-redux';
-import { VStack } from '@/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import { LangSwitcher } from '@/features/LangSwitcher';
 import { ToggleFeatures } from '@/shared/lib/features';
