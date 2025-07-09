@@ -59,7 +59,7 @@ export const AvatarDropdown = ({ className }: AvatarDropdownProps) => {
       on={
         <Dropdown
           className={classNames(cls.AvatarDropdown, {}, [className])}
-          direction={'bottom end'}
+          direction={'bottom left'}
           items={items}
           trigger={<Avatar size={40} src={authData.avatar} />}
         />

@@ -1,35 +1,38 @@
 import {
-  Button,
+  // Button,
   Listbox as HListBox,
   ListboxButton,
   ListboxOption,
   ListboxOptions,
 } from '@headlessui/react';
-import { Fragment, ReactNode } from 'react';
+import { Fragment, ReactNode, useMemo } from 'react';
 import cls from './ListBox.module.scss';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { AnchorPropsWithSelection } from '@headlessui/react/dist/internal/floating';
+// import { AnchorPropsWithSelection } from '@headlessui/react/dist/internal/floating';
 import { HStack } from '../../../../redesigned/Stack';
 import popupCls from '../../styles/popup.module.scss';
+import { Button } from '../../../Button';
+import { mapDirectionClass } from '../../styles/consts';
+import { DropdownDirection } from '@/shared/types/ui';
 
-export interface ListBoxItem {
+export interface ListBoxItem<T extends string> {
   value: string;
   content: ReactNode;
   disabled?: boolean;
 }
 
-interface ListBoxProps {
-  items?: ListBoxItem[];
+interface ListBoxProps<T extends string> {
+  items?: ListBoxItem<T>[];
   className?: string;
-  value?: string;
+  value?: T;
   defaultValue?: string;
-  onChange?: (value: string) => void;
+  onChange?: (value: T) => void;
   readonly?: boolean;
-  direction?: AnchorPropsWithSelection;
+  direction?: DropdownDirection;
   label?: string;
 }
 
-export function ListBox(props: ListBoxProps) {
+export function ListBox<T extends string>(props: ListBoxProps<T>) {
   const {
     items,
     className,
@@ -37,9 +40,15 @@ export function ListBox(props: ListBoxProps) {
     defaultValue,
     onChange,
     readonly,
-    direction = 'bottom',
+    direction = 'bottom right',
     label,
   } = props;
+
+  const optionsClasses = [mapDirectionClass[direction], popupCls.menu];
+
+  const selectedItem = useMemo(() => {
+    return items?.find((item) => item.value === value);
+  }, [items, value]);
 
   return (
     <HStack gap={'4'}>
@@ -52,12 +61,11 @@ export function ListBox(props: ListBoxProps) {
         onChange={onChange}
       >
         <ListboxButton as={Fragment}>
-          <Button disabled={readonly}>{value ?? defaultValue}</Button>
+          <Button variant="filled" disabled={readonly}>
+            {selectedItem?.content ?? defaultValue}
+          </Button>
         </ListboxButton>
-        <ListboxOptions
-          anchor={direction}
-          className={classNames(cls.options, {}, [popupCls.menu])}
-        >
+        <ListboxOptions className={classNames(cls.options, {}, optionsClasses)}>
           {items?.map((item) => (
             <ListboxOption
               key={item.value}
@@ -70,9 +78,10 @@ export function ListBox(props: ListBoxProps) {
                   className={classNames(cls.item, {
                     [popupCls.active]: focus,
                     [popupCls.disabled]: item.disabled,
+                    [popupCls.selected]: selected,
                   })}
                 >
-                  {selected && '!!!'}
+                  {selected}
                   {item.content}
                 </li>
               )}

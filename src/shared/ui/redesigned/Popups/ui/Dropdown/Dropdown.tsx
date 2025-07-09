@@ -2,9 +2,11 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
 import cls from './Dropdown.module.scss';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Fragment, ReactNode } from 'react';
-import { AnchorProps } from '@headlessui/react/dist/internal/floating';
+// import { AnchorProps } from '@headlessui/react/dist/internal/floating';
 import { AppLink } from '../../../AppLink/AppLink';
 import popupCls from '../../styles/popup.module.scss';
+import { DropdownDirection } from '@/shared/types/ui';
+import { mapDirectionClass } from '../../styles/consts';
 
 export interface DropdownItem {
   disabled?: boolean;
@@ -17,11 +19,13 @@ interface DropdownProps {
   className?: string;
   items: DropdownItem[];
   trigger: ReactNode;
-  direction?: AnchorProps;
+  direction?: DropdownDirection;
 }
 
 export function Dropdown(props: DropdownProps) {
-  const { className, items, trigger, direction = 'bottom' } = props;
+  const { className, items, trigger, direction = 'bottom right' } = props;
+
+  const menuClasses = [mapDirectionClass[direction], popupCls.menu];
 
   return (
     <Menu
@@ -30,8 +34,8 @@ export function Dropdown(props: DropdownProps) {
     >
       <MenuButton className={popupCls.trigger}>{trigger}</MenuButton>
       <MenuItems
-        anchor={direction}
-        className={classNames(cls.menu, {}, [popupCls.menu])}
+        // anchor={direction}
+        className={classNames(cls.menu, {}, menuClasses)}
       >
         {items.map((item, index) => {
           const content = ({ focus }: { focus: boolean }) => (

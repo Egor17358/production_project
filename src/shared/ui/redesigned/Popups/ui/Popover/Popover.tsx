@@ -6,18 +6,21 @@ import {
   PopoverPanel,
 } from '@headlessui/react';
 import { ReactNode } from 'react';
-import { AnchorProps } from '@headlessui/react/dist/internal/floating';
 import popupCls from '../../styles/popup.module.scss';
+import { mapDirectionClass } from '../../styles/consts';
+import { DropdownDirection } from '@/shared/types/ui';
 
 export interface PopoverProps {
   className?: string;
   trigger: ReactNode;
-  direction?: AnchorProps;
+  direction?: DropdownDirection;
   children: ReactNode;
 }
 
 export function Popover(props: PopoverProps) {
-  const { className, trigger, direction = 'bottom', children } = props;
+  const { className, trigger, direction = 'bottom right', children } = props;
+
+  const menuClasses = [mapDirectionClass[direction], popupCls.menu];
 
   return (
     <HPopover
@@ -27,12 +30,8 @@ export function Popover(props: PopoverProps) {
         {trigger}
       </PopoverButton>
       <PopoverPanel
-        anchor={direction}
-        className={classNames(cls.panel, {}, [
-          className,
-          // popupCls.popup,
-          popupCls.menu,
-        ])}
+        // anchor={direction}
+        className={classNames(cls.panel, {}, menuClasses)}
       >
         {children}
       </PopoverPanel>

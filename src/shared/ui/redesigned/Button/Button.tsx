@@ -3,7 +3,7 @@ import cls from './Button.module.scss';
 import { ButtonHTMLAttributes, FC, memo, ReactNode } from 'react';
 import { TestProps } from '@/shared/types/testProps';
 
-export type ButtonVariant = 'clear' | 'outline';
+export type ButtonVariant = 'clear' | 'outline' | 'filled';
 
 export type ButtonSize = 'm' | 'l' | 'xl';
 
