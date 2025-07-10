@@ -3,7 +3,8 @@ import cls from './Input.module.scss';
 import React, {
   InputHTMLAttributes,
   memo,
-  MutableRefObject,
+  ReactNode,
+  // MutableRefObject,
   useEffect,
   useRef,
   useState,
@@ -20,6 +21,8 @@ export interface InputProps extends HTMLInputProps {
   onChange?: (value: string) => void;
   autofocus?: boolean;
   readonly?: boolean;
+  addonLeft?: ReactNode;
+  addonRight?: ReactNode;
 }
 
 export const Input = memo((props: InputProps) => {
@@ -31,15 +34,14 @@ export const Input = memo((props: InputProps) => {
     placeholder,
     autofocus,
     readonly,
+    addonLeft,
+    addonRight,
     ...otherProps
   } = props;
 
-  const ref = useRef<HTMLInputElement>() as MutableRefObject<HTMLInputElement>;
+  const ref = useRef<HTMLInputElement>(null);
 
   const [isFocused, setIsFocused] = useState(false);
-  const [caretPosition, setCaretPosition] = useState(0);
-
-  const isCaretVisible = isFocused && !readonly;
 
   useEffect(() => {
     if (autofocus) {
@@ -52,7 +54,6 @@ export const Input = memo((props: InputProps) => {
 
   const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     onChange?.(event.target.value);
-    setCaretPosition(event.target.value.length);
   };
 
   const onBlur = () => {
@@ -63,45 +64,29 @@ export const Input = memo((props: InputProps) => {
     setIsFocused(true);
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const onSelect = (e: any) => {
-    setCaretPosition(e?.target?.selectionStart || 0);
-  };
-
   const mods: Mods = {
     [cls.readonly]: readonly,
+    [cls.focused]: isFocused,
+    [cls.withAddonLeft]: Boolean(addonLeft),
+    [cls.withAddonRight]: Boolean(addonRight),
   };
 
   return (
     <div className={classNames(cls.InputWrapper, mods, [className])}>
-      {placeholder && (
-        <div
-          style={{
-            whiteSpace: __PROJECT__ === 'storybook' ? 'nowrap' : 'unset',
-          }}
-          className={cls.placeholder}
-        >{`${placeholder}>`}</div>
-      )}
-      <div className={cls.caretWrapper}>
-        <input
-          ref={ref ? ref : null}
-          className={cls.input}
-          type={type}
-          value={value}
-          onChange={onChangeHandler}
-          onBlur={onBlur}
-          onFocus={onFocus}
-          onSelect={onSelect}
-          readOnly={readonly}
-          {...otherProps}
-        />
-        {isCaretVisible && (
-          <span
-            style={{ left: `${caretPosition * 9}px` }}
-            className={cls.caret}
-          />
-        )}
-      </div>
+      <div className={cls.addonLeft}>{addonLeft}</div>
+      <input
+        ref={ref ? ref : null}
+        className={cls.input}
+        type={type}
+        value={value}
+        onChange={onChangeHandler}
+        onBlur={onBlur}
+        onFocus={onFocus}
+        placeholder={placeholder}
+        readOnly={readonly}
+        {...otherProps}
+      />
+      <div className={cls.addonRight}>{addonRight}</div>
     </div>
   );
 });

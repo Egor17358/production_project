@@ -14,6 +14,8 @@ import popupCls from '../../styles/popup.module.scss';
 import { Button } from '../../../Button';
 import { mapDirectionClass } from '../../styles/consts';
 import { DropdownDirection } from '@/shared/types/ui';
+import ArrowIcon from '@/shared/assets/icons/arrow-bottom.svg';
+import { Icon } from '../../../Icon';
 
 export interface ListBoxItem<T extends string> {
   value: string;
@@ -61,7 +63,11 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
         onChange={onChange}
       >
         <ListboxButton as={Fragment}>
-          <Button variant="filled" disabled={readonly}>
+          <Button
+            addonRight={<Icon Svg={ArrowIcon} />}
+            variant="filled"
+            disabled={readonly}
+          >
             {selectedItem?.content ?? defaultValue}
           </Button>
         </ListboxButton>
