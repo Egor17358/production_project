@@ -18,5 +18,11 @@
   "Некорректный возраст": "Incorrect age",
   "Некорректный город": "Incorrect city",
   "Некорректная страна": "Incorrect country",
-  "Выберите страну": "Select country"
+  "Выберите страну": "Select country",
+  "Имя пользователя": "User name",
+  "Ссылка на аватар": "Link to the avatar",
+  "Город": "City",
+  "Возраст": "Age",
+  "Фамилия": "Surname",
+  "Имя": "Name"
 }
