@@ -10,11 +10,14 @@ import {
 // import { Text } from '@/shared/ui/deprecated/Text/Text';
 // import { Icon } from '@/shared/ui/deprecated/Icon/Icon';
 // import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
-import { Card } from '@/shared/ui/deprecated/Card';
+import { Card as CardDeprecated } from '@/shared/ui/deprecated/Card';
+import { Card as CardRedesigned } from '@/shared/ui/redesigned/Card';
 // import { Avatar } from '@/shared/ui/deprecated/Avatar/Avatar';
 // import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button/Button';
 // import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
-import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton';
+import { Skeleton as SkeletonRedesigned } from '@/shared/ui/redesigned/Skeleton';
+import { toggleFeatures } from '@/shared/lib/features';
 
 export interface ArticleListItemSkeletonProps {
   className?: string;
@@ -22,6 +25,17 @@ export interface ArticleListItemSkeletonProps {
 }
 export const ArticleListItemSkeleton = memo(
   ({ className, view }: ArticleListItemSkeletonProps) => {
+    const Skeleton = toggleFeatures({
+      name: 'isAppRedesigned',
+      on: () => SkeletonRedesigned,
+      off: () => SkeletonDeprecated,
+    });
+    const Card = toggleFeatures({
+      name: 'isAppRedesigned',
+      on: () => CardRedesigned,
+      off: () => CardDeprecated,
+    });
+
     if (view == ArticleView.BIG) {
       return (
         <div
