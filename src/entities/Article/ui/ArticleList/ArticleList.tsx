@@ -7,6 +7,8 @@ import { ArticleView } from '../../model/consts/articleConsts';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 import { Text, TextSize } from '@/shared/ui/deprecated/Text';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 // import { PAGE_ID } from '@/widgets/Page/ui/Page';
 
 export interface ArticleListProps {
@@ -84,22 +86,47 @@ export const ArticleList = memo((props: ArticleListProps) => {
     //   {articles.length > 0 ? articles.map(renderArticle) : null}
     //   {isLoading && getSkeletons(view)}
     // </div>
-    <div
-      data-testid={'ArticleList'}
-      className={classNames(cls.ArticleList, {}, [className, cls[view]])}
-    >
-      {articles.map((item) => (
-        <ArticleListItem
-          article={item}
-          view={view}
-          target={target}
-          key={item.id}
-          className={cls.card}
-        />
-      ))}
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={
+        <HStack
+          wrap="wrap"
+          gap="16"
+          data-testid={'ArticleList'}
+          className={classNames(cls.ArticleListRedesigned, {}, [])}
+        >
+          {articles.map((item) => (
+            <ArticleListItem
+              article={item}
+              view={view}
+              target={target}
+              key={item.id}
+              className={cls.card}
+            />
+          ))}
 
-      {isLoading && getSkeletons(view)}
-    </div>
+          {isLoading && getSkeletons(view)}
+        </HStack>
+      }
+      off={
+        <div
+          data-testid={'ArticleList'}
+          className={classNames(cls.ArticleList, {}, [className, cls[view]])}
+        >
+          {articles.map((item) => (
+            <ArticleListItem
+              article={item}
+              view={view}
+              target={target}
+              key={item.id}
+              className={cls.card}
+            />
+          ))}
+
+          {isLoading && getSkeletons(view)}
+        </div>
+      }
+    />
   );
 });
 

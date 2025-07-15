@@ -1,6 +1,5 @@
 .BIG {
-  width: 100%;
-
+  // width: 100%;
   .views {
     margin-left: auto;
   }
@@ -112,3 +111,13 @@
 }
 
 
+.ArticleListItemRedesigned {
+  &.BIG {
+    width: 100%;
+  } 
+
+  &.SMALL {
+    width: 240px;
+    height: 350px;
+  }
+}
