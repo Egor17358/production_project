@@ -13,7 +13,7 @@ import { useCallback, useState } from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { Icon } from '@/shared/ui/redesigned/Icon';
-import { Drawer } from '@/shared/ui/deprecated/Drawer';
+import { Drawer } from '@/shared/ui/redesigned/Drawer';
 import { Popover } from '@/shared/ui/redesigned/Popups';
 
 export interface NotificationButtonProps {

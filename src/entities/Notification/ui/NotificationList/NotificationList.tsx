@@ -5,7 +5,7 @@ import { useNotifications } from '../../api/notificationApi';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import { NotificationItem } from '../NotificationItem/NotificationItem';
 import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton';
-import { Skeleton as SkeletonRedesigned } from '@/shared/ui/deprecated/Skeleton';
+import { Skeleton as SkeletonRedesigned } from '@/shared/ui/redesigned/Skeleton';
 import { toggleFeatures } from '@/shared/lib/features';
 
 export interface NotificationListProps {

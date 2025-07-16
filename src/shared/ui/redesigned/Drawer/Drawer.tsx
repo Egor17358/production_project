@@ -20,6 +20,7 @@ import {
   AnimationProvider,
   useAnimationLibs,
 } from '@/shared/lib/components/AnimationProvider';
+import { toggleFeatures } from '@/shared/lib/features';
 
 export interface DrawerProps {
   className?: string;
@@ -91,9 +92,17 @@ export const DrawerContent = memo((props: DrawerProps) => {
   const display = y.to((py) => (py < height ? 'block' : 'none'));
 
   return (
-    <Portal>
+    <Portal element={document.getElementById('app') ?? document.body}>
       <div
-        className={classNames(cls.Drawer, {}, [className, theme, 'app_drawer'])}
+        className={classNames(cls.Drawer, {}, [
+          className,
+          theme,
+          toggleFeatures({
+            name: 'isAppRedesigned',
+            on: () => cls.drawerNew,
+            off: () => cls.drawerOld,
+          }),
+        ])}
       >
         <Overlay onClick={close} />
         <Spring.a.div
