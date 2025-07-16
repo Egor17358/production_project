@@ -5,7 +5,11 @@ import { Dropdown as DropdownDeprecated } from '@/shared/ui/deprecated/Popups';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, isUserManager, userActions } from '@/entities/User';
 import { useCallback } from 'react';
-import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
+import {
+  getRouteAdmin,
+  getRouteProfile,
+  getRouteSettings,
+} from '@/shared/const/router';
 import { Avatar as AvatarDeprecated } from '@/shared/ui/deprecated/Avatar';
 import { useUserRole } from '@/entities/User';
 import { ToggleFeatures } from '@/shared/lib/features';
@@ -47,6 +51,10 @@ export const AvatarDropdown = ({ className }: AvatarDropdownProps) => {
           },
         ]
       : []),
+    {
+      content: t('Настройки'),
+      href: getRouteSettings(),
+    },
     {
       content: t('Профиль'),
       href: getRouteProfile(authData.id),
