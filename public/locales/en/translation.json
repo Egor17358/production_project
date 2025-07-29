@@ -58,5 +58,8 @@
   "Новый": "New",
   "Старый": "Old",
   "Вариант интерфейса": "Interface option",
-  "Настройки": "Settings"
+  "Настройки": "Settings",
+  "{{count}} просмотров_zero": "{{count}} views",
+  "{{count}} просмотров_one": "{{count}} view",
+  "{{count}} просмотров_other": "{{count}} views "
 }
