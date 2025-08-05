@@ -4,6 +4,7 @@ import { ButtonHTMLAttributes, FC, memo, ReactNode } from 'react';
 import { TestProps } from '@/shared/types/testProps';
 
 export type ButtonVariant = 'clear' | 'outline' | 'filled';
+export type ButtonColor = 'normal' | 'success' | 'error';
 
 export type ButtonSize = 'm' | 'l' | 'xl';
 
@@ -17,6 +18,7 @@ export interface ButtonProps
   disabled?: boolean;
   children?: ReactNode;
   fullWidth?: boolean;
+  color?: ButtonColor;
   addonLeft?: ReactNode;
   addonRight?: ReactNode;
 }
@@ -30,6 +32,7 @@ export const Button: FC<ButtonProps> = memo((props: ButtonProps) => {
     size = 'm',
     disabled,
     fullWidth,
+    color = 'normal',
     addonLeft,
     addonRight,
     ...otherProps
@@ -48,6 +51,7 @@ export const Button: FC<ButtonProps> = memo((props: ButtonProps) => {
         className,
         cls[variant],
         cls[size],
+        cls[color],
       ])}
       type="button"
       disabled={disabled}

@@ -49,8 +49,21 @@
   outline: none;
   border-radius: 34px;
 
+
   &:hover {
     border-color: var(--accent-redesigned);
+  }
+
+  &.normal {
+    border-color: var(--icon-redesigned);
+  }
+
+  &.error {
+    border-color: var(--cancel-redesigned);
+  }
+
+  &.success {      
+    border-color: var(--save-redesigned);
   }
 }
 

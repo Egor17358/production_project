@@ -13,7 +13,7 @@ export const DetailsContainer = memo((props: DetailsContainerProps) => {
   const { id } = useParams<{ id: string }>();
 
   return (
-    <Card fullHeight max className={className} padding="24" border="round">
+    <Card fullHeight max className={className} padding="24" border="partial">
       <ArticleDetails id={id} />
     </Card>
   );
