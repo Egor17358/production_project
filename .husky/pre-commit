@@ -1,5 +1,6 @@
-# npm run build:prod
 npx lint-staged
+
+# npm run build:prod
 # npm run lint:scss
 # npm run test:unit
 # npm run storybook:build
