@@ -13,6 +13,7 @@ import { PageLoader } from '@/widgets/PageLoader';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { MainLayout } from '@/shared/layout/MainLayout';
 import { AppLoaderLayout } from '@/shared/layout/AppLoaderLayout';
+import { useAppToolbar } from './lib/useAppToolbar';
 // import { t } from 'i18next';
 // import { useTranslation } from 'react-i18next';
 
@@ -21,6 +22,7 @@ const App = () => {
 
   const dispatch = useAppDispatch();
   const inited = useSelector(getUserInited);
+  const toolbar = useAppToolbar();
 
   useEffect(() => {
     if (!inited) {
@@ -53,7 +55,7 @@ const App = () => {
               header={<Navbar />}
               content={<AppRouter />}
               sidebar={<Sidebar />}
-              // toolbar={<div>{'testToolbar'}</div>}
+              toolbar={toolbar}
             />
           </Suspense>
         </div>
