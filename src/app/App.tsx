@@ -12,6 +12,7 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { PageLoader } from '@/widgets/PageLoader';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { MainLayout } from '@/shared/layout/MainLayout';
+import { AppLoaderLayout } from '@/shared/layout/AppLoaderLayout';
 // import { t } from 'i18next';
 // import { useTranslation } from 'react-i18next';
 
@@ -28,7 +29,17 @@ const App = () => {
   }, [dispatch, inited]);
 
   if (!inited) {
-    return <PageLoader />;
+    return (
+      <ToggleFeatures
+        feature="isAppRedesigned"
+        on={
+          <div id={'app'} className={classNames('app_redesigned', {}, [theme])}>
+            <AppLoaderLayout />
+          </div>
+        }
+        off={<PageLoader />}
+      />
+    );
   }
   // const { t } = useTranslation('translation');
 
