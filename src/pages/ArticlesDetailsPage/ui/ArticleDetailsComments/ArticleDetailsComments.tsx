@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Text as TextDeprecated, TextSize } from '@/shared/ui/deprecated/Text';
 import { Text } from '@/shared/ui/redesigned/Text';
 import { AddCommentForm } from '@/features/AddCommentForm';
-import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
+import { articleDetailsCommentsSelectors } from '../../model/slices/articleDetailsCommentsSlice';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
@@ -22,7 +22,7 @@ export interface ArticleDetailsCommentsProps {
 export const ArticleDetailsComments = memo(
   ({ className, id }: ArticleDetailsCommentsProps) => {
     const { t } = useTranslation('article-details');
-    const comments = useSelector(getArticleComments.selectAll);
+    const comments = useSelector(articleDetailsCommentsSelectors.selectAll);
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
     const dispatch = useAppDispatch();
 

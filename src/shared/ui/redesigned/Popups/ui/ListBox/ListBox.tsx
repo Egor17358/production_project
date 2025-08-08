@@ -62,14 +62,13 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
         value={value}
         onChange={onChange}
       >
-        <ListboxButton as={Fragment}>
-          <Button
-            addonRight={<Icon Svg={ArrowIcon} />}
-            variant="filled"
-            disabled={readonly}
-          >
-            {selectedItem?.content ?? defaultValue}
-          </Button>
+        <ListboxButton
+          as={Button}
+          addonRight={<Icon Svg={ArrowIcon} />}
+          variant="filled"
+          disabled={readonly}
+        >
+          {selectedItem?.content ?? defaultValue}
         </ListboxButton>
         <ListboxOptions className={classNames(cls.options, {}, optionsClasses)}>
           {items?.map((item) => (

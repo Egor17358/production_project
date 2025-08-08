@@ -70,7 +70,6 @@ export const StarRating = memo((props: StarRatingProps) => {
           width: size,
           height: size,
           Svg: StarIcon,
-          key: starNumber,
           onMouseLeave: onLeave,
           onMouseEnter: onHover(starNumber),
           onClick: onClick(starNumber),

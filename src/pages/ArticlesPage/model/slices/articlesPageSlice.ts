@@ -22,28 +22,31 @@ const articlesAdapter = createEntityAdapter({
   // sortComparer: (a, b) => a.title.localeCompare(b.title),
 });
 
-export const getArticles = articlesAdapter.getSelectors<StateSchema>(
-  (state: StateSchema) =>
-    state.articlesPage || articlesAdapter.getInitialState(),
+const selectArticlePageState = (state: StateSchema) => state.articlesPage;
+
+const initialState = articlesAdapter.getInitialState<ArticlesPageSchema>({
+  isLoading: false,
+  error: undefined,
+  ids: [],
+  entities: {},
+  view: ArticleView.SMALL,
+  page: 1,
+  hasMore: true,
+  _inited: false,
+  limit: 9,
+  sort: ArticleSortField.CREATED,
+  search: '',
+  order: 'asc',
+  type: ArticleType.ALL,
+});
+
+export const articlesSelectors = articlesAdapter.getSelectors<StateSchema>(
+  (state) => selectArticlePageState(state) || initialState,
 );
 
 const articlePageSlice = createSlice({
   name: 'articlePageSlice',
-  initialState: articlesAdapter.getInitialState<ArticlesPageSchema>({
-    isLoading: false,
-    error: undefined,
-    ids: [],
-    entities: {},
-    view: ArticleView.SMALL,
-    page: 1,
-    hasMore: true,
-    _inited: false,
-    limit: 9,
-    sort: ArticleSortField.CREATED,
-    search: '',
-    order: 'asc',
-    type: ArticleType.ALL,
-  }),
+  initialState,
   reducers: {
     setView: (state, action: PayloadAction<ArticleView>) => {
       state.view = action.payload;

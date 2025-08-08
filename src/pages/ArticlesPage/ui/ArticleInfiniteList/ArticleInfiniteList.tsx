@@ -1,7 +1,7 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { memo } from 'react';
 import { useSelector } from 'react-redux';
-import { getArticles } from '../../model/slices/articlesPageSlice';
+import { articlesSelectors } from '../../model/slices/articlesPageSlice';
 import {
   getArticlesPageError,
   getArticlesPageIsLoading,
@@ -16,7 +16,8 @@ export interface ArticleInfiniteListProps {
 }
 export const ArticleInfiniteList = memo(
   ({ className }: ArticleInfiniteListProps) => {
-    const articles = useSelector(getArticles.selectAll);
+    const articles = useSelector(articlesSelectors.selectAll);
+    // const articles = useSelector(selectAllArticles);
     const isLoading = useSelector(getArticlesPageIsLoading);
     const view = useSelector(getArticlesPageView);
     const error = useSelector(getArticlesPageError);
