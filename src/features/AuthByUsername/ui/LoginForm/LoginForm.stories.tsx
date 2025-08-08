@@ -4,6 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import LoginForm from './LoginForm';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { fn } from '@storybook/test';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -35,6 +36,14 @@ Primary.parameters = {
   state: { loginForm: { username: 'name', password: '123' } },
 };
 
+export const PrimaryRedesigned: Story = {
+  args: {},
+};
+PrimaryRedesigned.decorators = [NewDesignDecorator, StoreDecorator];
+PrimaryRedesigned.parameters = {
+  state: { loginForm: { username: 'name', password: '123' } },
+};
+
 export const withError: Story = {
   args: {},
 };
@@ -43,27 +52,10 @@ withError.parameters = {
   state: { loginForm: { username: 'name', password: '123', error: 'ERROR' } },
 };
 
-export const Loading: Story = {
+export const withErrorRedesigned: Story = {
   args: {},
 };
-Loading.decorators = [StoreDecorator];
-Loading.parameters = { state: { loginForm: { isLoading: true } } };
-
-// export const DarkTheme: Story = {
-//   args: {
-//     placeholder:
-//     'Type Text',
-//     value: '1331'
-//   },
-// };
-// DarkTheme.decorators = [ThemeDecorator];
-// DarkTheme.parameters = {
-//   theme: Theme.DARK,
-// };
-
-// export const OutlineDark: Story = {
-//   args: {
-//     children: 'Text',
-//     theme: ButtonTheme.OUTLINE,
-//   },
-// };
+withErrorRedesigned.decorators = [NewDesignDecorator, StoreDecorator];
+withErrorRedesigned.parameters = {
+  state: { loginForm: { username: 'name', password: '123', error: 'ERROR' } },
+};

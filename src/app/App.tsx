@@ -1,4 +1,4 @@
-import { Suspense, useEffect } from 'react';
+import { memo, Suspense, useEffect } from 'react';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppRouter } from './providers/router';
@@ -14,10 +14,11 @@ import { ToggleFeatures } from '@/shared/lib/features';
 import { MainLayout } from '@/shared/layout/MainLayout';
 import { AppLoaderLayout } from '@/shared/layout/AppLoaderLayout';
 import { useAppToolbar } from './lib/useAppToolbar';
+import { withTheme } from './providers/ThemeProvider';
 // import { t } from 'i18next';
 // import { useTranslation } from 'react-i18next';
 
-const App = () => {
+const App = memo(() => {
   const { theme } = useTheme();
 
   const dispatch = useAppDispatch();
@@ -73,6 +74,8 @@ const App = () => {
       }
     />
   );
-};
+});
 
-export default App;
+export default withTheme(App);
+
+App.displayName = 'App';

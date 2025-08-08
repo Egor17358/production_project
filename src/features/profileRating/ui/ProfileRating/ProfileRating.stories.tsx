@@ -11,6 +11,7 @@ import {
   // delay
 } from 'msw';
 import { mswDecorator, initialize } from 'msw-storybook-addon';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 initialize();
 
@@ -35,6 +36,13 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const handlersArgs = [
+  http.get(`${__API__}/profile-ratings?userId=1&profileId=1`, async () => {
+    // await delay(200);
+    return HttpResponse.json([{ ...profileRating, id: '1' }]);
+  }),
+];
+
 const profileRating = {
   id: '1',
   rate: 4,
@@ -50,15 +58,26 @@ export const Normal: Story = {
 };
 Normal.parameters = {
   msw: {
-    handlers: [
-      http.get(`${__API__}/profile-ratings?userId=1&profileId=1`, async () => {
-        // await delay(200);
-        return HttpResponse.json([{ ...profileRating, id: '1' }]);
-      }),
-    ],
+    handlers: handlersArgs,
   },
 };
 Normal.decorators = [mswDecorator, StoreDecorator];
+
+export const NormalRedesigned: Story = {
+  args: {
+    profileId: '1',
+  },
+};
+NormalRedesigned.parameters = {
+  msw: {
+    handlers: handlersArgs,
+  },
+};
+NormalRedesigned.decorators = [
+  NewDesignDecorator,
+  mswDecorator,
+  StoreDecorator,
+];
 
 export const DARK: Story = {
   args: {
@@ -69,11 +88,24 @@ DARK.decorators = [ThemeDecorator, StoreDecorator, mswDecorator];
 DARK.parameters = {
   theme: Theme.DARK,
   msw: {
-    handlers: [
-      http.get(`${__API__}/profile-ratings?userId=1&profileId=1`, async () => {
-        // await delay(200);
-        return HttpResponse.json([{ ...profileRating, id: '1' }]);
-      }),
-    ],
+    handlers: handlersArgs,
+  },
+};
+
+export const DARKRedesigned: Story = {
+  args: {
+    profileId: '1',
+  },
+};
+DARKRedesigned.decorators = [
+  NewDesignDecorator,
+  ThemeDecorator,
+  StoreDecorator,
+  mswDecorator,
+];
+DARKRedesigned.parameters = {
+  theme: Theme.DARK,
+  msw: {
+    handlers: handlersArgs,
   },
 };

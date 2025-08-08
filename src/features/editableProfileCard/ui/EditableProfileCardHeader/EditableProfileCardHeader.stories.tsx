@@ -5,6 +5,7 @@ import { EditableProfileCardHeader } from './EditableProfileCardHeader';
 // import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 // import { Theme } from '@/shared/const/theme';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -32,6 +33,11 @@ export const Normal: Story = {
   args: {},
 };
 Normal.decorators = [StoreDecorator];
+
+export const NormalRedesigned: Story = {
+  args: {},
+};
+NormalRedesigned.decorators = [NewDesignDecorator, StoreDecorator];
 
 // export const DARK: Story = {
 //   args: {

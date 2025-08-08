@@ -44,7 +44,14 @@ export const CurrencySelect = memo(
     return (
       <ToggleFeatures
         feature="isAppRedesigned"
-        on={<ListBox direction="top right" {...propsComponent} />}
+        on={
+          <ListBox
+            direction={
+              __PROJECT__ !== 'storybook' ? 'top right' : 'bottom left'
+            }
+            {...propsComponent}
+          />
+        }
         off={<ListBoxDeprecated {...propsComponent} />}
       />
     );

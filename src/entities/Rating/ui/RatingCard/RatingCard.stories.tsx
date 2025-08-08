@@ -4,6 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { RatingCard } from './RatingCard';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -34,6 +35,14 @@ export const Normal: Story = {
   },
 };
 
+export const NormalRedesigned: Story = {
+  args: {
+    title: 'Оцените',
+    rate: 3,
+  },
+};
+NormalRedesigned.decorators = [NewDesignDecorator];
+
 export const DARK: Story = {
   args: {
     title: 'Оцените',
@@ -41,5 +50,15 @@ export const DARK: Story = {
 };
 DARK.decorators = [ThemeDecorator];
 DARK.parameters = {
+  theme: Theme.DARK,
+};
+
+export const DARKRedesigned: Story = {
+  args: {
+    title: 'Оцените',
+  },
+};
+DARKRedesigned.decorators = [NewDesignDecorator, ThemeDecorator];
+DARKRedesigned.parameters = {
   theme: Theme.DARK,
 };

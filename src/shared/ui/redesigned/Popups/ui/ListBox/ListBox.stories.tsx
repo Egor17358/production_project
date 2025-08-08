@@ -2,12 +2,13 @@ import type { Meta, StoryObj } from '@storybook/react';
 // import { fn } from '@storybook/test';
 
 import { ListBox } from './ListBox';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 // import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 // import { Theme } from '@/shared/const/theme';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'shared/ListBox',
+  title: 'shared/ListBoxRedesigned',
   component: ListBox,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
@@ -27,7 +28,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Normal: Story = {
+export const NormalRedesigned: Story = {
   args: {
     value: '123',
     items: [
@@ -36,6 +37,8 @@ export const Normal: Story = {
     ],
   },
 };
+
+NormalRedesigned.decorators = [NewDesignDecorator];
 
 // export const DARK: Story = {
 //   args: {

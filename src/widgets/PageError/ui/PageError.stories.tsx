@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { PageError } from './PageError';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -29,10 +30,24 @@ type Story = StoryObj<typeof meta>;
 export const Light: Story = {
   args: {},
 };
+
+export const LightRedesigned: Story = {
+  args: {},
+};
+LightRedesigned.decorators = [NewDesignDecorator];
+
 export const Dark: Story = {
   args: {},
 };
 Dark.decorators = [ThemeDecorator];
 Dark.parameters = {
+  theme: Theme.DARK,
+};
+
+export const DarkRedesigned: Story = {
+  args: {},
+};
+DarkRedesigned.decorators = [NewDesignDecorator, ThemeDecorator];
+DarkRedesigned.parameters = {
   theme: Theme.DARK,
 };

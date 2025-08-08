@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import type { Meta, StoryObj } from '@storybook/react';
 // import { fn } from '@storybook/test';
 
@@ -7,6 +6,7 @@ import { ArticleListItem } from './ArticleListItem';
 // import { Theme } from '@/shared/const/theme';
 import { Article } from '../../model/types/article';
 import { ArticleView } from '../../model/consts/articleConsts';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -113,12 +113,28 @@ export const Big: Story = {
   },
 };
 
+export const BigRedesigned: Story = {
+  args: {
+    view: ArticleView.BIG,
+    article,
+  },
+};
+BigRedesigned.decorators = [NewDesignDecorator];
+
 export const Small: Story = {
   args: {
     view: ArticleView.SMALL,
     article,
   },
 };
+
+export const SmallRedesigned: Story = {
+  args: {
+    view: ArticleView.SMALL,
+    article,
+  },
+};
+SmallRedesigned.decorators = [NewDesignDecorator];
 
 // export const DARK: Story = {
 //   args: {

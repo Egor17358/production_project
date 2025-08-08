@@ -10,6 +10,7 @@ import { Article } from '@/entities/Article';
 import { http, HttpResponse } from 'msw';
 import { mswDecorator, initialize } from 'msw-storybook-addon';
 import AvatarImg from '@/shared/assets/tests/testimage.jpeg';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 initialize();
 const meta = {
@@ -46,6 +47,29 @@ export const Normal: Story = {
 };
 Normal.decorators = [StoreDecorator, mswDecorator];
 Normal.parameters = {
+  msw: {
+    handlers: [
+      http.get(`${__API__}/articles?_limit=3`, async () => {
+        // await delay(200);
+        return HttpResponse.json([
+          { ...article, id: '1' },
+          // { ...article, id: '2' },
+          // { ...article, id: '3' },
+        ]);
+      }),
+    ],
+  },
+};
+
+export const NormalRedesigned: Story = {
+  args: {},
+};
+NormalRedesigned.decorators = [
+  NewDesignDecorator,
+  StoreDecorator,
+  mswDecorator,
+];
+NormalRedesigned.parameters = {
   msw: {
     handlers: [
       http.get(`${__API__}/articles?_limit=3`, async () => {

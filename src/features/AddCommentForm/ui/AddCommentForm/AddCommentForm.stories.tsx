@@ -5,6 +5,7 @@ import AddCommentForm from './AddCommentForm';
 // import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 // import { Theme } from '@/shared/const/theme';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 // import { Country } from '@/entities/Country';
 // import { Currency } from '@/entities/Currency';
 // import AvatarImg from '@/shared/assets/tests/testimage.jpeg';
@@ -37,3 +38,7 @@ type Story = StoryObj<typeof meta>;
 export const Normal: Story = {};
 Normal.decorators = [StoreDecorator];
 Normal.parameters = {};
+
+export const NormalRedesigned: Story = {};
+NormalRedesigned.decorators = [NewDesignDecorator, StoreDecorator];
+NormalRedesigned.parameters = {};

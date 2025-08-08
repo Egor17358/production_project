@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import type { Meta, StoryObj } from '@storybook/react';
 // import { fn } from '@storybook/test';
 
@@ -7,6 +6,7 @@ import { ArticleList } from './ArticleList';
 // import { Theme } from '@/shared/const/theme';
 import { Article } from '../../model/types/article';
 import { ArticleView } from '../../model/consts/articleConsts';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -109,6 +109,14 @@ export const LoadingBig: Story = {
     view: ArticleView.BIG,
   },
 };
+export const LoadingBigRedesigned: Story = {
+  args: {
+    isLoading: true,
+    articles: [],
+    view: ArticleView.BIG,
+  },
+};
+LoadingBigRedesigned.decorators = [NewDesignDecorator];
 
 export const LoadingSmall: Story = {
   args: {
@@ -117,6 +125,15 @@ export const LoadingSmall: Story = {
     view: ArticleView.SMALL,
   },
 };
+
+export const LoadingSmallRedesigned: Story = {
+  args: {
+    isLoading: true,
+    articles: [],
+    view: ArticleView.SMALL,
+  },
+};
+LoadingSmallRedesigned.decorators = [NewDesignDecorator];
 
 export const ListBig: Story = {
   args: {
@@ -128,6 +145,17 @@ export const ListBig: Story = {
     view: ArticleView.BIG,
   },
 };
+export const ListBigRedesigned: Story = {
+  args: {
+    isLoading: false,
+    articles: new Array(9).fill(0).map((item, index) => ({
+      ...article,
+      id: String(index),
+    })),
+    view: ArticleView.BIG,
+  },
+};
+ListBigRedesigned.decorators = [NewDesignDecorator];
 
 export const ListSmall: Story = {
   args: {
@@ -139,6 +167,18 @@ export const ListSmall: Story = {
     view: ArticleView.SMALL,
   },
 };
+
+export const ListSmallRedesigned: Story = {
+  args: {
+    isLoading: false,
+    articles: new Array(1).fill(0).map((item, index) => ({
+      ...article,
+      id: String(index),
+    })),
+    view: ArticleView.SMALL,
+  },
+};
+ListSmallRedesigned.decorators = [NewDesignDecorator];
 
 // export const DARK: Story = {
 //   args: {

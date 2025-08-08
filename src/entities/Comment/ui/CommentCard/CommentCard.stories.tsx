@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 // import { fn } from '@storybook/test';
 
 import { CommentCard } from './CommentCard';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 // import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 // import { Theme } from '@/shared/const/theme';
 
@@ -27,18 +28,38 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
+
+const normalArgs = {
+  comment: { id: '1', text: 'aaaa', user: { id: '1', username: 'userName' } },
+};
+
 export const Normal: Story = {
   args: {
-    comment: { id: '1', text: 'aaaa', user: { id: '1', username: 'userName' } },
+    ...normalArgs,
   },
 };
 
+export const NormalRedesigned: Story = {
+  args: {
+    ...normalArgs,
+  },
+};
+NormalRedesigned.decorators = [NewDesignDecorator];
+
 export const Loading: Story = {
   args: {
-    comment: { id: '1', text: 'aaaa', user: { id: '1', username: 'userName' } },
+    ...normalArgs,
     isLoading: true,
   },
 };
+
+export const LoadingRedesigned: Story = {
+  args: {
+    ...normalArgs,
+    isLoading: true,
+  },
+};
+LoadingRedesigned.decorators = [NewDesignDecorator];
 
 // export const DARK: Story = {
 //   args: {

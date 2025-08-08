@@ -8,6 +8,7 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 import AvatarImg from '@/shared/assets/tests/testimage.jpeg';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -47,11 +48,21 @@ export const Primary: Story = {};
 Primary.decorators = [StoreDecorator];
 Primary.parameters = {};
 
+export const PrimaryRedesigned: Story = {};
+PrimaryRedesigned.decorators = [NewDesignDecorator, StoreDecorator];
+PrimaryRedesigned.parameters = {};
+
 export const withError: Story = {};
 withError.args = {
   error: 'true',
 };
 withError.decorators = [StoreDecorator];
+
+export const withErrorRedesigned: Story = {};
+withErrorRedesigned.args = {
+  error: 'true',
+};
+withErrorRedesigned.decorators = [NewDesignDecorator, StoreDecorator];
 
 export const Loading: Story = {};
 Loading.decorators = [StoreDecorator];
@@ -59,8 +70,24 @@ Loading.args = {
   isLoading: true,
 };
 
+export const LoadingRedesigned: Story = {};
+LoadingRedesigned.decorators = [NewDesignDecorator, StoreDecorator];
+LoadingRedesigned.args = {
+  isLoading: true,
+};
+
 export const Dark: Story = {};
 Dark.decorators = [ThemeDecorator, StoreDecorator];
 Dark.parameters = {
+  theme: Theme.DARK,
+};
+
+export const DarkRedesigned: Story = {};
+DarkRedesigned.decorators = [
+  NewDesignDecorator,
+  ThemeDecorator,
+  StoreDecorator,
+];
+DarkRedesigned.parameters = {
   theme: Theme.DARK,
 };

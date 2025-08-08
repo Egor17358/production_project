@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { CountrySelect } from './CountrySelect';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 // import AvatarImg from './testimage.jpeg'
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -31,3 +32,8 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {},
 };
+
+export const PrimaryRedesigned: Story = {
+  args: {},
+};
+PrimaryRedesigned.decorators = [NewDesignDecorator];

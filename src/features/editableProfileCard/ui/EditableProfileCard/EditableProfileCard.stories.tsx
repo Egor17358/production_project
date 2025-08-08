@@ -5,6 +5,7 @@ import { EditableProfileCard } from './EditableProfileCard';
 // import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 // import { Theme } from 'app/providers/ThemeProvider';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 // import { fn } from '@storybook/test';
 
 const meta = {
@@ -28,6 +29,11 @@ export const Normal: Story = {
   args: {},
 };
 Normal.decorators = [StoreDecorator];
+
+export const NormalRedesigned: Story = {
+  args: {},
+};
+NormalRedesigned.decorators = [NewDesignDecorator, StoreDecorator];
 
 // export const Dark: Story = {
 //   args: {},

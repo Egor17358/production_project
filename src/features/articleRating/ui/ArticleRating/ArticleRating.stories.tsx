@@ -7,6 +7,7 @@ import { Theme } from '@/shared/const/theme';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { http, HttpResponse } from 'msw';
 import { mswDecorator, initialize } from 'msw-storybook-addon';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 initialize();
 
@@ -62,6 +63,32 @@ Normal.parameters = {
 };
 Normal.decorators = [StoreDecorator, mswDecorator];
 
+export const NormalRedesigned: Story = {
+  args: {
+    articleId: '1',
+  },
+};
+NormalRedesigned.parameters = {
+  state: {
+    user: {
+      authData: { id: '1' },
+    },
+  },
+  msw: {
+    handlers: [
+      http.get(`${__API__}/article-ratings?userId=1&articleId=1`, async () => {
+        // await delay(200);
+        return HttpResponse.json([{ ...articleRating }]);
+      }),
+    ],
+  },
+};
+NormalRedesigned.decorators = [
+  NewDesignDecorator,
+  StoreDecorator,
+  mswDecorator,
+];
+
 export const NormalWithoutRate: Story = {
   args: {
     articleId: '1',
@@ -76,12 +103,32 @@ NormalWithoutRate.parameters = {
   msw: {
     handlers: [
       http.get(`${__API__}/article-ratings?userId=1&articleId=1`, async () => {
-        // await delay(200);
         return HttpResponse.json([{ ...articleRating, rate: 0 }]);
       }),
     ],
   },
 };
+
+export const NormalWithoutRateRedesigned: Story = {
+  args: {
+    articleId: '1',
+  },
+};
+NormalWithoutRateRedesigned.parameters = {
+  state: {
+    user: {
+      authData: { id: '1' },
+    },
+  },
+  msw: {
+    handlers: [
+      http.get(`${__API__}/article-ratings?userId=1&articleId=1`, async () => {
+        return HttpResponse.json([{ ...articleRating, rate: 0 }]);
+      }),
+    ],
+  },
+};
+NormalWithoutRateRedesigned.decorators = [NewDesignDecorator];
 
 export const DARK: Story = {
   args: {
@@ -90,6 +137,29 @@ export const DARK: Story = {
 };
 DARK.decorators = [ThemeDecorator];
 DARK.parameters = {
+  theme: Theme.DARK,
+  state: {
+    user: {
+      authData: { id: '1' },
+    },
+  },
+  msw: {
+    handlers: [
+      http.get(`${__API__}/article-ratings?userId=1&articleId=1`, async () => {
+        // await delay(200);
+        return HttpResponse.json([{ ...articleRating }]);
+      }),
+    ],
+  },
+};
+
+export const DARKRedesigned: Story = {
+  args: {
+    articleId: '1',
+  },
+};
+DARKRedesigned.decorators = [NewDesignDecorator, ThemeDecorator];
+DARKRedesigned.parameters = {
   theme: Theme.DARK,
   state: {
     user: {

@@ -11,6 +11,7 @@ import {
   // delay
 } from 'msw';
 import { mswDecorator, initialize } from 'msw-storybook-addon';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 initialize();
 
@@ -47,6 +48,36 @@ const profileRating = {
 export const Normal: Story = {};
 Normal.decorators = [StoreDecorator, mswDecorator];
 Normal.parameters = {
+  state: {
+    profile: {
+      form: {
+        username: 'admin',
+        age: 22,
+        country: 'Russia',
+        lastname: 'asd asddas',
+        first: 'asd',
+        city: 'asf',
+        currency: 'USD',
+      },
+    },
+  },
+  msw: {
+    handlers: [
+      http.get(`${__API__}/profile-ratings?userId=1&profileId=1`, async () => {
+        // await delay(200);
+        return HttpResponse.json([{ ...profileRating, id: '1' }]);
+      }),
+    ],
+  },
+};
+
+export const NormalRedesigned: Story = {};
+NormalRedesigned.decorators = [
+  NewDesignDecorator,
+  StoreDecorator,
+  mswDecorator,
+];
+NormalRedesigned.parameters = {
   state: {
     profile: {
       form: {

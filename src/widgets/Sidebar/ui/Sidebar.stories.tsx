@@ -4,6 +4,7 @@ import { Sidebar } from './Sidebar';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -37,6 +38,16 @@ Light.parameters = {
   },
 };
 
+export const LightRedesigned: Story = {
+  args: {},
+};
+LightRedesigned.decorators = [NewDesignDecorator, StoreDecorator];
+LightRedesigned.parameters = {
+  state: {
+    user: { authData: {} },
+  },
+};
+
 export const Dark: Story = {
   args: {},
 };
@@ -48,11 +59,36 @@ Dark.parameters = {
   },
 };
 
+export const DarkRedesigned: Story = {
+  args: {},
+};
+DarkRedesigned.decorators = [
+  NewDesignDecorator,
+  ThemeDecorator,
+  StoreDecorator,
+];
+DarkRedesigned.parameters = {
+  theme: Theme.DARK,
+  state: {
+    user: { authData: {} },
+  },
+};
+
 export const NoAuth: Story = {
   args: {},
 };
 NoAuth.decorators = [StoreDecorator];
 NoAuth.parameters = {
+  state: {
+    user: {},
+  },
+};
+
+export const NoAuthRedesigned: Story = {
+  args: {},
+};
+NoAuthRedesigned.decorators = [NewDesignDecorator, StoreDecorator];
+NoAuthRedesigned.parameters = {
   state: {
     user: {},
   },
