@@ -11,8 +11,11 @@ const cors = require('cors');
 const options = {};
 
 try {
-  options.key = fs.readFileSync('./egor17358project.ru/privkey.pem');
-  options.cert = fs.readFileSync('./egor17358project.ru/fullchain.pem');
+  const keyPath = path.resolve(__dirname, 'egor17358project.ru/privkey.pem');
+  const certPath = path.resolve(__dirname, 'egor17358project.ru/fullchain.pem');
+
+  options.key = fs.readFileSync(keyPath);
+  options.cert = fs.readFileSync(certPath);
 } catch (error) {
   console.log('error sert');
 }
