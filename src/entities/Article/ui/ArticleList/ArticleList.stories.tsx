@@ -33,7 +33,7 @@ const article = {
   id: '1',
   title: 'Javascript news',
   subtitle: 'Что нового в JS за 2037 год?',
-  img: 'https://avatars.dzeninfra.ru/get-zen_doc/53963/pub_651011ddc419e8692e91c5dc_65101281d67f4c757ed51043/scale_1200',
+  img: 'https://i.pinimg.com/736x/69/bf/8b/69bf8b69d44711f31b780b830fe537a3.jpg',
   views: 1022,
   createdAt: '26.02.2037',
   type: ['IT'],
