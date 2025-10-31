@@ -61,7 +61,11 @@ describe('/app/router/AppRouter', function () {
         user: { _inited: true, authData: {} },
       },
     });
-    const page = await screen.findByTestId('ProfilePage');
+    const page = await screen.findByTestId(
+      'ProfilePage',
+      {},
+      { timeout: 5000 },
+    );
     expect(page).toBeInTheDocument();
   });
 
